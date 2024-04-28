@@ -1,7 +1,8 @@
-import { Box } from "@chakra-ui/react";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/routes";
 
 function App() {
-  return <Box bg={"red"}>home</Box>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
