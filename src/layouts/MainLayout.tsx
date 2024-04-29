@@ -1,11 +1,15 @@
-import { Container } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/common/Navbar";
 
 function MainLayout() {
   return (
-    <Container as={"main"} maxW={"1440px"}>
-      <Outlet />
-    </Container>
+    <Box as={"main"}>
+      <Navbar />
+      <Container as={"section"} maxW={"1335px"}>
+        <Outlet />
+      </Container>
+    </Box>
   );
 }
 

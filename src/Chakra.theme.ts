@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import "@fontsource/plus-jakarta-sans";
 
 export const theme = extendTheme({
   colors: {
@@ -58,7 +59,7 @@ export const theme = extendTheme({
       800: "#1A4393",
       900: "#102E7A",
     },
-    Secondinary: {
+    Secondary: {
       100: "#E0E9F4",
       200: "#C3D4E9",
       300: "#90A3BF",
@@ -69,5 +70,9 @@ export const theme = extendTheme({
       800: "#080C19",
       900: "#040815",
     },
+  },
+  fonts: {
+    heading: `'plus-jakarta-sans', sans-serif`,
+    body: `'plus-jakarta-sans', sans-serif`,
   },
 });
