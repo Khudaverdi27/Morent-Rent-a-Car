@@ -1,0 +1,10 @@
+.chakra-button:has(.bell--icon)::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background-color: #ff4423;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

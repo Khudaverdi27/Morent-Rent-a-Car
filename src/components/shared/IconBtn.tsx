@@ -8,6 +8,7 @@ type IconBtnProps = {
 function IconBtn({ children }: IconBtnProps) {
   return (
     <Button
+      p={"0"}
       w={"44px"}
       h={"44px"}
       color={"Secondary.400"}

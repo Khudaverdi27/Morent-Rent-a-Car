@@ -1,7 +1,8 @@
-import { Flex, HStack, Img, Spacer } from "@chakra-ui/react";
-import { BsFillHeartFill } from "react-icons/bs";
+import { Avatar, Flex, HStack, Spacer } from "@chakra-ui/react";
+import { FaHeart } from "react-icons/fa6";
 import { BiSolidBell } from "react-icons/bi";
 import { IoMdSettings } from "react-icons/io";
+import { Icon } from "@chakra-ui/react";
 
 import Logo from "./Logo";
 import Search from "../../Form/Search";
@@ -20,23 +21,23 @@ function Navbar() {
       borderColor={"Secondary.300"}
       as="header"
     >
-      <HStack spacing="44px">
+      <HStack w={"50%"} spacing="54px">
         <Logo />
         <Search />
       </HStack>
       <Spacer />
       <HStack spacing="14px">
         <IconBtn>
-          <BsFillHeartFill />
+          <Icon as={FaHeart} boxSize={5} />
         </IconBtn>
         <IconBtn>
-          <BiSolidBell />
+          <Icon className="bell--icon" as={BiSolidBell} boxSize={5} />
         </IconBtn>
         <IconBtn>
-          <IoMdSettings />
+          <Icon as={IoMdSettings} boxSize={5} />
         </IconBtn>
         <IconBtn>
-          <Img />
+          <Avatar w={"44px"} h={"44px"} src="#" />
         </IconBtn>
       </HStack>
     </Flex>
