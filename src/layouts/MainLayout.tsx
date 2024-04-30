@@ -4,7 +4,7 @@ import Navbar from "../components/common/Navbar";
 
 function MainLayout() {
   return (
-    <Box as={"main"}>
+    <Box as={"main"} bg={"Secondary.50"}>
       <Navbar />
       <Container as={"section"} maxW={"1335px"}>
         <Outlet />

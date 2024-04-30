@@ -11,14 +11,16 @@ import IconBtn from "../shared/IconBtn";
 function Navbar() {
   return (
     <Flex
+      zIndex={"10"}
       width="100%"
+      pos={"sticky"}
+      top="0"
       align={"center"}
       bgColor={"Primary.0"}
       pl={"30px"}
       pr={"20px"}
       py={"15px"}
-      borderBottom={"1px"}
-      borderColor={"Secondary.300"}
+      boxShadow="sm"
       as="header"
     >
       <HStack w={"50%"} spacing="54px">
