@@ -8,3 +8,12 @@
   top: 0;
   right: 0;
 }
+
+.select--calendar {
+  width: 150px;
+  font-size: 12px;
+  outline: none;
+}
+.select--calendar::placeholder {
+  color: #90a3bf;
+}
