@@ -7,10 +7,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 import car from "../../assets/img/image 7.png";
+import car8 from "../../assets/img/image 8.png";
 
 function Banner() {
   return (
-    <SimpleGrid as={"article"} minChildWidth={"250px"} spacing={10} p={"10px"}>
+    <SimpleGrid as={"article"} minChildWidth={"250px"} spacing={10}>
       <Card
         borderRadius={"10px"}
         overflow={"hidden"}
@@ -58,35 +59,33 @@ function Banner() {
         bg="Primary.500"
         _before={{
           content: "''",
-          h: "180%",
-          opacity: 0.1,
-          borderRadius: "50%",
+          bgImage:
+            "linear-gradient(135deg, Primary.0 25%, transparent 25%), linear-gradient(45deg, Primary.0 25%, transparent 25%),linear-gradient(135deg, transparent 24%,#a29fe5 25%, #a29fe5 45%, transparent 45%), linear-gradient(45deg, transparent 24%,#a29fe5 25%, #a29fe5 45%, transparent 45%)",
+          bgSize: "3em 3em",
+          bgColor: "Primary.0",
+          opacity: "0.1",
           w: "100%",
-          bgGradient:
-            " repeating-radial-gradient(circle, transparent 0 30px, Secondary.50 10px 50px)",
+          h: "100%",
           position: "absolute",
-          clipPath: "circle(farthest-side)",
-          top: -6,
-          right: 0,
         }}
       >
         <CardBody color="Primary.0" position={"relative"}>
           <Text fontSize={"32px"} as={"h2"} maxW={"50%"} fontWeight={"500"}>
-            The Best Platform for Car Rental
+            Easy way to rent a car at a low price
           </Text>
           <Text maxW={"50%"} py={5}>
-            Ease of doing a car rental safely and reliably. Of course at a low
-            price.
+            Providing cheap car rental services and safe and comfortable
+            facilities.
           </Text>
           <Button
-            _hover={{ bgColor: "Primary.600" }}
+            _hover={{ bgColor: "Information.400" }}
             fontWeight={"400"}
-            bgColor="Primary.500"
+            bgColor="Information.500"
             color="Primary.0"
           >
             Rental Car
           </Button>
-          <Image top={"66%"} left={"25%"} position={"absolute"} src={car} />
+          <Image top={"66%"} left={"25%"} position={"absolute"} src={car8} />
         </CardBody>
       </Card>
     </SimpleGrid>
