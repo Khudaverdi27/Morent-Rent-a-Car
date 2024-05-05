@@ -17,3 +17,47 @@
 .select--calendar::placeholder {
   color: #90a3bf;
 }
+
+.left-banner-circle--pattern::before {
+  content: "";
+  height: 180%;
+  opacity: 0.1;
+  border-radius: 50%;
+  width: 100%;
+  background-image: repeating-radial-gradient(
+    circle,
+    transparent 0 30px,
+    #f6f7f9 10px 50px
+  );
+
+  position: absolute;
+  clip-path: circle(farthest-side);
+  top: -6;
+  right: 0;
+}
+
+.right-banner-zig--pattern::before {
+  content: "";
+  background-image: linear-gradient(135deg, #fff 25%, transparent 25%),
+    linear-gradient(45deg, #fff 25%, transparent 25%),
+    linear-gradient(
+      135deg,
+      transparent 24%,
+      #a29fe5 25%,
+      #a29fe5 45%,
+      transparent 45%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 24%,
+      #a29fe5 25%,
+      #a29fe5 45%,
+      transparent 45%
+    );
+  background-size: 3em 3em;
+  background-color: #fff;
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}

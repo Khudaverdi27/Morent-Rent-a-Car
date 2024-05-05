@@ -8,6 +8,7 @@ import { RiArrowDownSLine, RiArrowUpDownLine } from "react-icons/ri";
 
 function SelectBox() {
   const [startDate, setStartDate] = useState<any>("");
+  const [endDate, setEndDate] = useState<any>("");
   return (
     <Flex mt={6} justify={"space-between"} align={"center"}>
       <Box bgColor={"Primary.0"} w={"582px"} rounded={"10px"}>
@@ -97,9 +98,9 @@ function SelectBox() {
             <SelectOptions title="Date">
               <HStack>
                 <DatePicker
-                  selected={startDate}
+                  selected={endDate}
                   placeholderText="Select your date"
-                  onChange={(date) => setStartDate(date)}
+                  onChange={(date) => setEndDate(date)}
                   className="select--calendar"
                 />
                 <RiArrowDownSLine
