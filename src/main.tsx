@@ -4,10 +4,20 @@ import "./assets/css/index.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "./Chakra.theme.ts";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <>
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
-  </>
-);
+async function enableMocking() {
+  const { worker } = await import("./mocks/browser");
+
+  // `worker.start()` returns a Promise that resolves
+  // once the Service Worker is up and ready to intercept requests.
+  return worker.start();
+}
+
+enableMocking().then(() => {
+  ReactDOM.createRoot(document.getElementById("root")!).render(
+    <>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </>
+  );
+});

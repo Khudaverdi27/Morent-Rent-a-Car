@@ -1,11 +1,4 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  Image,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import car from "../../assets/img/image 7.png";
 import car8 from "../../assets/img/image 8.png";
 import BannerCard from "./BannerCard";

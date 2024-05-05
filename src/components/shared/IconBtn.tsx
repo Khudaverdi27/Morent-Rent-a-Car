@@ -3,9 +3,10 @@ import { ReactNode } from "react";
 
 type IconBtnProps = {
   children: ReactNode;
+  border?: string;
 };
 
-function IconBtn({ children }: IconBtnProps) {
+function IconBtn({ children, border }: IconBtnProps) {
   return (
     <Button
       p={"0"}
@@ -13,7 +14,7 @@ function IconBtn({ children }: IconBtnProps) {
       h={"44px"}
       color={"Secondary.400"}
       bg={"transparent"}
-      border={"1px"}
+      border={!border ? "1px" : ""}
       borderColor={"Secondary.100"}
       _hover={{
         background: "transparent",

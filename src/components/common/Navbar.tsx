@@ -3,7 +3,6 @@ import { FaHeart } from "react-icons/fa6";
 import { BiSolidBell } from "react-icons/bi";
 import { IoMdSettings } from "react-icons/io";
 import { Icon } from "@chakra-ui/react";
-
 import Logo from "./Logo";
 import Search from "../../Form/Search";
 import IconBtn from "../shared/IconBtn";

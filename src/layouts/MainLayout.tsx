@@ -6,7 +6,7 @@ function MainLayout() {
   return (
     <Box as={"main"} bg={"Secondary.50"}>
       <Navbar />
-      <Container as={"section"} maxW={"1440px"}>
+      <Container as={"section"} maxW={"1340px"}>
         <Outlet />
       </Container>
     </Box>

@@ -67,9 +67,9 @@ function SelectBox() {
         </Box>
       </Box>
       <Button
+        boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         bgColor="Primary.500"
         rounded={"10px"}
-        boxShadow="2xl"
         _hover={{ bgColor: "Primary.600" }}
         size="lg"
         color={"Primary.0"}
