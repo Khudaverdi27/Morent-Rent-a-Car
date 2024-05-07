@@ -1,10 +1,9 @@
-import { http, HttpResponse } from "msw";
+import { delay, http, HttpResponse } from "msw";
 import data from "../data/banner.json";
 
 export const handlers = [
-  // Intercept "GET https://example.com/user" requests...
-  http.get("https://example.com/user", () => {
-    // ...and respond to them using this JSON response.
+  http.get("https://api.cars.com/banner", async () => {
+    await delay(5000);
     return HttpResponse.json(data);
   }),
 ];

@@ -6,9 +6,17 @@ interface IBannerProps {
   text: string;
   img: string;
   bgPattern: string;
+  isLoading: boolean;
 }
 
-function BannerCard({ className, title, text, img, bgPattern }: IBannerProps) {
+function BannerCard({
+  className,
+  title,
+  text,
+  img,
+  bgPattern,
+  isLoading,
+}: IBannerProps) {
   return (
     <Card
       className={className}
