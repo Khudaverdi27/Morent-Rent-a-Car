@@ -6,9 +6,9 @@
     "gas": "70L",
     "control": "Manual",
     "seats": "6 People",
-    "price": "72$",
-    "isDiscount": "80$",
-    "img": "./assets/img/rush.png"
+    "price": 72,
+    "isDiscount": 80,
+    "img": "src/assets/img/rush.png"
   },
   {
     "id": 196946423,
@@ -17,9 +17,9 @@
     "gas": "80L",
     "control": "Manual",
     "seats": "6 People",
-    "price": "80$",
+    "price": 80,
     "isDiscount": false,
-    "img": "./assets/img/crv.png"
+    "img": "src/assets/img/crv.png"
   },
   {
     "id": 1961446423,
@@ -28,9 +28,9 @@
     "gas": "90L",
     "control": "Manual",
     "seats": "6 People",
-    "price": "74$",
+    "price": 74,
     "isDiscount": false,
-    "img": "./assets/img/terios.png"
+    "img": "src/assets/img/terios.png"
   },
   {
     "id": 197394423,
@@ -39,9 +39,9 @@
     "gas": "80L",
     "control": "Manual",
     "seats": "6 People",
-    "price": "80$",
+    "price": 80,
     "isDiscount": false,
-    "img": "./assets/img/crv2.png"
+    "img": "src/assets/img/crv2.png"
   },
   {
     "id": 137694423,
@@ -50,9 +50,9 @@
     "gas": "70L",
     "control": "Manual",
     "seats": "4 People",
-    "price": "76$",
-    "isDiscount": "80$",
-    "img": "./assets/img/mg.png"
+    "price": 76,
+    "isDiscount": 80,
+    "img": "src/assets/img/mg.png"
   },
   {
     "id": 132246423,
@@ -61,9 +61,9 @@
     "gas": "80L",
     "control": "Manual",
     "seats": "6 People",
-    "price": "80$",
+    "price": 80,
     "isDiscount": false,
-    "img": "./assets/img/newmg.png"
+    "img": "src/assets/img/newmg.png"
   },
   {
     "id": 111694423,
@@ -72,9 +72,9 @@
     "gas": "70L",
     "control": "Manual",
     "seats": "4 People",
-    "price": "74$",
+    "price": 74,
     "isDiscount": false,
-    "img": "./assets/img/excite.png"
+    "img": "src/assets/img/excite.png"
   },
   {
     "id": 132666623,
@@ -83,8 +83,8 @@
     "gas": "80L",
     "control": "Manual",
     "seats": "6 People",
-    "price": "80$",
+    "price": 80,
     "isDiscount": false,
-    "img": "./assets/img/newmg.png"
+    "img": "src/assets/img/newmg.png"
   }
 ]

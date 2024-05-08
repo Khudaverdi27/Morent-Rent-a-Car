@@ -11,7 +11,14 @@ export const carApi = createApi({
     getByPopular: builder.query<apiResponsePopulars, string>({
       query: (endPoint) => `/${endPoint}`,
     }),
+    getByRecommends: builder.query<apiResponsePopulars, string>({
+      query: (endPoint) => `/${endPoint}`,
+    }),
   }),
 });
 
-export const { useGetByNameQuery } = carApi;
+export const {
+  useGetByNameQuery,
+  useGetByPopularQuery,
+  useGetByRecommendsQuery,
+} = carApi;

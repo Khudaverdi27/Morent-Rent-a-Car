@@ -7,7 +7,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import CardCar from "../../pages/Home/CardCar";
-import { useGetByNameQuery } from "../../services/request";
 import { apiResponsePopulars } from "../../types/apiResponse";
 import _ from "lodash";
 import CardCarContent from "../../pages/Home/CardCarContent";
@@ -16,11 +15,11 @@ import SectionLoading from "./SectionLoading";
 interface ISectionProps {
   title: string;
   showAll: boolean;
+  carData: any;
+  isLoading: boolean;
 }
 
-function Section({ title, showAll }: ISectionProps) {
-  const { data, isLoading } = useGetByNameQuery("popularCars");
-
+function Section({ title, showAll, carData, isLoading }: ISectionProps) {
   return (
     <Box as="section">
       <HStack py={8}>
@@ -47,7 +46,7 @@ function Section({ title, showAll }: ISectionProps) {
             <SectionLoading />
           </>
         ) : (
-          _.map(data, (d: apiResponsePopulars) => (
+          _.map(carData, (d: apiResponsePopulars) => (
             <CardCar key={d.id}>
               <CardCarContent {...d} />
             </CardCar>
