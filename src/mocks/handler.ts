@@ -3,7 +3,7 @@ import data from "../data/banner.json";
 
 export const handlers = [
   http.get("https://api.cars.com/banner", async () => {
-    await delay(5000);
+    await delay(3000);
     return HttpResponse.json(data);
   }),
 ];
