@@ -1,9 +1,9 @@
 import { SimpleGrid, Button, CardBody, Image, Text } from "@chakra-ui/react";
 import BannerCard from "./BannerCard";
 import { useGetByNameQuery } from "../../services/request";
-import { apiResponse } from "../../types/apiResponse";
 import _ from "lodash";
 import BannerCardLoading from "./BannerCardLoading";
+import { apiResponseBanner } from "../../types/apiResponse";
 
 function Banner() {
   const { data, isLoading } = useGetByNameQuery("banner");
@@ -16,10 +16,10 @@ function Banner() {
           <BannerCardLoading />
         </>
       ) : (
-        _.map(data, (d: apiResponse) => (
+        _.map(data, (d: apiResponseBanner) => (
           <BannerCard
             key={d.id}
-            className={d?.classname}
+            className={d.classname}
             bgPattern={d.bgPattern}
           >
             <CardBody color="Primary.0" position={"relative"}>

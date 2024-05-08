@@ -1,13 +1,17 @@
 import {
   Box,
   Button,
-  Flex,
   HStack,
   SimpleGrid,
   Spacer,
   Text,
 } from "@chakra-ui/react";
 import CardCar from "../../pages/Home/CardCar";
+import { useGetByNameQuery } from "../../services/request";
+import { apiResponsePopulars } from "../../types/apiResponse";
+import _ from "lodash";
+import CardCarContent from "../../pages/Home/CardCarContent";
+import SectionLoading from "./SectionLoading";
 
 interface ISectionProps {
   title: string;
@@ -15,6 +19,8 @@ interface ISectionProps {
 }
 
 function Section({ title, showAll }: ISectionProps) {
+  const { data, isLoading } = useGetByNameQuery("popularCars");
+
   return (
     <Box as="section">
       <HStack py={8}>
@@ -33,14 +39,20 @@ function Section({ title, showAll }: ISectionProps) {
         )}
       </HStack>
       <SimpleGrid minChildWidth={"250px"} spacing={8}>
-        <CardCar />
-        <CardCar />
-        <CardCar />
-        <CardCar />
-        <CardCar />
-        <CardCar />
-        <CardCar />
-        <CardCar />
+        {isLoading ? (
+          <>
+            <SectionLoading />
+            <SectionLoading />
+            <SectionLoading />
+            <SectionLoading />
+          </>
+        ) : (
+          _.map(data, (d: apiResponsePopulars) => (
+            <CardCar key={d.id}>
+              <CardCarContent {...d} />
+            </CardCar>
+          ))
+        )}
       </SimpleGrid>
     </Box>
   );

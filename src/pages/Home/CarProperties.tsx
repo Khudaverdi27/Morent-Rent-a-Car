@@ -4,26 +4,26 @@ import { SiCircle } from "react-icons/si";
 import { FaUserGroup } from "react-icons/fa6";
 import IconBtn from "../../components/shared/IconBtn";
 
-function CarProperties() {
+function CarProperties({ ...props }) {
   return (
-    <Flex mt={7}>
-      <HStack mt="6" gap="0" color={"Secondary.300"} fontSize={14}>
+    <Flex justify={"space-between"} alignItems={"flex-end"} height={"60%"}>
+      <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
           <Icon as={FaGasPump} boxSize={5} />
         </IconBtn>
-        <Text>90L</Text>
+        <Text>{props.gas}</Text>
       </HStack>
-      <HStack mt="6" gap="0" color={"Secondary.300"} fontSize={14}>
+      <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
           <Icon as={SiCircle} boxSize={5} />
         </IconBtn>
-        <Text>Manual</Text>
+        <Text>{props.control}</Text>
       </HStack>
-      <HStack mt="6" gap="0" color={"Secondary.300"} fontSize={14}>
+      <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
           <Icon as={FaUserGroup} boxSize={5} />
         </IconBtn>
-        <Text whiteSpace={"nowrap"}>2 People</Text>
+        <Text whiteSpace={"nowrap"}>{props.seats}</Text>
       </HStack>
     </Flex>
   );
