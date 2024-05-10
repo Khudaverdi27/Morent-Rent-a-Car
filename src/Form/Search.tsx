@@ -28,6 +28,7 @@ function Search() {
       </InputLeftElement>
 
       <Input
+        pointerEvents={isLoading ? "none" : "auto"}
         borderRadius={"3xl"}
         type="text"
         placeholder={isLoading ? "" : "Search something here"}

@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import { ReactNode } from "react";
+import { useGetByPopularQuery } from "../../services/request";
 
 type IconBtnProps = {
   children: ReactNode;
@@ -7,8 +8,10 @@ type IconBtnProps = {
 };
 
 function IconBtn({ children, border }: IconBtnProps) {
+  const { isLoading } = useGetByPopularQuery("banner");
   return (
     <Button
+      pointerEvents={isLoading ? "none" : "auto"}
       p={"0"}
       w={"44px"}
       h={"44px"}

@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 interface ISelectOptions {
   children: ReactNode;
-  title: string;
+  title: string | ReactNode;
 }
 
 function SelectOptions({ children, title }: ISelectOptions) {
