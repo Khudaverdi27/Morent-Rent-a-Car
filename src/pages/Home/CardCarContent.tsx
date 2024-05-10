@@ -36,6 +36,7 @@ function CardCarContent({ ...props }) {
       <Spacer />
       <CardBody>
         <Box
+          p={3}
           pos={"relative"}
           _before={{
             content: '""',
@@ -48,7 +49,7 @@ function CardCarContent({ ...props }) {
             bottom: 0,
           }}
         >
-          <Image src={props.img} alt="car" />
+          <Image width={"100%"} height={"100%"} src={props.img} alt="car" />
         </Box>
         <CarProperties {...props} />
       </CardBody>

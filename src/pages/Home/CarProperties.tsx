@@ -6,7 +6,7 @@ import IconBtn from "../../components/shared/IconBtn";
 
 function CarProperties({ ...props }) {
   return (
-    <Flex justify={"space-between"} alignItems={"flex-end"} height={"60%"}>
+    <Flex justify={"space-between"} alignItems={"flex-end"} height={"40%"}>
       <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
           <Icon as={FaGasPump} boxSize={5} />
