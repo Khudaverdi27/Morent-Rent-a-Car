@@ -40,6 +40,7 @@ function Home() {
           />
         ) : (
           <Button
+            borderRadius="4px"
             _hover={{ bg: "Primary.600" }}
             variant="solid"
             bgColor={"Primary.500"}

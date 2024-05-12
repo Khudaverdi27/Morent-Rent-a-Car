@@ -45,7 +45,7 @@
   },
   {
     "id": 137694423,
-    "name": "MG ZX Exclusice",
+    "name": "MG ZX Exclusive",
     "type": "Hatchback",
     "gas": "70L",
     "control": "Manual",
@@ -67,14 +67,14 @@
   },
   {
     "id": 111694423,
-    "name": "MG ZX Excite",
+    "name": "MG MG 4",
     "type": "Hatchback",
     "gas": "70L",
     "control": "Manual",
     "seats": "4 People",
     "price": 74,
     "isDiscount": false,
-    "img": "src/assets/img/excite.png"
+    "img": "src/assets/img/mgmg4.png"
   },
   {
     "id": 132666623,
@@ -85,6 +85,6 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "src/assets/img/newmg.png"
+    "img": "src/assets/img/mgzsred.png"
   }
 ]
