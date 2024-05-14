@@ -6,15 +6,25 @@ import {
   InputRightElement,
   Skeleton,
   SkeletonCircle,
+  Spacer,
 } from "@chakra-ui/react";
 import { CiSearch } from "react-icons/ci";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { useGetByPopularQuery } from "../services/request";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import IconBtn from "../components/shared/IconBtn";
 
 function Search() {
   const { isLoading } = useGetByPopularQuery("banner");
+  const isSmall = useMediaQuery("only screen and (max-width : 480px)");
   return (
-    <InputGroup>
+    <InputGroup
+      display={"flex"}
+      alignItems={"center"}
+      justifyContent={"space-between"}
+      mr={{ base: 0, sm: 5 }}
+      my={{ base: 6, sm: 0 }}
+    >
       <InputLeftElement pointerEvents="none">
         {isLoading ? (
           <SkeletonCircle
@@ -28,29 +38,34 @@ function Search() {
       </InputLeftElement>
 
       <Input
+        w={"100%"}
         pointerEvents={isLoading ? "none" : "auto"}
-        borderRadius={"3xl"}
+        borderRadius="3xl"
+        mr={{ base: "10px", sm: "0" }}
         type="text"
         placeholder={isLoading ? "" : "Search something here"}
         _placeholder={{ fontSize: "14px" }}
       />
-      <InputRightElement width="4.5rem">
-        {!isLoading && (
-          <Button
-            _hover={{
-              background: "transparent",
-            }}
-            variant="ghost"
-            h="1.75rem"
-            size="sm"
-          >
-            <GiSettingsKnobs
-              color="Secondary.400"
-              style={{ rotate: "90deg" }}
-            />
-          </Button>
-        )}
-      </InputRightElement>
+      {!isSmall && (
+        <InputRightElement width="4.5rem">
+          {!isLoading && (
+            <Button
+              _hover={{
+                background: "transparent",
+              }}
+              variant="ghost"
+              h="1.75rem"
+              size="sm"
+            >
+              <GiSettingsKnobs
+                color="Secondary.400"
+                style={{ rotate: "90deg" }}
+              />
+            </Button>
+          )}
+        </InputRightElement>
+      )}
+
       {isLoading && (
         <Skeleton
           top={"32%"}
@@ -60,6 +75,16 @@ function Search() {
           w={115}
           height="15px"
         />
+      )}
+      {isSmall && (
+        <IconBtn>
+          <GiSettingsKnobs
+            style={{
+              rotate: "90deg",
+              color: `${isLoading ? "#85A8F8" : "gray"}`,
+            }}
+          />
+        </IconBtn>
       )}
     </InputGroup>
   );

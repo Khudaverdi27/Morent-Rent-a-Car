@@ -12,6 +12,8 @@ function IconBtn({ children, border }: IconBtnProps) {
   return (
     <Button
       pointerEvents={isLoading ? "none" : "auto"}
+      display={"flex"}
+      order={{ base: 0, sm: 1 }}
       p={"0"}
       w={"44px"}
       h={"44px"}
