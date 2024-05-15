@@ -4,32 +4,42 @@ import { useGetByNameQuery } from "../../services/request";
 import _ from "lodash";
 import BannerCardLoading from "./BannerCardLoading";
 import { apiResponseBanner } from "../../types/apiResponse";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function Banner() {
   const { data, isLoading } = useGetByNameQuery("banner");
+  const isMobile = useMediaQuery("only screen and (max-width : 768px)");
+  const newData =
+    isMobile && Array.isArray(data) ? [...data.slice(0, 1)] : data;
 
   return (
     <SimpleGrid as={"article"} minChildWidth={"250px"} spacing={10}>
       {isLoading ? (
         <>
           <BannerCardLoading />
-          <BannerCardLoading />
+          {!isMobile && <BannerCardLoading />}
         </>
       ) : (
-        _.map(data, (d: apiResponseBanner) => (
+        _.map(newData, (d: apiResponseBanner) => (
           <BannerCard
             key={d.id}
             className={d.classname}
             bgPattern={d.bgPattern}
           >
             <CardBody color="Primary.0" position={"relative"}>
-              <Text fontSize={"32px"} as={"h2"} maxW={"50%"} fontWeight={"500"}>
+              <Text
+                fontSize={{ base: "xl", sm: "3xl" }}
+                as={"h2"}
+                maxW={{ base: "100%", lg: "50%" }}
+                fontWeight={"500"}
+              >
                 {d.title}
               </Text>
-              <Text maxW={"50%"} py={5}>
+              <Text maxW={{ base: "100%", lg: "50%" }} py={5}>
                 {d.text}
               </Text>
               <Button
+                size={{ base: "sm", sm: "md" }}
                 _hover={{
                   bgColor:
                     d.bgPattern === "circle"
@@ -45,8 +55,9 @@ function Banner() {
                 Rental Car
               </Button>
               <Image
-                top={"66%"}
-                left={"25%"}
+                w={{ base: "70%", sm: "50%", md: "60%", lg: "52%" }}
+                top={{ base: "80%", sm: "70%", md: "84%", lg: "70%" }}
+                left={{ base: "27%", md: "38%", lg: "38%" }}
                 position={"absolute"}
                 src={d.img}
               />

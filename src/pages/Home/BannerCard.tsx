@@ -10,13 +10,13 @@ interface IBannerProps {
 function BannerCard({ className, children, bgPattern }: IBannerProps) {
   const bg =
     bgPattern && (bgPattern === "circle" ? "Information.500" : "Primary.500");
+
   return (
     <Card
+      py={8}
       className={className}
       borderRadius={"10px"}
       overflow={"hidden"}
-      h="360px"
-      w="640px"
       bg={bg}
     >
       {children}

@@ -6,7 +6,6 @@ import {
   InputRightElement,
   Skeleton,
   SkeletonCircle,
-  Spacer,
 } from "@chakra-ui/react";
 import { CiSearch } from "react-icons/ci";
 import { GiSettingsKnobs } from "react-icons/gi";
