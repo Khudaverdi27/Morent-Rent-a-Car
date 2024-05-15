@@ -9,7 +9,6 @@ interface ISelectOptions {
 function SelectOptions({ children, title }: ISelectOptions) {
   return (
     <Box
-      maxW={207}
       pl={title !== "Locations" ? "20px" : "0"}
       fontWeight={700}
       borderRight={title === "Time" ? "none" : "1px"}

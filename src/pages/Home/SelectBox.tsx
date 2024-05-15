@@ -12,9 +12,14 @@ function SelectBox() {
   const [endDate, setEndDate] = useState<any>("");
   const { isLoading } = useGetByNameQuery("banner");
   return (
-    <Flex mt={6} justify={"space-between"} align={"center"}>
-      <Box bgColor={"Primary.0"} w={"582px"} rounded={"10px"}>
-        <Box ml={12} pb={6}>
+    <Flex
+      mt={6}
+      flexWrap={"wrap"}
+      justify={{ base: "center", sm: "space-between" }}
+      align={"center"}
+    >
+      <Box bgColor={"Primary.0"} rounded={"10px"}>
+        <Box px={{ base: "10px", sm: "50px" }} pb={6}>
           {isLoading ? (
             <Skeleton
               ml={"-40px"}
@@ -154,6 +159,7 @@ function SelectBox() {
           </HStack>
         </Box>
       </Box>
+
       <Button
         pointerEvents={isLoading ? "none" : "auto"}
         boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
@@ -165,8 +171,9 @@ function SelectBox() {
       >
         {!isLoading && <RiArrowUpDownLine />}
       </Button>
-      <Box bgColor={"Primary.0"} w={"582px"} rounded={"10px"}>
-        <Box ml={12} pb={6}>
+
+      <Box bgColor={"Primary.0"} rounded={"10px"}>
+        <Box px={{ base: "10px", sm: "50px" }} pb={6}>
           {isLoading ? (
             <Skeleton
               ml={"-40px"}

@@ -27,12 +27,13 @@ function Search() {
       <InputLeftElement pointerEvents="none">
         {isLoading ? (
           <SkeletonCircle
+            mr={5}
             startColor="Primary.300"
             endColor="Primary.200"
             size="4"
           />
         ) : (
-          <CiSearch color="Secondary.400" />
+          <CiSearch size={25} style={{ color: "gray" }} />
         )}
       </InputLeftElement>
 
