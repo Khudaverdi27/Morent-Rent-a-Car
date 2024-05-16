@@ -6,11 +6,15 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { RiArrowDownSLine, RiArrowUpDownLine } from "react-icons/ri";
 import { useGetByNameQuery } from "../../services/request";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function SelectBox() {
   const [startDate, setStartDate] = useState<any>("");
   const [endDate, setEndDate] = useState<any>("");
   const { isLoading } = useGetByNameQuery("banner");
+  const isMobile = useMediaQuery("only screen and (max-width : 768px)");
+  const width = isMobile ? 95 : 160;
+
   return (
     <Flex
       mt={6}
@@ -22,12 +26,12 @@ function SelectBox() {
         <Box px={{ base: "10px", sm: "50px" }} pb={6}>
           {isLoading ? (
             <Skeleton
-              ml={"-40px"}
+              ml={isMobile ? "0px" : "-40px"}
               mt={"10px"}
               startColor="Primary.300"
               endColor="Primary.200"
               borderRadius={"10px"}
-              w={166}
+              w={width}
               height="16px"
             />
           ) : (
@@ -38,12 +42,12 @@ function SelectBox() {
               title={
                 isLoading ? (
                   <Skeleton
-                    ml={"-60px"}
+                    ml={isMobile ? "0px" : "-60px"}
                     mt={"20px"}
                     startColor="Primary.300"
                     endColor="Primary.200"
                     borderRadius={"10px"}
-                    w={166}
+                    w={width}
                     height="16px"
                   />
                 ) : (
@@ -53,10 +57,10 @@ function SelectBox() {
             >
               {isLoading ? (
                 <Skeleton
-                  ml={"-60px"}
+                  ml={isMobile ? "0px" : "-60px"}
                   mt={"5px"}
                   borderRadius={"10px"}
-                  w={166}
+                  w={width}
                   height="16px"
                 />
               ) : (
@@ -83,7 +87,7 @@ function SelectBox() {
                     startColor="Primary.300"
                     endColor="Primary.200"
                     borderRadius={"10px"}
-                    w={166}
+                    w={width}
                     height="16px"
                   />
                 ) : (
@@ -95,7 +99,7 @@ function SelectBox() {
                 <Skeleton
                   mt={"5px"}
                   borderRadius={"10px"}
-                  w={166}
+                  w={width}
                   height="16px"
                 />
               ) : (
@@ -126,7 +130,7 @@ function SelectBox() {
                     startColor="Primary.300"
                     endColor="Primary.200"
                     borderRadius={"10px"}
-                    w={166}
+                    w={width}
                     height="16px"
                   />
                 ) : (
@@ -138,7 +142,7 @@ function SelectBox() {
                 <Skeleton
                   mt={"5px"}
                   borderRadius={"10px"}
-                  w={166}
+                  w={width}
                   height="16px"
                 />
               ) : (
@@ -176,12 +180,12 @@ function SelectBox() {
         <Box px={{ base: "10px", sm: "50px" }} pb={6}>
           {isLoading ? (
             <Skeleton
-              ml={"-40px"}
+              ml={isMobile ? "0px" : "-40px"}
               mt={"10px"}
               startColor="Primary.300"
               endColor="Primary.200"
               borderRadius={"10px"}
-              w={166}
+              w={width}
               height="16px"
             />
           ) : (
@@ -192,12 +196,12 @@ function SelectBox() {
               title={
                 isLoading ? (
                   <Skeleton
-                    ml={"-60px"}
+                    ml={isMobile ? "0px" : "-60px"}
                     mt={"20px"}
                     startColor="Primary.300"
                     endColor="Primary.200"
                     borderRadius={"10px"}
-                    w={166}
+                    w={width}
                     height="16px"
                   />
                 ) : (
@@ -207,10 +211,10 @@ function SelectBox() {
             >
               {isLoading ? (
                 <Skeleton
-                  ml={"-60px"}
+                  ml={isMobile ? "0px" : "-60px"}
                   mt={"5px"}
                   borderRadius={"10px"}
-                  w={166}
+                  w={width}
                   height="16px"
                 />
               ) : (
@@ -237,7 +241,7 @@ function SelectBox() {
                     startColor="Primary.300"
                     endColor="Primary.200"
                     borderRadius={"10px"}
-                    w={166}
+                    w={width}
                     height="16px"
                   />
                 ) : (
@@ -249,7 +253,7 @@ function SelectBox() {
                 <Skeleton
                   mt={"5px"}
                   borderRadius={"10px"}
-                  w={166}
+                  w={width}
                   height="16px"
                 />
               ) : (
@@ -280,7 +284,7 @@ function SelectBox() {
                     startColor="Primary.300"
                     endColor="Primary.200"
                     borderRadius={"10px"}
-                    w={166}
+                    w={width}
                     height="16px"
                   />
                 ) : (
@@ -292,7 +296,7 @@ function SelectBox() {
                 <Skeleton
                   mt={"5px"}
                   borderRadius={"10px"}
-                  w={166}
+                  w={width}
                   height="16px"
                 />
               ) : (
