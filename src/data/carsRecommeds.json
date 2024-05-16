@@ -8,7 +8,7 @@
     "seats": "6 People",
     "price": 72,
     "isDiscount": 80,
-    "img": "../../public/images/rush.png"
+    "img": "images/rush.png"
   },
   {
     "id": 196946423,
@@ -19,7 +19,7 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "../../public/images/crv.png"
+    "img": "images/crv.png"
   },
   {
     "id": 1961446423,
@@ -30,7 +30,7 @@
     "seats": "6 People",
     "price": 74,
     "isDiscount": false,
-    "img": "../../public/images/terios.png"
+    "img": "images/terios.png"
   },
   {
     "id": 197394423,
@@ -41,7 +41,7 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "../../public/images/crv2.png"
+    "img": "images/crv2.png"
   },
   {
     "id": 137694423,
@@ -52,7 +52,7 @@
     "seats": "4 People",
     "price": 76,
     "isDiscount": 80,
-    "img": "../../public/images/mg.png"
+    "img": "images/mg.png"
   },
   {
     "id": 132246423,
@@ -63,7 +63,7 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "../../public/images/newmg.png"
+    "img": "images/newmg.png"
   },
   {
     "id": 111694423,
@@ -74,7 +74,7 @@
     "seats": "4 People",
     "price": 74,
     "isDiscount": false,
-    "img": "../../public/images/mgmg4.png"
+    "img": "images/mgmg4.png"
   },
   {
     "id": 132666623,
@@ -85,6 +85,6 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "../../public/images/mgzsred.png"
+    "img": "images/mgzsred.png"
   }
 ]
