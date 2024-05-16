@@ -3,7 +3,7 @@
     "id": 1689163246,
     "title": "The Best Platform for Car Rental",
     "text": "Ease of doing a car rental safely and reliably. Of course at a low price.",
-    "img": "../../public/image7.png",
+    "img": "src/assets/img/image7.png",
     "bgPattern": "circle",
     "classname": "left-banner-circle--pattern"
   },
@@ -11,7 +11,7 @@
     "id": 146163246,
     "title": "Easy way to rent a car at a low price",
     "text": "Providing cheap car rental services and safe and comfortable facilities.",
-    "img": "../../public/img/image8.png",
+    "img": "src/assets/img/image8.png",
     "bgPattern": "zigzag",
     "classname": "right-banner-zig--pattern"
   }
