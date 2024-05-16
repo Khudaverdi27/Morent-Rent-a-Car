@@ -14,7 +14,7 @@ import {
 
 import CardCar from "../../pages/Home/CardCar";
 import IconBtn from "../shared/IconBtn";
-import imgg from "../../assets/img/loadingImg.png";
+import imgg from "../../../public/img/loadingImg.png";
 
 function SectionLoading() {
   return (

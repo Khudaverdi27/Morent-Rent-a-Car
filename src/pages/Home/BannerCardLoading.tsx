@@ -1,6 +1,6 @@
 import { CardBody, Image } from "@chakra-ui/react";
 import BannerCard from "./BannerCard";
-import imgg from "../../assets/img/loadingImg.png";
+import imgg from "../../../public/img/loadingImg.png";
 function BannerCardLoading() {
   return (
     <BannerCard>
