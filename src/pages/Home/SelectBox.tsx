@@ -17,16 +17,17 @@ function SelectBox() {
 
   return (
     <Flex
+      pos={"relative"}
+      gap={{ base: "30px", lg: "100px" }}
       mt={6}
-      flexWrap={"wrap"}
+      flexWrap={{ base: "wrap", lg: "nowrap" }}
       justify={{ base: "center", sm: "space-between" }}
       align={"center"}
     >
-      <Box bgColor={"Primary.0"} rounded={"10px"}>
+      <Box w={{ sm: "100%", lg: "45%" }} bgColor={"Primary.0"} rounded={"10px"}>
         <Box px={{ base: "10px", sm: "50px" }} pb={6}>
           {isLoading ? (
             <Skeleton
-              ml={isMobile ? "0px" : "-40px"}
               mt={"10px"}
               startColor="Primary.300"
               endColor="Primary.200"
@@ -37,12 +38,11 @@ function SelectBox() {
           ) : (
             <SelectBoxTitle>Pick - Up</SelectBoxTitle>
           )}
-          <HStack>
+          <HStack justify={"space-between"}>
             <SelectOptions
               title={
                 isLoading ? (
                   <Skeleton
-                    ml={isMobile ? "0px" : "-60px"}
                     mt={"20px"}
                     startColor="Primary.300"
                     endColor="Primary.200"
@@ -51,13 +51,12 @@ function SelectBox() {
                     height="16px"
                   />
                 ) : (
-                  "Locations"
+                  "Location"
                 )
               }
             >
               {isLoading ? (
                 <Skeleton
-                  ml={isMobile ? "0px" : "-60px"}
                   mt={"5px"}
                   borderRadius={"10px"}
                   w={width}
@@ -65,12 +64,12 @@ function SelectBox() {
                 />
               ) : (
                 <Select
+                  w={"100%"}
                   cursor={"pointer"}
                   variant="unstyled"
-                  pr={5}
                   fontSize={"12px"}
                   color="Secondary.300"
-                  placeholder="Select your city"
+                  placeholder="City"
                 >
                   <option value="option1">London</option>
                   <option value="option2">Istanbul</option>
@@ -147,12 +146,12 @@ function SelectBox() {
                 />
               ) : (
                 <Select
+                  mr={5}
                   cursor={"pointer"}
                   variant="unstyled"
-                  pr={5}
                   fontSize={"12px"}
                   color="Secondary.300"
-                  placeholder="Select your time"
+                  placeholder="Time"
                 >
                   <option value="1012">10:00-12:00</option>
                   <option value="1216">12:00-16:00</option>
@@ -165,6 +164,9 @@ function SelectBox() {
       </Box>
 
       <Button
+        top={{ md: "43%", lg: "35%" }}
+        left={{ base: "37%", sm: "40%", md: "47%" }}
+        pos={"absolute"}
         pointerEvents={isLoading ? "none" : "auto"}
         boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         bgColor="Primary.500"
@@ -176,11 +178,10 @@ function SelectBox() {
         {!isLoading && <RiArrowUpDownLine />}
       </Button>
 
-      <Box bgColor={"Primary.0"} rounded={"10px"}>
+      <Box w={{ sm: "100%", lg: "45%" }} bgColor={"Primary.0"} rounded={"10px"}>
         <Box px={{ base: "10px", sm: "50px" }} pb={6}>
           {isLoading ? (
             <Skeleton
-              ml={isMobile ? "0px" : "-40px"}
               mt={"10px"}
               startColor="Primary.300"
               endColor="Primary.200"
@@ -191,12 +192,11 @@ function SelectBox() {
           ) : (
             <SelectBoxTitle>Drop-off</SelectBoxTitle>
           )}
-          <HStack>
+          <HStack justify={"space-between"}>
             <SelectOptions
               title={
                 isLoading ? (
                   <Skeleton
-                    ml={isMobile ? "0px" : "-60px"}
                     mt={"20px"}
                     startColor="Primary.300"
                     endColor="Primary.200"
@@ -205,13 +205,12 @@ function SelectBox() {
                     height="16px"
                   />
                 ) : (
-                  "Locations"
+                  "Location"
                 )
               }
             >
               {isLoading ? (
                 <Skeleton
-                  ml={isMobile ? "0px" : "-60px"}
                   mt={"5px"}
                   borderRadius={"10px"}
                   w={width}
@@ -219,12 +218,12 @@ function SelectBox() {
                 />
               ) : (
                 <Select
+                  w={"100%"}
                   cursor={"pointer"}
                   variant="unstyled"
-                  pr={5}
                   fontSize={"12px"}
                   color="Secondary.300"
-                  placeholder="Select your city"
+                  placeholder="City"
                 >
                   <option value="option1">London</option>
                   <option value="option2">Istanbul</option>
@@ -301,12 +300,12 @@ function SelectBox() {
                 />
               ) : (
                 <Select
+                  mr={5}
                   cursor={"pointer"}
                   variant="unstyled"
-                  pr={5}
                   fontSize={"12px"}
                   color="Secondary.300"
-                  placeholder="Select your time"
+                  placeholder="Time"
                 >
                   <option value="1012">10:00-12:00</option>
                   <option value="1216">12:00-16:00</option>

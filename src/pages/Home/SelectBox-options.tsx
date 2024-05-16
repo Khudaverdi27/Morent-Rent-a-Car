@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import { useMediaQuery } from "@uidotdev/usehooks";
 import { ReactNode } from "react";
 
 interface ISelectOptions {
@@ -8,10 +7,10 @@ interface ISelectOptions {
 }
 
 function SelectOptions({ children, title }: ISelectOptions) {
-  const isMobile = useMediaQuery("only screen and (max-width : 768px)");
   return (
     <Box
-      pl={title !== "Locations" && !isMobile ? "20px" : "0"}
+      w={"100%"}
+      fontSize={{ base: "14px", sm: "16px" }}
       pr={"6px"}
       fontWeight={700}
       borderRight={title === "Time" ? "none" : "1px"}
