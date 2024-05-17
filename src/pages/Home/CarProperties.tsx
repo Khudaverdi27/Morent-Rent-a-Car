@@ -3,10 +3,17 @@ import { FaGasPump } from "react-icons/fa6";
 import { SiCircle } from "react-icons/si";
 import { FaUserGroup } from "react-icons/fa6";
 import IconBtn from "../../components/shared/IconBtn";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
-function CarProperties({ ...props }) {
+function CarProperties({ isMobile = false, ...props }) {
+  const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
   return (
-    <Flex justify={"space-between"} alignItems={"flex-end"} height={"40%"}>
+    <Flex
+      direction={!isMobile || !isSmallScreen ? "row" : "column"}
+      justify={"space-between"}
+      alignItems={"flex-end"}
+      height={"40%"}
+    >
       <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
           <Icon as={FaGasPump} boxSize={5} />

@@ -1,6 +1,6 @@
 import { CardBody, Image } from "@chakra-ui/react";
 import BannerCard from "./BannerCard";
-import imgg from "../../../public/images/loadingImg.png";
+
 function BannerCardLoading() {
   return (
     <BannerCard>
@@ -9,7 +9,7 @@ function BannerCardLoading() {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Image src={imgg} className="pulse" />
+        <Image src="images/loadingImg.png" className="pulse" />
       </CardBody>
     </BannerCard>
   );

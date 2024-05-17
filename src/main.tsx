@@ -3,7 +3,6 @@ import App from "./App.tsx";
 import "./assets/css/index.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "./Chakra.theme.ts";
-
 import { Provider } from "react-redux";
 import { store } from "./Redux/store.ts";
 

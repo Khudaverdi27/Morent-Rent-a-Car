@@ -6,29 +6,48 @@ import {
   useGetByPopularQuery,
   useGetByRecommendsQuery,
 } from "../../services/request";
+import { useState } from "react";
+import SimpleSlider from "./slider";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function Home() {
   const { data: popularCarsData, isLoading: popularCarsLoading } =
     useGetByPopularQuery("popularCars");
   const { data: recommendCarsData, isLoading: recommendCarsLoading } =
     useGetByRecommendsQuery("recommendCars");
+  const isMobile = useMediaQuery("only screen and (max-width : 768px)");
+
+  const [moreCars, setMoreCars] = useState<Boolean>(false);
 
   return (
-    <Box as={"section"} pt={5}>
+    <Box as={"section"} pt={5} overflowX={"hidden"}>
       <Banner />
       <SelectBox />
-      <Section
-        title="Popular Cars"
-        showAll={true}
-        carData={popularCarsData}
-        isLoading={popularCarsLoading}
-      />
+
+      {isMobile ? (
+        <SimpleSlider carData={popularCarsData} />
+      ) : (
+        <Section
+          title="Popular Cars"
+          showAll={true}
+          carData={popularCarsData}
+          isLoading={popularCarsLoading}
+        />
+      )}
       <Section
         title="Recomendation Car"
         showAll={false}
         carData={recommendCarsData}
         isLoading={recommendCarsLoading}
       />
+      {moreCars && (
+        <Section
+          title=""
+          showAll={false}
+          carData={popularCarsData}
+          isLoading={popularCarsLoading}
+        />
+      )}
       <Flex my={10} justify={"center"}>
         {recommendCarsLoading ? (
           <Skeleton
@@ -40,6 +59,7 @@ function Home() {
           />
         ) : (
           <Button
+            onClick={() => setMoreCars(!moreCars)}
             borderRadius="4px"
             _hover={{ bg: "Primary.600" }}
             variant="solid"
@@ -47,7 +67,7 @@ function Home() {
             color={"Primary.0"}
             fontWeight={"normal"}
           >
-            Show more car
+            {moreCars ? "Show less car" : "Show more car"}
           </Button>
         )}
       </Flex>

@@ -14,8 +14,10 @@ import {
 import IconBtn from "../../components/shared/IconBtn";
 import { GoHeart } from "react-icons/go";
 import CarProperties from "../../pages/Home/CarProperties";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
-function CardCarContent({ ...props }) {
+function CardCarContent({ isMobile = false, ...props }) {
+  const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
   return (
     <>
       <CardHeader>
@@ -34,7 +36,7 @@ function CardCarContent({ ...props }) {
         </Flex>
       </CardHeader>
       <Spacer />
-      <CardBody>
+      <CardBody display={!isMobile || !isSmallScreen ? "block" : "flex"}>
         <Box
           p={3}
           pos={"relative"}
@@ -49,9 +51,16 @@ function CardCarContent({ ...props }) {
             bottom: 0,
           }}
         >
-          <Image width={"100%"} height={"100%"} src={props.img} alt="car" />
+          <Image
+            objectFit={"contain"}
+            width={"100%"}
+            height={"100%"}
+            src={props.img}
+            alt="car"
+          />
         </Box>
-        <CarProperties {...props} />
+
+        <CarProperties {...props} isMobile={isMobile} />
       </CardBody>
       <Spacer />
       <CardFooter display={"flex"} justify={"space-between"}>

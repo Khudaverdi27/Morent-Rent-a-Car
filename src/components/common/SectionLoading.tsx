@@ -14,7 +14,6 @@ import {
 
 import CardCar from "../../pages/Home/CardCar";
 import IconBtn from "../shared/IconBtn";
-import imgg from "../../../public/images/loadingImg.png";
 
 function SectionLoading() {
   return (
@@ -39,7 +38,7 @@ function SectionLoading() {
       <Spacer />
       <CardBody>
         <Center>
-          <Image src={imgg} className="pulse" />
+          <Image src="images/loadingImg.png" className="pulse" />
         </Center>
 
         <HStack

@@ -48,7 +48,7 @@ function Section({ title, showAll, carData, isLoading }: ISectionProps) {
         ) : (
           _.map(carData, (d: apiResponsePopulars) => (
             <CardCar key={d.id}>
-              <CardCarContent {...d} />
+              <CardCarContent {...d} isMobile={false} />
             </CardCar>
           ))
         )}
