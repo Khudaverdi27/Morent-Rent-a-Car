@@ -164,8 +164,9 @@ function SelectBox() {
       </Box>
 
       <Button
+        minW={"65px"}
         top={{ md: "43%", lg: "35%" }}
-        left={{ base: "37%", sm: "40%", md: "47%" }}
+        left={{ base: "38%", sm: "40%", md: "47.5%" }}
         pos={"absolute"}
         pointerEvents={isLoading ? "none" : "auto"}
         boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"

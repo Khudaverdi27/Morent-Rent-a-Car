@@ -27,7 +27,8 @@ function Search() {
       <InputLeftElement pointerEvents="none">
         {isLoading ? (
           <SkeletonCircle
-            mr={5}
+            mr={4}
+            ml={2}
             startColor="Primary.300"
             endColor="Primary.200"
             size="4"
