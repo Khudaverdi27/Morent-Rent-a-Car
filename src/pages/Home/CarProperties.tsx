@@ -9,28 +9,30 @@ function CarProperties({ isMobile = false, ...props }) {
   const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
   return (
     <Flex
-      direction={!isMobile || !isSmallScreen ? "row" : "column"}
-      justify={"space-between"}
+      direction={isMobile || !isSmallScreen ? "row" : "column"}
+      justify={isMobile || !isSmallScreen ? "flex-start" : "space-between"}
       alignItems={"flex-end"}
       height={"40%"}
     >
       <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
-          <Icon as={FaGasPump} boxSize={5} />
+          <Icon as={FaGasPump} boxSize={{ base: 4, sm: 5 }} />
         </IconBtn>
-        <Text>{props.gas}</Text>
+        <Text fontSize={{ base: "12px", sm: "16px" }}>{props.gas}</Text>
       </HStack>
       <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
-          <Icon as={SiCircle} boxSize={5} />
+          <Icon as={SiCircle} boxSize={{ base: 4, sm: 5 }} />
         </IconBtn>
-        <Text>{props.control}</Text>
+        <Text fontSize={{ base: "12px", sm: "16px" }}>{props.control}</Text>
       </HStack>
       <HStack gap="0" color={"Secondary.300"} fontSize={14}>
         <IconBtn border="none">
-          <Icon as={FaUserGroup} boxSize={5} />
+          <Icon as={FaUserGroup} boxSize={{ base: 4, sm: 5 }} />
         </IconBtn>
-        <Text whiteSpace={"nowrap"}>{props.seats}</Text>
+        <Text fontSize={{ base: "12px", sm: "16px" }} whiteSpace={"nowrap"}>
+          {props.seats}
+        </Text>
       </HStack>
     </Flex>
   );

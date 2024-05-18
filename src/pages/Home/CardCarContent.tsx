@@ -36,7 +36,7 @@ function CardCarContent({ isMobile = false, ...props }) {
         </Flex>
       </CardHeader>
       <Spacer />
-      <CardBody display={!isMobile || !isSmallScreen ? "block" : "flex"}>
+      <CardBody display={isMobile || !isSmallScreen ? "block" : "flex"}>
         <Box
           p={3}
           pos={"relative"}
@@ -65,9 +65,13 @@ function CardCarContent({ isMobile = false, ...props }) {
       <Spacer />
       <CardFooter display={"flex"} justify={"space-between"}>
         <Box>
-          <Text fontWeight={"bold"} fontSize={"20"}>
+          <Text fontWeight={"bold"} fontSize={{ base: "16", sm: "20" }}>
             {`$${props.price}.00`}/
-            <Text color={"Secondary.300"} as={"small"}>
+            <Text
+              fontSize={{ base: "12", sm: "16" }}
+              color={"Secondary.300"}
+              as={"small"}
+            >
               day
             </Text>
           </Text>
@@ -79,7 +83,7 @@ function CardCarContent({ isMobile = false, ...props }) {
             as={"span"}
           >
             <Text
-              fontSize={"14"}
+              fontSize={{ base: "12", sm: "14" }}
               textDecoration={"line-through;"}
               fontWeight={"600"}
               color={"Secondary.300"}
@@ -93,6 +97,7 @@ function CardCarContent({ isMobile = false, ...props }) {
         <Spacer />
 
         <Button
+          size={{ base: "sm", sm: "md" }}
           alignSelf={"flex-end"}
           _hover={{ bg: "Primary.600" }}
           variant="solid"
