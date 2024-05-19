@@ -79,6 +79,6 @@
   animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.slick-track {
-  margin: 50px 0px;
+.slick-active + div {
+  margin-left: -50px;
 }

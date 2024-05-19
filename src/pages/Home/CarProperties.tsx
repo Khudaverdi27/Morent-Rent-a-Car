@@ -10,7 +10,8 @@ function CarProperties({ isMobile = false, ...props }) {
   return (
     <Flex
       direction={isMobile || !isSmallScreen ? "row" : "column"}
-      justify={isMobile || !isSmallScreen ? "flex-start" : "space-between"}
+      justify={isMobile || !isSmallScreen ? "center" : "space-between"}
+      ml={"-10px"}
       alignItems={"flex-end"}
       height={"40%"}
     >

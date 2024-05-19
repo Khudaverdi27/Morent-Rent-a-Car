@@ -3,7 +3,7 @@ import { apiResponsePopulars } from "../../types/apiResponse";
 import CardCar from "./CardCar";
 import CardCarContent from "./CardCarContent";
 import _ from "lodash";
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 interface ISectionProps {
   carData: any;
 }
@@ -21,9 +21,12 @@ export default function SimpleSlider({ carData }: ISectionProps) {
 
   return (
     <Box className="slider-container">
+      <Text color={"Secondary.300"} py={5}>
+        Popular cars
+      </Text>
       <Slider {...settings}>
         {_.map(carData, (d: apiResponsePopulars) => (
-          <Box ml={10} pr={7} key={d.id}>
+          <Box pr={16} key={d.id}>
             <CardCar>
               <CardCarContent {...d} isMobile={true} />
             </CardCar>
