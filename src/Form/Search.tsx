@@ -13,7 +13,11 @@ import { useGetByPopularQuery } from "../services/request";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import IconBtn from "../components/shared/IconBtn";
 
-function Search() {
+interface IsearchProps {
+  show: boolean;
+}
+
+function Search({ show }: IsearchProps) {
   const { isLoading } = useGetByPopularQuery("banner");
   const isSmall = useMediaQuery("only screen and (max-width : 480px)");
   return (
@@ -39,10 +43,10 @@ function Search() {
       </InputLeftElement>
 
       <Input
-        w={"100%"}
+        w={show && isSmall ? "85%" : "100%"}
         pointerEvents={isLoading ? "none" : "auto"}
         borderRadius="3xl"
-        mr={{ base: "10px", sm: "0" }}
+        mr={"10px"}
         type="text"
         placeholder={isLoading ? "" : "Search something here"}
         _placeholder={{ fontSize: "14px" }}
@@ -77,7 +81,7 @@ function Search() {
           height="15px"
         />
       )}
-      {isSmall && (
+      {isSmall && !show && (
         <IconBtn>
           <GiSettingsKnobs
             style={{

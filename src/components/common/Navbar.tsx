@@ -1,17 +1,16 @@
-import { Avatar, Flex, HStack, Skeleton, Spacer } from "@chakra-ui/react";
-import { FaHeart } from "react-icons/fa6";
-import { BiSolidBell } from "react-icons/bi";
-import { IoMdSettings } from "react-icons/io";
-import { Icon } from "@chakra-ui/react";
+import { Flex, HStack, Skeleton, Spacer } from "@chakra-ui/react";
 import Logo from "./Logo";
 import Search from "../../Form/Search";
-import IconBtn from "../shared/IconBtn";
 import { useGetByPopularQuery } from "../../services/request";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import ProfileSettings from "./ProfileSettings";
+import { useState } from "react";
 
 function Navbar() {
   const { isLoading } = useGetByPopularQuery("banner");
-  const isMobile = useMediaQuery("only screen and (max-width : 768px)");
+  const [show, setShow] = useState<boolean>(false);
+  const showSettings = () => {
+    setShow(!show);
+  };
 
   return (
     <Flex
@@ -33,6 +32,7 @@ function Navbar() {
       >
         {isLoading ? (
           <Skeleton
+            my={5}
             startColor="Primary.300"
             endColor="Primary.200"
             borderRadius={"10px"}
@@ -43,55 +43,15 @@ function Navbar() {
           <Logo />
         )}
         <Spacer />
-        {isMobile && (
-          <IconBtn>
-            <Avatar
-              bgColor={isLoading ? "Primary.300" : ""}
-              w={"44px"}
-              h={"44px"}
-              src="#"
-            />
-          </IconBtn>
-        )}
 
-        <Search />
+        <Search show={show} />
       </HStack>
       <Spacer />
-      {!isMobile && (
-        <HStack>
-          <IconBtn>
-            <Icon
-              color={isLoading ? "Primary.300" : ""}
-              as={FaHeart}
-              boxSize={5}
-            />
-          </IconBtn>
-          <IconBtn>
-            <Icon
-              color={isLoading ? "Primary.300" : ""}
-              className="bell--icon"
-              as={BiSolidBell}
-              boxSize={5}
-            />
-          </IconBtn>
-          <IconBtn>
-            <Icon
-              color={isLoading ? "Primary.300" : ""}
-              as={IoMdSettings}
-              boxSize={5}
-            />
-          </IconBtn>
-
-          <IconBtn>
-            <Avatar
-              bgColor={isLoading ? "Primary.300" : ""}
-              w={"44px"}
-              h={"44px"}
-              src="#"
-            />
-          </IconBtn>
-        </HStack>
-      )}
+      <ProfileSettings
+        showSettings={showSettings}
+        isLoading={isLoading}
+        show={show}
+      />
     </Flex>
   );
 }

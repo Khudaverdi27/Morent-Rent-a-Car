@@ -18,6 +18,7 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 
 function CardCarContent({ isMobile = false, ...props }) {
   const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
+
   return (
     <>
       <CardHeader>

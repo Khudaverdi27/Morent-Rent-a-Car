@@ -11,9 +11,14 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 function SelectBox() {
   const [startDate, setStartDate] = useState<any>("");
   const [endDate, setEndDate] = useState<any>("");
+  const [changeSelection, setChangeSelection] = useState<number>(0);
   const { isLoading } = useGetByNameQuery("banner");
   const isMobile = useMediaQuery("only screen and (max-width : 768px)");
   const width = isMobile ? 95 : 160;
+
+  const handleChange = () => {
+    setChangeSelection(changeSelection === 1 ? 0 : 1);
+  };
 
   return (
     <Flex
@@ -24,7 +29,12 @@ function SelectBox() {
       justify={{ base: "center", sm: "space-between" }}
       align={"center"}
     >
-      <Box w={{ sm: "100%", lg: "45%" }} bgColor={"Primary.0"} rounded={"10px"}>
+      <Box
+        order={changeSelection}
+        w={{ sm: "100%", lg: "45%" }}
+        bgColor={"Primary.0"}
+        rounded={"10px"}
+      >
         <Box px={{ base: "10px", sm: "50px" }} pb={6}>
           {isLoading ? (
             <Skeleton
@@ -153,9 +163,9 @@ function SelectBox() {
                   color="Secondary.300"
                   placeholder="Time"
                 >
-                  <option value="1012">10:00-12:00</option>
-                  <option value="1216">12:00-16:00</option>
-                  <option value="1620">16:00-20:00</option>
+                  <option value="1012">10:00</option>
+                  <option value="1216">12:00</option>
+                  <option value="1620">16:00</option>
                 </Select>
               )}
             </SelectOptions>
@@ -164,6 +174,7 @@ function SelectBox() {
       </Box>
 
       <Button
+        onClick={handleChange}
         minW={"65px"}
         top={{ md: "43%", lg: "35%" }}
         left={{ base: "38%", sm: "40%", md: "47.5%" }}
@@ -308,9 +319,9 @@ function SelectBox() {
                   color="Secondary.300"
                   placeholder="Time"
                 >
-                  <option value="1012">10:00-12:00</option>
-                  <option value="1216">12:00-16:00</option>
-                  <option value="1620">16:00-20:00</option>
+                  <option value="1012">12:00</option>
+                  <option value="1216">16:00</option>
+                  <option value="1620">20:00</option>
                 </Select>
               )}
             </SelectOptions>
