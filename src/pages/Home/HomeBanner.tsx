@@ -13,7 +13,13 @@ function Banner() {
     isMobile && Array.isArray(data) ? [...data.slice(0, 1)] : data;
 
   return (
-    <SimpleGrid as={"article"} minChildWidth={"250px"} spacing={10}>
+    <SimpleGrid
+      px={"20px"}
+      mt={5}
+      as={"article"}
+      minChildWidth={"250px"}
+      spacing={10}
+    >
       {isLoading ? (
         <>
           <BannerCardLoading />

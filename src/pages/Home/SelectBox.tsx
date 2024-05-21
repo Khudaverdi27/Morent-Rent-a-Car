@@ -24,7 +24,7 @@ function SelectBox() {
     <Flex
       pos={"relative"}
       gap={{ base: "30px", lg: "100px" }}
-      mt={6}
+      mt={3}
       flexWrap={{ base: "wrap", lg: "nowrap" }}
       justify={{ base: "center", sm: "space-between" }}
       align={"center"}

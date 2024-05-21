@@ -1,5 +1,4 @@
 import { Box, Button, Flex, Skeleton } from "@chakra-ui/react";
-import Banner from "./HomeBanner";
 import SelectBox from "./SelectBox";
 import Section from "../../components/common/Section";
 import {
@@ -21,7 +20,6 @@ function Home() {
 
   return (
     <Box as={"section"} pt={5} overflowX={"hidden"}>
-      <Banner />
       <SelectBox />
 
       {isMobile ? (
