@@ -8,6 +8,7 @@ import { useState } from "react";
 function Navbar() {
   const { isLoading } = useGetByPopularQuery("banner");
   const [show, setShow] = useState<boolean>(false);
+
   const showSettings = () => {
     setShow(!show);
   };

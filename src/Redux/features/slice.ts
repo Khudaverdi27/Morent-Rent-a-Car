@@ -1,20 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store"; // store'dan doğru şekilde import edin
 
-export interface CounterState {
-  value: number;
+export interface openCategoryState {
+  value: boolean;
 }
 
-const initialState: CounterState = {
-  value: 0,
+const initialState: openCategoryState = {
+  value: false,
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
+export const openCategorySlice = createSlice({
+  name: "click",
   initialState,
-  reducers: {},
+  reducers: {
+    openCategory: (state) => {
+      state.value = !state.value;
+    },
+  },
 });
 
-// Action creators are generated for each case reducer function
-export const {} = counterSlice.actions;
+export const { openCategory } = openCategorySlice.actions;
+export const selectCount = (state: RootState) => state.click.value;
 
-export default counterSlice.reducer;
+export default openCategorySlice.reducer;

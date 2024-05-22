@@ -12,6 +12,8 @@ import { GiSettingsKnobs } from "react-icons/gi";
 import { useGetByPopularQuery } from "../services/request";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import IconBtn from "../components/shared/IconBtn";
+import { useAppDispatch } from "../Redux/hooks/reduxhook";
+import { openCategory } from "../Redux/features/slice";
 
 interface IsearchProps {
   show: boolean;
@@ -20,6 +22,10 @@ interface IsearchProps {
 function Search({ show }: IsearchProps) {
   const { isLoading } = useGetByPopularQuery("banner");
   const isSmall = useMediaQuery("only screen and (max-width : 480px)");
+  const dispatch = useAppDispatch();
+  const openCategories = () => {
+    dispatch(openCategory());
+  };
   return (
     <InputGroup
       display={"flex"}
@@ -63,6 +69,7 @@ function Search({ show }: IsearchProps) {
               size="sm"
             >
               <GiSettingsKnobs
+                onClick={openCategories}
                 color="Secondary.400"
                 style={{ rotate: "90deg" }}
               />
