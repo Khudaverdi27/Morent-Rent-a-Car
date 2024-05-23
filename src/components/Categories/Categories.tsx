@@ -6,6 +6,8 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { useAppDispatch } from "../../Redux/hooks/reduxhook";
+import { addData } from "../../Redux/features/slice";
 
 interface ICheckboxProps {
   groupedCars: { [key: string]: any[] };
@@ -13,6 +15,11 @@ interface ICheckboxProps {
 }
 
 function Categories({ groupedCars, title }: ICheckboxProps) {
+  const dispatch = useAppDispatch();
+  const saveInArray = (value: string | number) => {
+    dispatch(addData(value));
+  };
+
   return (
     <Box>
       <Heading
@@ -30,7 +37,12 @@ function Categories({ groupedCars, title }: ICheckboxProps) {
           {Object.keys(groupedCars).map((type) => {
             const itemCount = groupedCars[type].length;
             return (
-              <Checkbox colorScheme="blue" key={type} value={type}>
+              <Checkbox
+                onChange={(e) => saveInArray(e.target.value)}
+                colorScheme="blue"
+                key={type}
+                value={type}
+              >
                 <Text color={"Secondary.400"} fontSize={18}>
                   {type}
                   <Text

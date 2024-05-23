@@ -6,6 +6,9 @@ import {
   SliderThumb,
   Heading,
   Text,
+  HStack,
+  SliderMark,
+  Tooltip,
 } from "@chakra-ui/react";
 import {
   useGetByPopularQuery,
@@ -15,12 +18,15 @@ import { useState, useEffect } from "react";
 import _ from "lodash";
 import { apiResponsePopulars } from "../../types/apiResponse";
 import Categories from "./Categories";
+import { useAppDispatch } from "../../Redux/hooks/reduxhook";
+import { addData } from "../../Redux/features/slice";
 
 function CategoryContent() {
   const { data: popularCarsData } = useGetByPopularQuery("popularCars");
   const { data: recommendCarsData } = useGetByRecommendsQuery("recommendCars");
-  const [sliderValue, setSliderValue] = useState(50);
-
+  const [sliderValue, setSliderValue] = useState<string | number>(50);
+  const [showTooltip, setShowTooltip] = useState<boolean>(false);
+  const [tooltipValue, setTooltipValue] = useState<number>(50);
   const [cars, setCars] = useState<apiResponsePopulars[]>([]);
   const groupedCarsByType = _.groupBy(cars, "type");
   const groupedCarsBySeat = _.groupBy(cars, "seats");
@@ -32,9 +38,13 @@ function CategoryContent() {
     }
   }, [popularCarsData, recommendCarsData]);
 
-  useEffect(() => {
-    console.log(sliderValue);
-  }, [sliderValue]);
+  const dispatch = useAppDispatch();
+
+  const saveInArray = (value: string | number) => {
+    dispatch(addData(value));
+    setSliderValue(value);
+  };
+
   return (
     <Box>
       <Box pb={5}>
@@ -58,26 +68,40 @@ function CategoryContent() {
           min={0}
           max={100}
           colorScheme="blue"
-          onChange={(v) => setSliderValue(v)}
+          onChangeEnd={(v) => saveInArray(v)}
+          onChange={(v) => setTooltipValue(v)}
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
         >
           <SliderTrack bg={"Secondary.300"} h={3} borderRadius={5}>
             <SliderFilledTrack />
           </SliderTrack>
-
-          <SliderThumb
-            _before={{
-              content: "''",
-              w: "16px",
-              h: "16px",
-              bgGradient: "radial(circle, Primary.500 40%, Primary.0 50%)",
-              rounded: "100%",
-              position: "absolute",
-              top: "-2px",
-              left: "-2px",
-            }}
-          />
+          <Tooltip
+            hasArrow
+            bg="Primary.500"
+            color="white"
+            placement="top"
+            isOpen={showTooltip}
+            label={`$${tooltipValue}`}
+          >
+            <SliderThumb
+              _before={{
+                content: "''",
+                w: "16px",
+                h: "16px",
+                bgGradient: "radial(circle, Primary.500 40%, Primary.0 50%)",
+                rounded: "100%",
+                position: "absolute",
+                top: "-2px",
+                left: "-2px",
+              }}
+            />
+          </Tooltip>
         </Slider>
-        <Text color="Secondary.400">Max. $100.00 </Text>
+        <HStack color="Secondary.400" justify={"space-between"}>
+          <Text>{`Selected price. $${sliderValue}`} </Text>
+          <Text>Max. $100.00</Text>
+        </HStack>
       </Box>
     </Box>
   );
