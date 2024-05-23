@@ -69,8 +69,6 @@ function CategoryContent() {
           colorScheme="blue"
           onChangeEnd={(v) => saveInArray(v)}
           onChange={(v) => setTooltipValue(v)}
-          onMouseEnter={() => setShowTooltip(true)}
-          onMouseLeave={() => setShowTooltip(false)}
         >
           <SliderTrack bg={"Secondary.300"} h={3} borderRadius={5}>
             <SliderFilledTrack />
@@ -84,6 +82,8 @@ function CategoryContent() {
             label={`$${tooltipValue}`}
           >
             <SliderThumb
+              onClick={() => setShowTooltip(true)}
+              onDoubleClick={() => setShowTooltip(false)}
               _before={{
                 content: "''",
                 w: "16px",
