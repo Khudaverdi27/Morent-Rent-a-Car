@@ -11,9 +11,9 @@ import { CiSearch } from "react-icons/ci";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { useGetByPopularQuery } from "../services/request";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import IconBtn from "../components/shared/IconBtn";
 import { useAppDispatch } from "../Redux/hooks/reduxhook";
 import { openCategory } from "../Redux/features/slice";
+import DrawerToggle from "../components/Categories/Drawer";
 
 interface IsearchProps {
   show: boolean;
@@ -22,10 +22,12 @@ interface IsearchProps {
 function Search({ show }: IsearchProps) {
   const { isLoading } = useGetByPopularQuery("banner");
   const isSmall = useMediaQuery("only screen and (max-width : 480px)");
+  const isMobile = useMediaQuery("only screen and (max-width : 780px)");
   const dispatch = useAppDispatch();
   const openCategories = () => {
     dispatch(openCategory());
   };
+
   return (
     <InputGroup
       display={"flex"}
@@ -59,22 +61,25 @@ function Search({ show }: IsearchProps) {
       />
       {!isSmall && (
         <InputRightElement width="4.5rem">
-          {!isLoading && (
-            <Button
-              _hover={{
-                background: "transparent",
-              }}
-              variant="ghost"
-              h="1.75rem"
-              size="sm"
-            >
-              <GiSettingsKnobs
-                onClick={openCategories}
-                color="Secondary.400"
-                style={{ rotate: "90deg" }}
-              />
-            </Button>
-          )}
+          {!isLoading &&
+            (isMobile ? (
+              <DrawerToggle isLoading={isLoading} />
+            ) : (
+              <Button
+                _hover={{
+                  background: "transparent",
+                }}
+                variant="ghost"
+                h="1.75rem"
+                size="sm"
+              >
+                <GiSettingsKnobs
+                  onClick={openCategories}
+                  color="Secondary.400"
+                  style={{ rotate: "90deg" }}
+                />
+              </Button>
+            ))}
         </InputRightElement>
       )}
 
@@ -88,16 +93,7 @@ function Search({ show }: IsearchProps) {
           height="15px"
         />
       )}
-      {isSmall && !show && (
-        <IconBtn>
-          <GiSettingsKnobs
-            style={{
-              rotate: "90deg",
-              color: `${isLoading ? "#85A8F8" : "gray"}`,
-            }}
-          />
-        </IconBtn>
-      )}
+      {isSmall && !show && <DrawerToggle isLoading={isLoading} />}
     </InputGroup>
   );
 }
