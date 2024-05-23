@@ -7,7 +7,6 @@ import {
   Heading,
   Text,
   HStack,
-  SliderMark,
   Tooltip,
 } from "@chakra-ui/react";
 import {
