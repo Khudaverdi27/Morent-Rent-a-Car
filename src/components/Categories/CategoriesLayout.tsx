@@ -1,10 +1,11 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useAppSelector } from "../../Redux/hooks/reduxhook";
+import { PropsWithChildren } from "react";
 
 const MotionBox = motion(Box);
 
-function CategoriesLayout() {
+function CategoriesLayout({ children }: PropsWithChildren) {
   const isOpen = useAppSelector((state) => state.click.value);
 
   return (
@@ -23,15 +24,7 @@ function CategoriesLayout() {
       minW={"360px"}
       as="motion.div"
     >
-      <Heading
-        fontWeight={"normal"}
-        letterSpacing={"4px"}
-        color={"Secondary.300"}
-        fontSize={12}
-        as={"h6"}
-      >
-        TYPE
-      </Heading>
+      {children}
     </MotionBox>
   );
 }
