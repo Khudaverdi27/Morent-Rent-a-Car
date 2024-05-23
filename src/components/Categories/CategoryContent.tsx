@@ -17,10 +17,8 @@ import { apiResponsePopulars } from "../../types/apiResponse";
 import Categories from "./Categories";
 
 function CategoryContent() {
-  const { data: popularCarsData, isLoading: popularCarsLoading } =
-    useGetByPopularQuery("popularCars");
-  const { data: recommendCarsData, isLoading: recommendCarsLoading } =
-    useGetByRecommendsQuery("recommendCars");
+  const { data: popularCarsData } = useGetByPopularQuery("popularCars");
+  const { data: recommendCarsData } = useGetByRecommendsQuery("recommendCars");
   const [sliderValue, setSliderValue] = useState(50);
 
   const [cars, setCars] = useState<apiResponsePopulars[]>([]);
