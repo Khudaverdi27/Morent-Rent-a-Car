@@ -5,6 +5,7 @@ import {
   DrawerOverlay,
   Drawer,
   useDisclosure,
+  Button,
 } from "@chakra-ui/react";
 import IconBtn from "../shared/IconBtn";
 import { GiSettingsKnobs } from "react-icons/gi";
@@ -25,14 +26,22 @@ function DrawerToggle({ isLoading }: IDrawerProps) {
   return (
     <>
       {isMobile ? (
-        <GiSettingsKnobs
-          cursor={"pointer"}
-          onClick={onOpen}
-          style={{
-            rotate: "90deg",
-            color: `${isLoading ? "#85A8F8" : "gray"}`,
+        <Button
+          variant={"ghost"}
+          size={"sm"}
+          _hover={{
+            background: "transparent",
           }}
-        />
+          onClick={onOpen}
+        >
+          <GiSettingsKnobs
+            cursor={"pointer"}
+            style={{
+              rotate: "90deg",
+              color: `${isLoading ? "#85A8F8" : "gray"}`,
+            }}
+          />
+        </Button>
       ) : (
         <IconBtn>
           <GiSettingsKnobs

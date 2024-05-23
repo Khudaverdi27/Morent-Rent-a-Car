@@ -18,7 +18,7 @@ function ProfileSettings({ isLoading, showSettings, show }: iProfileProps) {
     <Stack
       pos={{ base: "absolute", md: "relative" }}
       right={{ base: 4, sm: 0 }}
-      top={{ base: 5, md: 0 }}
+      top={{ base: 4, md: 0 }}
       direction={{ base: "column", md: "row" }}
     >
       {(show || !isMobile) && (

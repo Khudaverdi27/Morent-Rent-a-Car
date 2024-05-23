@@ -66,6 +66,7 @@ function Search({ show }: IsearchProps) {
               <DrawerToggle isLoading={isLoading} />
             ) : (
               <Button
+                onClick={openCategories}
                 _hover={{
                   background: "transparent",
                 }}
@@ -74,7 +75,6 @@ function Search({ show }: IsearchProps) {
                 size="sm"
               >
                 <GiSettingsKnobs
-                  onClick={openCategories}
                   color="Secondary.400"
                   style={{ rotate: "90deg" }}
                 />
