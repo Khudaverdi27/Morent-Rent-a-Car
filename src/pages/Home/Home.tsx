@@ -47,6 +47,7 @@ function Home() {
           showAll={false}
           carData={cars}
           isLoading={popularCarsLoading}
+          carsCount={cars.length}
         />
       ) : (
         <Box>

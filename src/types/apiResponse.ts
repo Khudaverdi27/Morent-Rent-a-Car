@@ -16,4 +16,6 @@ export type apiResponsePopulars = {
   price: number;
   isDiscount: number | boolean;
   img: string;
+  star: number;
+  review: number;
 };

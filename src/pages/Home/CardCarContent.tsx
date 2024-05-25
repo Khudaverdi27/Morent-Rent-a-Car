@@ -15,6 +15,7 @@ import IconBtn from "../../components/shared/IconBtn";
 import { GoHeart } from "react-icons/go";
 import CarProperties from "../../pages/Home/CarProperties";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import { Link } from "react-router-dom";
 
 function CardCarContent({ isMobile = false, ...props }) {
   const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
@@ -97,7 +98,8 @@ function CardCarContent({ isMobile = false, ...props }) {
 
         <Spacer />
 
-        <Button
+     <Link to={"car-detail"}>
+     <Button
           size={{ base: "sm", sm: "md" }}
           alignSelf={"flex-end"}
           _hover={{ bg: "Primary.600" }}
@@ -108,6 +110,7 @@ function CardCarContent({ isMobile = false, ...props }) {
         >
           Rent now
         </Button>
+     </Link>
       </CardFooter>
     </>
   );

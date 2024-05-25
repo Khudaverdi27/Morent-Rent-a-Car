@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
-import About from "../pages/About";
 import MainLayout from "../layouts/MainLayout";
 import Error from "../pages/Error";
 import AuthLayout from "../layouts/AuthLayout";
 import Auth from "../pages/Auth";
+import CarDetail from "../pages/CarDetail/CarDetail";
 
 export const router = createBrowserRouter([
   {
@@ -16,8 +16,8 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "about",
-        element: <About />,
+        path: "car-detail",
+        element: <CarDetail />,
       },
       {
         path: "*",

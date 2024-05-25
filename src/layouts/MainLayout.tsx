@@ -1,5 +1,5 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer/Footer";
 import Banner from "../pages/Home/HomeBanner";
@@ -12,11 +12,12 @@ import CategoryContent from "../components/Categories/CategoryContent";
 function MainLayout() {
   const isOpen = useAppSelector((state) => state.click.value);
   const isMobile = useMediaQuery("only screen and (max-width : 780px)");
+  const path = useLocation().pathname;
 
   return (
     <Box as={"main"} bg={"Secondary.50"}>
       <Navbar />
-      {(!isOpen || isMobile) && <Banner />}
+      {!isOpen && path === "/" && <Banner />}
       <Flex>
         {!isMobile && (
           <CategoriesLayout>

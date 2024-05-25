@@ -17,9 +17,16 @@ interface ISectionProps {
   showAll: boolean;
   carData: any;
   isLoading: boolean;
+  carsCount?: number;
 }
 
-function Section({ title, showAll, carData, isLoading }: ISectionProps) {
+function Section({
+  title,
+  showAll,
+  carData,
+  isLoading,
+  carsCount,
+}: ISectionProps) {
   return (
     <Box as="section">
       <HStack py={8}>
@@ -53,6 +60,13 @@ function Section({ title, showAll, carData, isLoading }: ISectionProps) {
           ))
         )}
       </SimpleGrid>
+      {carsCount && (
+        <Text
+          color={"Secondary.300"}
+          py={5}
+          textAlign={"end"}
+        >{`${carsCount} cars`}</Text>
+      )}
     </Box>
   );
 }
