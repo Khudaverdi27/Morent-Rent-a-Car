@@ -3,15 +3,15 @@
     "id": 125743646,
     "name": "All New Rush",
     "type": "SUV",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "text": "Introducing Toyota’s new multi-talented SUV . Fusing dynamic and sharp styling, Rush looks great wherever it goes.",
     "gas": "70L",
     "control": "Manual",
     "seats": "6 People",
     "price": 72,
     "isDiscount": 80,
     "img": {
-      "main": "images/rush.png",
-      "view": ["images/rush.png"]
+      "main": "images/rush01.png",
+      "view": ["images/rush01.png", "images/rush02.png", "images/rush03.png"]
     },
     "star": 4,
     "review": 269
@@ -20,15 +20,15 @@
     "id": 196946423,
     "name": "CR - V",
     "type": "SUV",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "text": "One glance is enough to know: this is a premium SUV bursting with character. But not only does the new Touareg mirror the symbiosis between flawless design and luxurious features – it also impresses with its everyday practicality that you will simply love. ",
     "gas": "80L",
     "control": "Manual",
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
     "img": {
-      "main": "images/crv.png",
-      "view": ["images/crv.png"]
+      "main": "images/crv01.png",
+      "view": ["images/crv01.png", "images/crv02.png", "images/crv03.png"]
     },
     "star": 5,
     "review": 316
@@ -37,32 +37,36 @@
     "id": 1961446423,
     "name": "All New Terios",
     "type": "SUV",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "text": "It has a ground clearance of 220 mm and dimensions is 4455 mm L x 1695 mm W x 1705 mm H. Over 95 users have reviewed Terios on basis of Features, Mileage, seating comfort, and engine performance. ",
     "gas": "90L",
     "control": "Manual",
     "seats": "6 People",
     "price": 74,
     "isDiscount": false,
     "img": {
-      "main": "images/terios.png",
-      "view": ["images/terios.png"]
+      "main": "images/terios01.png",
+      "view": [
+        "images/terios01.png",
+        "images/terios02.png",
+        "images/terios03.png"
+      ]
     },
     "star": 4,
     "review": 289
   },
   {
     "id": 197394423,
-    "name": "CR - V",
+    "name": "BMW-X",
     "type": "SUV",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "text": "BMW X models are equipped with advanced highway safety technology to spot dangers ahead of time – and help you reach your destination on time.",
     "gas": "80L",
     "control": "Manual",
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
     "img": {
-      "main": "images/crv2.png",
-      "view": ["images/crv2.png"]
+      "main": "images/bmw01.png",
+      "view": ["images/bmw01.png", "images/bmw02.png", "images/bmw03.png"]
     },
     "star": 5,
     "review": 263
@@ -71,23 +75,23 @@
     "id": 137694423,
     "name": "MG ZX Exclusive",
     "type": "Hatchback",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "text": "The MG ZX will surprise you with its 10” touch screen with Apple CarPlay® and Android Auto®. You can enjoy of your favorite music and navigation apps like Waze.",
     "gas": "70L",
     "control": "Manual",
     "seats": "4 People",
     "price": 76,
     "isDiscount": 80,
     "img": {
-      "main": "images/mg.png",
-      "view": ["images/mg.png"]
+      "main": "images/mg01.png",
+      "view": ["images/mg01.png", "images/mg02.png", "images/mg03.png"]
     },
     "star": 4,
     "review": 199
   },
   {
     "id": 132246423,
-    "name": "New MG ZS",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "name": "Honda CR-V",
+    "text": "The CR-V offers reliably good performance, with plenty of usable space, friendly driving dynamics, front- or all-wheel drive, a 190-hp turbocharged engine, and an optional 204-hp hybrid version that we review separately. ",
     "type": "SUV",
     "gas": "80L",
     "control": "Manual",
@@ -95,8 +99,8 @@
     "price": 80,
     "isDiscount": false,
     "img": {
-      "main": "images/newmg.png",
-      "view": ["images/newmg.png"]
+      "main": "images/newmg01.png",
+      "view": ["images/newmg01.png", "images/newmg02.png", "images/newmg03.png"]
     },
     "star": 3,
     "review": 266
@@ -105,15 +109,15 @@
     "id": 111694423,
     "name": "MG MG 4",
     "type": "Hatchback",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "text": " MG4 Electric is the forward-thinking solution. It's a car that allows everyone to step into the world of pure electric mobility. Its energetic, agile design features express the vitality and free spirit of this almost 100-years-young brand to the world.",
     "gas": "70L",
     "control": "Manual",
     "seats": "4 People",
     "price": 74,
     "isDiscount": false,
     "img": {
-      "main": "images/mgmg4.png",
-      "view": ["images/mgmg4.png"]
+      "main": "images/mgmg401.png",
+      "view": ["images/mgmg401.png", "images/mgmg402.png", "images/mgmg403.png"]
     },
     "star": 5,
     "review": 344
@@ -122,15 +126,19 @@
     "id": 132666623,
     "name": "New MG ZS",
     "type": "SUV",
-    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
+    "text": "The MG Rover ZS range was created from the under rated Rover 45 range and unexpectedly the MG ZS180 was clearly the model that displayed the strongest MG characteristics or all the new MG saloons.",
     "gas": "80L",
     "control": "Manual",
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
     "img": {
-      "main": "images/mgzsred.png",
-      "view": ["images/mgzsred.png"]
+      "main": "images/mgzsred01.png",
+      "view": [
+        "images/mgzsred01.png",
+        "images/mgzsred02.png",
+        "images/mgzsred03.png"
+      ]
     },
     "star": 4,
     "review": 422
