@@ -65,7 +65,7 @@ function Banner() {
                 top={{ base: "80%", sm: "70%", md: "84%", lg: "70%" }}
                 left={{ base: "27%", md: "38%", lg: "38%" }}
                 position={"absolute"}
-                src={d.img}
+                src={d.img.main}
               />
             </CardBody>
           </BannerCard>

@@ -79,6 +79,25 @@
   animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.slick-active + div {
+.mobile-slider .slick-active + div {
   margin-left: -50px;
+}
+
+.carDetail .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+}
+.carDetail .slick-dots {
+  display: flex !important;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.carDetail .slick-dots li {
+  width: 80px;
+  height: 70px;
+}
+.carDetail ul {
+  bottom: -80px;
 }

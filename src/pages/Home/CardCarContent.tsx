@@ -14,11 +14,12 @@ import {
 import IconBtn from "../../components/shared/IconBtn";
 import { GoHeart } from "react-icons/go";
 import CarProperties from "../../pages/Home/CarProperties";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery, useSessionStorage } from "@uidotdev/usehooks";
 import { Link } from "react-router-dom";
 
 function CardCarContent({ isMobile = false, ...props }) {
   const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
+  const [, setStorage] = useSessionStorage<{}>("carToDetail", {});
 
   return (
     <>
@@ -57,7 +58,7 @@ function CardCarContent({ isMobile = false, ...props }) {
             objectFit={"contain"}
             width={"100%"}
             height={"100%"}
-            src={props.img}
+            src={props.img.main}
             alt="car"
           />
         </Box>
@@ -98,19 +99,20 @@ function CardCarContent({ isMobile = false, ...props }) {
 
         <Spacer />
 
-     <Link to={"car-detail"}>
-     <Button
-          size={{ base: "sm", sm: "md" }}
-          alignSelf={"flex-end"}
-          _hover={{ bg: "Primary.600" }}
-          variant="solid"
-          bgColor={"Primary.500"}
-          color={"Primary.0"}
-          fontWeight={"normal"}
-        >
-          Rent now
-        </Button>
-     </Link>
+        <Link to={"car-detail"}>
+          <Button
+            onClick={() => setStorage(props)}
+            size={{ base: "sm", sm: "md" }}
+            alignSelf={"flex-end"}
+            _hover={{ bg: "Primary.600" }}
+            variant="solid"
+            bgColor={"Primary.500"}
+            color={"Primary.0"}
+            fontWeight={"normal"}
+          >
+            Rent now
+          </Button>
+        </Link>
       </CardFooter>
     </>
   );

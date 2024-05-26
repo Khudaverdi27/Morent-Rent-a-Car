@@ -8,7 +8,10 @@
     "seats": "6 People",
     "price": 72,
     "isDiscount": 80,
-    "img": "images/rush.png",
+    "img": {
+      "main": "images/rush.png",
+      "view": ["images/rush.png"]
+    },
     "star": 4,
     "review": 269
   },
@@ -21,7 +24,10 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "images/crv.png",
+    "img": {
+      "main": "images/crv.png",
+      "view": ["images/crv.png"]
+    },
     "star": 5,
     "review": 316
   },
@@ -34,7 +40,10 @@
     "seats": "6 People",
     "price": 74,
     "isDiscount": false,
-    "img": "images/terios.png",
+    "img": {
+      "main": "images/terios.png",
+      "view": ["images/terios.png"]
+    },
     "star": 4,
     "review": 289
   },
@@ -47,7 +56,10 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "images/crv2.png",
+    "img": {
+      "main": "images/crv2.png",
+      "view": ["images/crv2.png"]
+    },
     "star": 5,
     "review": 263
   },
@@ -60,7 +72,10 @@
     "seats": "4 People",
     "price": 76,
     "isDiscount": 80,
-    "img": "images/mg.png",
+    "img": {
+      "main": "images/mg.png",
+      "view": ["images/mg.png"]
+    },
     "star": 4,
     "review": 199
   },
@@ -73,7 +88,10 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "images/newmg.png",
+    "img": {
+      "main": "images/newmg.png",
+      "view": ["images/newmg.png"]
+    },
     "star": 3,
     "review": 266
   },
@@ -86,7 +104,10 @@
     "seats": "4 People",
     "price": 74,
     "isDiscount": false,
-    "img": "images/mgmg4.png",
+    "img": {
+      "main": "images/mgmg4.png",
+      "view": ["images/mgmg4.png"]
+    },
     "star": 5,
     "review": 344
   },
@@ -99,7 +120,10 @@
     "seats": "6 People",
     "price": 80,
     "isDiscount": false,
-    "img": "images/mgzsred.png",
+    "img": {
+      "main": "images/mgzsred.png",
+      "view": ["images/mgzsred.png"]
+    },
     "star": 4,
     "review": 422
   }

@@ -20,7 +20,7 @@ export default function SimpleSlider({ carData }: ISectionProps) {
   };
 
   return (
-    <Box className="slider-container">
+    <Box className="slider-container mobile-slider">
       <Text color={"Secondary.300"} py={5}>
         Popular cars
       </Text>
