@@ -17,25 +17,25 @@ import { GoHeart } from "react-icons/go";
 import { Link } from "react-router-dom";
 import IconBtn from "../../components/shared/IconBtn";
 import { FaStar } from "react-icons/fa";
+import { useSessionStorage } from "@uidotdev/usehooks";
 
 function CardDetailInfo() {
+  const [storage] = useSessionStorage<any>("carToDetail", {});
   return (
     <Card boxShadow={"none"}>
       <CardHeader>
         <Flex justify={"space-between"} align={"center"}>
           <Flex>
             <Box>
-              <Heading size="sm">Nissan</Heading>
+              <Heading size="sm">{storage.name}</Heading>
               <HStack>
                 <HStack>
-                  <FaStar fill="#FBAD39" />
-                  <FaStar fill="#FBAD39" />
-                  <FaStar fill="#FBAD39" />
-                  <FaStar fill="#FBAD39" />
-                  <FaStar fill="#FBAD39" />
+                  {Array.from({ length: storage.star }, (_, i) => (
+                    <FaStar key={i} fill="#FBAD39" />
+                  ))}
                 </HStack>
                 <Text color={"Secondary.300"} fontSize={14}>
-                  440+ Reviewer
+                  {storage.review}+ Reviewer
                 </Text>
               </HStack>
             </Box>
@@ -47,24 +47,23 @@ function CardDetailInfo() {
       </CardHeader>
       <Spacer />
       <CardBody color={"Secondary.300"}>
-        NISMO has become the embodiment of Nissan's outstanding performance,
-        inspired by the most unforgiving proving ground, the "race track".
+        {storage.text}
         <SimpleGrid minChildWidth={"110px"} gap={5} mt={5}>
           <Text>Type Car</Text>
-          <Text color="Secondary.600">Sport</Text>
+          <Text color="Secondary.600">{storage.type}</Text>
           <Text>Capacity</Text>
-          <Text color="Secondary.600">2 Person</Text>
+          <Text color="Secondary.600">{storage.seats}</Text>
           <Text>Steering</Text>
-          <Text color="Secondary.600">Manual</Text>
+          <Text color="Secondary.600">{storage.control}</Text>
           <Text>Gasoline</Text>
-          <Text color="Secondary.600">70L</Text>
+          <Text color="Secondary.600">{storage.gas}</Text>
         </SimpleGrid>
       </CardBody>
       <Spacer />
       <CardFooter display={"flex"} justify={"space-between"}>
         <Box>
           <Text fontWeight={"bold"} fontSize={{ base: "16", sm: "20" }}>
-            $80.00/
+            {`$${storage.price}.00/`}
             <Text
               fontSize={{ base: "12", sm: "16" }}
               color={"Secondary.300"}
@@ -73,13 +72,8 @@ function CardDetailInfo() {
               day
             </Text>
           </Text>
-          <Text
-            fontSize={"14"}
-            textDecoration={"line-through;"}
-            fontWeight={"600"}
-            color={"Secondary.300"}
-            as={"span"}
-          >
+
+          {storage.isDiscount && (
             <Text
               fontSize={{ base: "12", sm: "14" }}
               textDecoration={"line-through;"}
@@ -87,9 +81,9 @@ function CardDetailInfo() {
               color={"Secondary.300"}
               as={"span"}
             >
-              $50.00
+              {`$${storage.isDiscount}.00`}
             </Text>
-          </Text>
+          )}
         </Box>
 
         <Spacer />

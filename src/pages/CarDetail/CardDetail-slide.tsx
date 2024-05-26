@@ -32,7 +32,7 @@ function CarDetailSlide() {
     <Box className="slider-container carDetail">
       <Slider {...settings}>
         {_.map(storage.img.view, (c: string) => (
-          <Box>
+          <Box w={"100%"} h={"100%"}>
             <Image src={c} />
           </Box>
         ))}

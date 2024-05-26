@@ -4,8 +4,8 @@
     "title": "The Best Platform for Car Rental",
     "text": "Ease of doing a car rental safely and reliably. Of course at a low price.",
     "img": {
-      "main": "images/image7.png",
-      "view": ["images/image7.png"]
+      "main": "images/koen01.png",
+      "view": ["images/koen01.png"]
     },
     "bgPattern": "circle",
     "classname": "left-banner-circle--pattern"

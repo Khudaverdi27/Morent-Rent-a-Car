@@ -2,6 +2,7 @@
   {
     "id": 1689453246,
     "name": "Koenigsegg",
+    "text": "Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.",
     "type": "Sport",
     "gas": "90L",
     "control": "Manual",
@@ -9,8 +10,8 @@
     "price": 99,
     "isDiscount": false,
     "img": {
-      "main": "images/image7.png",
-      "view": ["images/image7.png"]
+      "main": "images/koen01.png",
+      "view": ["images/koen01.png", "images/koen02.png", "images/koen03.png"]
     },
     "star": 5,
     "review": 250
@@ -18,6 +19,7 @@
   {
     "id": 1969453246,
     "name": "Nissan GT - R",
+    "text": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the 'race track.'",
     "type": "Sport",
     "gas": "80L",
     "control": "Manual",
@@ -39,14 +41,15 @@
     "id": 1969456356,
     "name": "Rolls - Royce",
     "type": "Sedan",
+    "text": "The Phantom hues to Rolls tradition—for now—by still being powered by a nearly silent gasoline V-12 under its long hood. A pillowy soft ride floats you gracefully across life's harsh bumps. ",
     "gas": "70L",
     "control": "Manual",
     "seats": "4 People",
     "price": 96,
     "isDiscount": false,
     "img": {
-      "main": "images/rolls.png",
-      "view": ["images/rolls.png"]
+      "main": "images/rolls01.png",
+      "view": ["images/rolls01.png", "images/rolls02.png", "images/rolls03.png"]
     },
     "star": 5,
     "review": 260
@@ -55,14 +58,15 @@
     "id": 1955553246,
     "name": "Nissan GT - R",
     "type": "Sport",
+    "text": "Need a burst of inspiration? Take a look at the Gray Nissan GT-R Customized for a Racer Look image and go back to customizing your vehicle with renewed passion.",
     "gas": "80L",
     "control": "Manual",
     "seats": "2 People",
     "price": 80,
     "isDiscount": 100,
     "img": {
-      "main": "images/gtred.png",
-      "view": ["images/gtred.png"]
+      "main": "images/gtred01.png",
+      "view": ["images/gtred01.png", "images/gtred02.png", "images/gtred03.png"]
     },
     "star": 3,
     "review": 356

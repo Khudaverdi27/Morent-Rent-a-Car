@@ -13,6 +13,7 @@ export type apiResponsePopulars = {
   id: number;
   name: string;
   type: string;
+  text: string;
   gas: string;
   control: string;
   seats: string;
