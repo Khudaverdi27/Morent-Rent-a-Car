@@ -1,12 +1,24 @@
-import { Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 import CardDetailInfo from "./CarDetail-Info";
 import CarDetailSlide from "./CardDetail-slide";
+import CarReview from "./CarReview";
+import { useSessionStorage } from "@uidotdev/usehooks";
+import _ from "lodash";
+
+export interface CarReviewProps {
+  name: string;
+  img: string;
+  job: string;
+  content: string;
+  reviewCount: number;
+}
 
 function CarDetail() {
+  const [storage] = useSessionStorage<any>("carToDetail", {});
   return (
     <Grid
-      my={10}
-      templateRows="repeat(2, 1fr)"
+      mt={10}
+      templateRows={{ base: "repeat(2, 1fr)", md: "repeat(1, 1fr)" }}
       templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
       gap={4}
     >
@@ -20,8 +32,26 @@ function CarDetail() {
           <CardDetailInfo />
         </GridItem>
       </SimpleGrid>
-      <GridItem colSpan={{ base: 1, md: 2 }} bg="tomato">
-        s
+      <GridItem my={5} colSpan={{ base: 1, md: 2 }}>
+        <Heading p={6} backgroundColor={"Primary.0"} size="md">
+          Reviews{" "}
+          <Box
+            ml={2}
+            fontWeight={"normal"}
+            fontSize={"14px"}
+            bgColor={"Primary.500"}
+            py={1}
+            borderRadius={"4px"}
+            px={4}
+            color={"Primary.0"}
+            as="span"
+          >
+            {storage.review.length}
+          </Box>
+        </Heading>
+        {_.map(storage.review, (d: CarReviewProps, i: number) => (
+          <CarReview data={d} key={i} />
+        ))}
       </GridItem>
     </Grid>
   );

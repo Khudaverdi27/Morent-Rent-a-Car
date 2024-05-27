@@ -15,7 +15,29 @@
       "view": ["images/koen01.png", "images/koen02.png", "images/koen03.png"]
     },
     "star": 5,
-    "review": 250,
+    "review": [
+      {
+        "name": "Sergio de Paula",
+        "img": "https://randomuser.me/api/portraits/women/9.jpg",
+        "job": "Art Director",
+        "content": "Sollicitudin metus id, consequat risus. Phasellus nec nisl lacus. Phasellus id posuere nulla. Aliquam erat volutpat. Duis sed turpis porta, faucibus magna et, vulputate massa. Donec faucibus rhoncus ligula, in tempor arcu tristique id. Orci varius natoque penatibus et magnis dis parturient montes",
+        "reviewCount": 4
+      },
+      {
+        "name": "Alex Santon",
+        "img": "https://randomuser.me/api/portraits/men/79.jpg",
+        "job": "CEO at Bukalapak",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque bibendum sollicitudin. Nulla blandit, nulla eget ultrices euismod, quam dolor lobortis metus, vel pretium velit enim quis nunc. Vestibulum vestibulum in mi ut malesuada. Nunc pellentesque libero metus, non dictum mi venenatis a.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Rafaella Mendes Diniz",
+        "img": "https://randomuser.me/api/portraits/women/45.jpg",
+        "job": "Hair dresser",
+        "content": " Phasellus nec nisl lacus. Phasellus id posuere nulla. Aliquam erat volutpat. Duis sed turpis porta, faucibus magna et, vulputate massa. Donec",
+        "reviewCount": 3
+      }
+    ],
     "bgPattern": "circle",
     "classname": "left-banner-circle--pattern"
   },
@@ -39,7 +61,50 @@
       ]
     },
     "star": 4,
-    "review": 530,
+    "review": [
+      {
+        "name": "Ivana Cajina",
+        "img": "https://unsplash.com/photos/man-leaning-on-brown-wall-_7LbC5J-jw4",
+        "job": "Photographer",
+        "content": " In condimentum scelerisque ligula, in pretium mauris rhoncus quis. Sed tempus, ligula sit amet sagittis vulputate, metus risus eleifend augue, vitae maximus nibh dolor at augue. Vestibulum ut neque ligula. Ut ex sem, scelerisque eu metus a, aliquam malesuada lacus. ",
+        "reviewCount": 4
+      },
+      {
+        "name": "Philip Martin",
+        "img": "https://randomuser.me/api/portraits/men/49.jpg",
+        "job": "CEO at AWS",
+        "content": "Fusce laoreet enim egestas velit auctor pellentesque. Mauris accumsan semper mi, ac porta nulla porta nec.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Clarisse Meyer",
+        "img": "https://randomuser.me/api/portraits/women/4.jpg",
+        "job": "Athlete",
+        "content": "Maecenas scelerisque bibendum sollicitudin. Nulla blandit, nulla eget ultrices euismod, quam dolor lobortis metus, vel pretium velit enim quis nunc.",
+        "reviewCount": 3
+      },
+      {
+        "name": "Nate Johnston",
+        "img": "https://randomuser.me/api/portraits/men/48.jpg",
+        "job": "PR Director",
+        "content": "Vestibulum vestibulum in mi ut malesuada. Nunc pellentesque libero metus, non dictum mi venenatis a. Proin id augue vel mauris pellentesque auctor. Etiam porttitor vel sapien ac posuere.",
+        "reviewCount": 4
+      },
+      {
+        "name": "Diana Simumpande",
+        "img": "https://randomuser.me/api/portraits/women/5.jpg",
+        "job": "Developer",
+        "content": "Duis sed turpis porta, faucibus magna et, vulputate massa. Donec faucibus rhoncus ligula, in tempor arcu tristique id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce laoreet enim egestas velit auctor pellentesque. Mauris accumsan semper mi, ac porta nulla porta nec.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Mike Von",
+        "img": "https://randomuser.me/api/portraits/men/47.jpg",
+        "job": "Graphic Designer",
+        "content": " In metus ex, luctus eget luctus convallis, interdum in justo. Cras sit amet varius risus, quis blandit tellus. Mauris vitae finibus eros. In condimentum scelerisque ligula",
+        "reviewCount": 3
+      }
+    ],
     "bgPattern": "zigzag",
     "classname": "right-banner-zig--pattern"
   }

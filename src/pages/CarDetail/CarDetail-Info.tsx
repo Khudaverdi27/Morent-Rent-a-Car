@@ -35,7 +35,7 @@ function CardDetailInfo() {
                   ))}
                 </HStack>
                 <Text color={"Secondary.300"} fontSize={14}>
-                  {storage.review}+ Reviewer
+                  {storage.review.length}+ Reviewer
                 </Text>
               </HStack>
             </Box>

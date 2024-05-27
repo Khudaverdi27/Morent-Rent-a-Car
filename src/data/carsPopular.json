@@ -14,7 +14,29 @@
       "view": ["images/koen01.png", "images/koen02.png", "images/koen03.png"]
     },
     "star": 5,
-    "review": 250
+    "review": [
+      {
+        "name": "Sergio de Paula",
+        "img": "https://randomuser.me/api/portraits/women/9.jpg",
+        "job": "Art Director",
+        "content": "Sollicitudin metus id, consequat risus. Phasellus nec nisl lacus. Phasellus id posuere nulla. Aliquam erat volutpat. Duis sed turpis porta, faucibus magna et, vulputate massa. Donec faucibus rhoncus ligula, in tempor arcu tristique id. Orci varius natoque penatibus et magnis dis parturient montes",
+        "reviewCount": 4
+      },
+      {
+        "name": "Alex Santon",
+        "img": "https://randomuser.me/api/portraits/men/79.jpg",
+        "job": "CEO at Bukalapak",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque bibendum sollicitudin. Nulla blandit, nulla eget ultrices euismod, quam dolor lobortis metus, vel pretium velit enim quis nunc. Vestibulum vestibulum in mi ut malesuada. Nunc pellentesque libero metus, non dictum mi venenatis a.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Rafaella Mendes Diniz",
+        "img": "https://randomuser.me/api/portraits/women/45.jpg",
+        "job": "Hair dresser",
+        "content": " Phasellus nec nisl lacus. Phasellus id posuere nulla. Aliquam erat volutpat. Duis sed turpis porta, faucibus magna et, vulputate massa. Donec",
+        "reviewCount": 3
+      }
+    ]
   },
   {
     "id": 1969453246,
@@ -35,7 +57,50 @@
       ]
     },
     "star": 4,
-    "review": 530
+    "review": [
+      {
+        "name": "Ivana Cajina",
+        "img": "https://unsplash.com/photos/man-leaning-on-brown-wall-_7LbC5J-jw4",
+        "job": "Photographer",
+        "content": " In condimentum scelerisque ligula, in pretium mauris rhoncus quis. Sed tempus, ligula sit amet sagittis vulputate, metus risus eleifend augue, vitae maximus nibh dolor at augue. Vestibulum ut neque ligula. Ut ex sem, scelerisque eu metus a, aliquam malesuada lacus. ",
+        "reviewCount": 4
+      },
+      {
+        "name": "Philip Martin",
+        "img": "https://randomuser.me/api/portraits/men/49.jpg",
+        "job": "CEO at AWS",
+        "content": "Fusce laoreet enim egestas velit auctor pellentesque. Mauris accumsan semper mi, ac porta nulla porta nec.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Clarisse Meyer",
+        "img": "https://randomuser.me/api/portraits/women/4.jpg",
+        "job": "Athlete",
+        "content": "Maecenas scelerisque bibendum sollicitudin. Nulla blandit, nulla eget ultrices euismod, quam dolor lobortis metus, vel pretium velit enim quis nunc.",
+        "reviewCount": 3
+      },
+      {
+        "name": "Nate Johnston",
+        "img": "https://randomuser.me/api/portraits/men/48.jpg",
+        "job": "PR Director",
+        "content": "Vestibulum vestibulum in mi ut malesuada. Nunc pellentesque libero metus, non dictum mi venenatis a. Proin id augue vel mauris pellentesque auctor. Etiam porttitor vel sapien ac posuere.",
+        "reviewCount": 4
+      },
+      {
+        "name": "Diana Simumpande",
+        "img": "https://randomuser.me/api/portraits/women/5.jpg",
+        "job": "Developer",
+        "content": "Duis sed turpis porta, faucibus magna et, vulputate massa. Donec faucibus rhoncus ligula, in tempor arcu tristique id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce laoreet enim egestas velit auctor pellentesque. Mauris accumsan semper mi, ac porta nulla porta nec.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Mike Von",
+        "img": "https://randomuser.me/api/portraits/men/47.jpg",
+        "job": "Graphic Designer",
+        "content": " In metus ex, luctus eget luctus convallis, interdum in justo. Cras sit amet varius risus, quis blandit tellus. Mauris vitae finibus eros. In condimentum scelerisque ligula",
+        "reviewCount": 3
+      }
+    ]
   },
   {
     "id": 1969456356,
@@ -52,7 +117,36 @@
       "view": ["images/rolls01.png", "images/rolls02.png", "images/rolls03.png"]
     },
     "star": 5,
-    "review": 260
+    "review": [
+      {
+        "name": "Alexander Hipp",
+        "img": "https://randomuser.me/api/portraits/men/46.jpg",
+        "job": "Manager",
+        "content": "Mauris et ligula eget tortor commodo vestibulum non placerat nisl. In varius odio sit amet erat mattis tempus. Nunc ullamcorper enim sit amet ipsum molestie, id lacinia elit volutpat. Phasellus in bibendum eros. Donec non finibus purus, ac hendrerit turpis. Fusce ut odio enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Alex Suprun",
+        "img": "https://randomuser.me/api/portraits/women/10.jpg",
+        "job": "Sales Assistant",
+        "content": "Nulla varius nisi mi, at congue leo ornare ut. In metus ex, luctus eget luctus convallis, interdum in justo. Cras sit amet varius risus, quis blandit tellus. Mauris vitae finibus eros. ",
+        "reviewCount": 5
+      },
+      {
+        "name": "Michael Dam",
+        "img": "https://randomuser.me/api/portraits/men/45.jpg",
+        "job": "Hair dresser",
+        "content": "Proin sit amet neque sit amet odio sollicitudin maximus in ut metus. Vivamus sit amet lectus pretium, placerat magna non, fringilla nulla. ",
+        "reviewCount": 4
+      },
+      {
+        "name": "Chase Chappell",
+        "img": "https://randomuser.me/api/portraits/men/11.jpg",
+        "job": "Sportsman",
+        "content": "Maecenas egestas tortor turpis, nec imperdiet elit sodales ac. Nunc vitae nunc velit. Nunc ut tortor egestas, porttitor metus ac, pharetra magna. Integer non lorem nulla.",
+        "reviewCount": 4
+      }
+    ]
   },
   {
     "id": 1955553246,
@@ -69,6 +163,35 @@
       "view": ["images/gtred01.png", "images/gtred02.png", "images/gtred03.png"]
     },
     "star": 3,
-    "review": 356
+    "review": [
+      {
+        "name": "Yang Miao",
+        "img": "https://randomuser.me/api/portraits/women/19.jpg",
+        "job": "Operator",
+        "content": "Aliquam pharetra mollis imperdiet. Aliquam fermentum lobortis dui eu scelerisque. Suspendisse potenti. Donec placerat orci mi, eget venenatis mi blandit non.Donec at rutrum est.",
+        "reviewCount": 3
+      },
+      {
+        "name": "Christopher Campbell",
+        "img": "https://randomuser.me/api/portraits/women/20.jpg",
+        "job": "Hostess",
+        "content": "Vitae maximus nibh dolor at augue. Vestibulum ut neque ligula. Ut ex sem, scelerisque eu metus a, aliquam malesuada lacus. Mauris et ligula eget tortor commodo vestibulum non placerat nisl. In varius odio sit amet erat mattis tempus.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Ayo Ogunseinde",
+        "img": "https://randomuser.me/api/portraits/men/40.jpg",
+        "job": "Office Manager",
+        "content": "Fusce ut odio enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "reviewCount": 3
+      },
+      {
+        "name": "Ed Pylypenko",
+        "img": "https://randomuser.me/api/portraits/men/39.jpg",
+        "job": "Accountant",
+        "content": "Aenean tincidunt nisi ac imperdiet fermentum. Maecenas egestas tortor turpis, nec imperdiet elit sodales ac. Nunc vitae nunc velit. Nunc ut tortor egestas, porttitor metus ac, pharetra magna. ",
+        "reviewCount": 3
+      }
+    ]
   }
 ]

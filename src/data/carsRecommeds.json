@@ -14,7 +14,29 @@
       "view": ["images/rush01.png", "images/rush02.png", "images/rush03.png"]
     },
     "star": 4,
-    "review": 269
+    "review": [
+      {
+        "name": "Andrej Lišakov",
+        "img": "https://randomuser.me/api/portraits/men/38.jpg",
+        "job": "CEO at Google",
+        "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        "reviewCount": 5
+      },
+      {
+        "name": "Christian Buehner",
+        "img": "https://randomuser.me/api/portraits/men/37.jpg",
+        "job": "TV journalist",
+        "content": "When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Courtney Cook",
+        "img": "https://randomuser.me/api/portraits/men/36.jpg",
+        "job": "Office Manager",
+        "content": "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "reviewCount": 4
+      }
+    ]
   },
   {
     "id": 196946423,
@@ -31,7 +53,43 @@
       "view": ["images/crv01.png", "images/crv02.png", "images/crv03.png"]
     },
     "star": 5,
-    "review": 316
+    "review": [
+      {
+        "name": "Christina Peterson",
+        "img": "https://randomuser.me/api/portraits/women/21.jpg",
+        "job": "CEO at ZARA",
+        "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. ",
+        "reviewCount": 4
+      },
+      {
+        "name": "Ali Morshedlou",
+        "img": "https://randomuser.me/api/portraits/men/37.jpg",
+        "job": "Director assistant",
+        "content": "Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. ",
+        "reviewCount": 5
+      },
+      {
+        "name": "Yağız Kara",
+        "img": "https://randomuser.me/api/portraits/men/10.jpg",
+        "job": "Project Manager",
+        "content": "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. ",
+        "reviewCount": 5
+      },
+      {
+        "name": "Jurica Koletić",
+        "img": "https://randomuser.me/api/portraits/women/8.jpg",
+        "job": "Driver at Uber",
+        "content": "The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32. ",
+        "reviewCount": 5
+      },
+      {
+        "name": "Vince Veras",
+        "img": "https://randomuser.me/api/portraits/women/29.jpg",
+        "job": "Gardener",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
+        "reviewCount": 4
+      }
+    ]
   },
   {
     "id": 1961446423,
@@ -52,7 +110,43 @@
       ]
     },
     "star": 4,
-    "review": 289
+    "review": [
+      {
+        "name": "Hannah Busing",
+        "img": "https://randomuser.me/api/portraits/women/14.jpg",
+        "job": "Sales assistant",
+        "content": "'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
+        "reviewCount": 4
+      },
+      {
+        "name": "Jonas Kakaroto",
+        "img": "https://randomuser.me/api/portraits/men/31.jpg",
+        "job": "Marketing director",
+        "content": "Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+        "reviewCount": 3
+      },
+      {
+        "name": "Artem Beliaikin",
+        "img": "https://randomuser.me/api/portraits/men/32.jpg",
+        "job": "Researcher",
+        "content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, ",
+        "reviewCount": 2
+      },
+      {
+        "name": "Charles Etoroma",
+        "img": "https://randomuser.me/api/portraits/men/19.jpg",
+        "job": "Footballer",
+        "content": "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined",
+        "reviewCount": 2
+      },
+      {
+        "name": "Ben den Engelsen",
+        "img": "https://randomuser.me/api/portraits/men/0.jpg",
+        "job": "Alpinist",
+        "content": "It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.",
+        "reviewCount": 3
+      }
+    ]
   },
   {
     "id": 197394423,
@@ -69,7 +163,29 @@
       "view": ["images/bmw01.png", "images/bmw02.png", "images/bmw03.png"]
     },
     "star": 5,
-    "review": 263
+    "review": [
+      {
+        "name": "Juan Encalada",
+        "img": "https://randomuser.me/api/portraits/men/1.jpg",
+        "job": "Agile Coach",
+        "content": "The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+        "reviewCount": 4
+      },
+      {
+        "name": "Ana Itonishvili",
+        "img": "https://randomuser.me/api/portraits/women/22.jpg",
+        "job": "Service Manager",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at justo quis est efficitur vehicula. Suspendisse sit amet nibh tempor, commodo risus sed, posuere nunc. Vivamus sed facilisis arcu.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Luis Villasmil",
+        "img": "https://randomuser.me/api/portraits/men/22.jpg",
+        "job": "QA Tester",
+        "content": "Donec in ligula sollicitudin, blandit risus at, rhoncus turpis. Phasellus pretium, ipsum sed interdum tincidunt, sem mauris aliquam massa, a suscipit mi massa quis odio. Ut diam purus, condimentum quis felis condimentum, gravida porta massa. Proin vel risus porttitor",
+        "reviewCount": 5
+      }
+    ]
   },
   {
     "id": 137694423,
@@ -86,7 +202,36 @@
       "view": ["images/mg01.png", "images/mg02.png", "images/mg03.png"]
     },
     "star": 4,
-    "review": 199
+    "review": [
+      {
+        "name": "Harps Joseph",
+        "img": "https://randomuser.me/api/portraits/men/23.jpg",
+        "job": "Videomaker",
+        "content": "Phasellus nec nisl lacus. Phasellus id posuere nulla. Aliquam erat volutpat. Duis sed turpis porta, faucibus magna et, vulputate massa. Donec faucibus rhoncus ligula, in tempor arcu tristique id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce laoreet enim egestas velit auctor pellentesque. Mauris accumsan semper mi, ac porta nulla porta nec.",
+        "reviewCount": 4
+      },
+      {
+        "name": "Amy Hirschi",
+        "img": "https://randomuser.me/api/portraits/women/23.jpg",
+        "job": "Teacher",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque bibendum sollicitudin. Nulla blandit, nulla eget ultrices euismod, quam dolor lobortis metus, vel pretium velit enim quis nunc. Vestibulum vestibulum in mi ut malesuada. Nunc pellentesque libero metus, non dictum mi venenatis a. Proin id augue vel mauris pellentesque auctor.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Ben Kolde",
+        "img": "https://randomuser.me/api/portraits/men/25.jpg",
+        "job": "QA Tester",
+        "content": "Aenean tincidunt nisi ac imperdiet fermentum. Maecenas egestas tortor turpis, nec imperdiet elit sodales ac. Nunc vitae nunc velit. Nunc ut tortor egestas, porttitor metus ac, pharetra magna. Integer non lorem nulla. ",
+        "reviewCount": 5
+      },
+      {
+        "name": "Faizur Rehman",
+        "img": "https://randomuser.me/api/portraits/men/26.jpg",
+        "job": "Designer",
+        "content": "Donec at rutrum est. Nulla varius nisi mi, at congue leo ornare ut. In metus ex, luctus eget luctus convallis, interdum in justo. Cras sit amet varius risus, quis blandit tellus. Mauris vitae finibus eros.",
+        "reviewCount": 5
+      }
+    ]
   },
   {
     "id": 132246423,
@@ -103,7 +248,36 @@
       "view": ["images/newmg01.png", "images/newmg02.png", "images/newmg03.png"]
     },
     "star": 3,
-    "review": 266
+    "review": [
+      {
+        "name": "César Rincón",
+        "img": "https://randomuser.me/api/portraits/men/27.jpg",
+        "job": "Artist",
+        "content": "Donec at rutrum est. Nulla varius nisi mi, at congue leo ornare ut. In metus ex, luctus eget luctus convallis, interdum in justo. Cras sit amet varius risus, quis blandit tellus. Mauris vitae finibus eros.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Corinne Kutz",
+        "img": "https://randomuser.me/api/portraits/women/28.jpg",
+        "job": "Math Teacher",
+        "content": "In condimentum scelerisque ligula, in pretium mauris rhoncus quis. Sed tempus, ligula sit amet sagittis vulputate, metus risus eleifend augue, vitae maximus nibh dolor at augue. Vestibulum ut neque ligula. Ut ex sem, scelerisque eu metus a, aliquam malesuada lacus.",
+        "reviewCount": 4
+      },
+      {
+        "name": "Dushawn Jovic",
+        "img": "https://randomuser.me/api/portraits/men/28.jpg",
+        "job": "Musician",
+        "content": "Mauris et ligula eget tortor commodo vestibulum non placerat nisl. In varius odio sit amet erat mattis tempus. Nunc ullamcorper enim sit amet ipsum molestie, id lacinia elit volutpat. Phasellus in bibendum eros. Donec non finibus purus, ac hendrerit turpis. ",
+        "reviewCount": 2
+      },
+      {
+        "name": "Kimson Doan",
+        "img": "https://randomuser.me/api/portraits/women/29.jpg",
+        "job": "Designer",
+        "content": "Fusce ut odio enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "reviewCount": 5
+      }
+    ]
   },
   {
     "id": 111694423,
@@ -120,7 +294,36 @@
       "view": ["images/mgmg401.png", "images/mgmg402.png", "images/mgmg403.png"]
     },
     "star": 5,
-    "review": 344
+    "review": [
+      {
+        "name": "John Doe",
+        "img": "https://randomuser.me/api/portraits/men/2.jpg",
+        "job": "Artist",
+        "content": "Curabitur vulputate interdum tellus. Proin sit amet neque sit amet odio sollicitudin maximus in ut metus. Vivamus sit amet lectus pretium, placerat magna non, fringilla nulla.",
+        "reviewCount": 5
+      },
+      {
+        "name": "Jorinne Mikel",
+        "img": "https://randomuser.me/api/portraits/women/3.jpg",
+        "job": "Math Teacher",
+        "content": "Sed non tincidunt mauris. Nunc viverra eleifend ultricies. Sed euismod mollis tellus, eu euismod velit mollis ut. Integer fermentum sit amet massa eu interdum.",
+        "reviewCount": 4
+      },
+      {
+        "name": "Dushawn Orban",
+        "img": "https://randomuser.me/api/portraits/men/4.jpg",
+        "job": "Musician",
+        "content": "Mauris gravida sapien magna, ut lobortis dui fringilla ut. Curabitur lacinia justo lacinia ante molestie egestas.",
+        "reviewCount": 2
+      },
+      {
+        "name": "Kimson Doan",
+        "img": "https://randomuser.me/api/portraits/women/5.jpg",
+        "job": "Designer",
+        "content": "Cras pulvinar, tortor nec venenatis congue, arcu orci aliquet purus, quis ornare velit massa at erat. Quisque sit amet tincidunt tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel mi neque.",
+        "reviewCount": 5
+      }
+    ]
   },
   {
     "id": 132666623,
@@ -141,6 +344,42 @@
       ]
     },
     "star": 4,
-    "review": 422
+    "review": [
+      {
+        "name": "Aatik Tasneem",
+        "img": "https://randomuser.me/api/portraits/men/41.jpg",
+        "job": "CEO at BMW",
+        "content": "Cras pulvinar, tortor nec venenatis congue, arcu orci aliquet purus, quis ornare velit massa at erat. Quisque sit amet tincidunt tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel mi neque.",
+        "reviewCount": 3
+      },
+      {
+        "name": "Brooke Cagle",
+        "img": "https://randomuser.me/api/portraits/men/44.jpg",
+        "job": "Dirver at Bolt",
+        "content": "Cras pulvinar, tortor nec venenatis congue, arcu orci aliquet purus, quis ornare velit massa at erat. Quisque sit amet tincidunt tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel mi neque.",
+        "reviewCount": 1
+      },
+      {
+        "name": "Gabriel Silvério",
+        "img": "https://randomuser.me/api/portraits/women/44.jpg",
+        "job": "Musician",
+        "content": "Etiam at justo quis est efficitur vehicula. Suspendisse sit amet nibh tempor, commodo risus sed, posuere nunc. Vivamus sed facilisis arcu. Donec in ligula sollicitudin, blandit risus at, rhoncus turpis. Phasellus pretium, ipsum sed interdum tincidunt, sem mauris aliquam massa, a suscipit mi massa quis odio. Ut diam purus, condimentum quis felis condimentum, gravida porta massa. Proin vel risus porttitor, ",
+        "reviewCount": 5
+      },
+      {
+        "name": "Mahdi Bafande",
+        "img": "https://randomuser.me/api/portraits/men/17.jpg",
+        "job": "Taxi Driver",
+        "content": "Vivamus sed facilisis arcu. Donec in ligula sollicitudin, blandit risus at, rhoncus turpis. Phasellus pretium, ipsum sed interdum tincidunt, sem mauris aliquam massa",
+        "reviewCount": 5
+      },
+      {
+        "name": "Taras Shypka",
+        "img": "https://randomuser.me/api/portraits/women/17.jpg",
+        "job": "Chess player",
+        "content": " Mauris vitae finibus eros. In condimentum scelerisque ligula, in pretium mauris rhoncus quis. Sed tempus, ligula sit amet sagittis vulputate, metus risus eleifend augue, vitae maximus nibh dolor at augue. Vestibulum ut neque ligula. Ut ex sem, scelerisque eu metus a, aliquam malesuada lacus. ",
+        "reviewCount": 4
+      }
+    ]
   }
 ]
