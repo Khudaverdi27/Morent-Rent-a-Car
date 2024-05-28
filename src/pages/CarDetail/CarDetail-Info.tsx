@@ -21,13 +21,28 @@ import { useSessionStorage } from "@uidotdev/usehooks";
 
 function CardDetailInfo() {
   const [storage] = useSessionStorage<any>("carToDetail", {});
-  const star = Math.round(
-    storage.review.reduce(
-      (acc: any, review: any) => acc + review.reviewCount,
-      0
-    ) / storage.review.length
+  const reviewCountTotal = storage.review.reduce(
+    (acc: any, review: any) => acc + review.reviewCount,
+    0
   );
+  const reviewCountAverage = reviewCountTotal / storage.review.length;
+  const star = Math.round(reviewCountAverage);
 
+  const totalStars = 5;
+  const emptyStars = totalStars - star;
+
+  // Generate filled stars
+  const filledStars = Array.from({ length: star }, (_, i) => (
+    <FaStar key={`filled-${i}`} fill="#FBAD39" />
+  ));
+
+  // Generate empty stars
+  const emptyStarsArray = Array.from({ length: emptyStars }, (_, i) => (
+    <FaStar key={`empty-${i}`} fill="#E0E0E0" /> // or any color for empty stars
+  ));
+
+  // Combine both arrays
+  const stars = [...filledStars, ...emptyStarsArray];
   return (
     <Card boxShadow={"none"}>
       <CardHeader>
@@ -36,11 +51,7 @@ function CardDetailInfo() {
             <Box>
               <Heading size="sm">{storage.name}</Heading>
               <HStack>
-                <HStack>
-                  {Array.from({ length: star }, (_, i) => (
-                    <FaStar key={i} fill="#FBAD39" />
-                  ))}
-                </HStack>
+                <HStack>{stars}</HStack>
                 <Text color={"Secondary.300"} fontSize={14}>
                   {storage.review.length}+ Reviewer
                 </Text>
