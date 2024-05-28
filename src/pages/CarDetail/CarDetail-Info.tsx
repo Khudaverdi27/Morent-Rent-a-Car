@@ -21,6 +21,13 @@ import { useSessionStorage } from "@uidotdev/usehooks";
 
 function CardDetailInfo() {
   const [storage] = useSessionStorage<any>("carToDetail", {});
+  const star = Math.round(
+    storage.review.reduce(
+      (acc: any, review: any) => acc + review.reviewCount,
+      0
+    ) / storage.review.length
+  );
+
   return (
     <Card boxShadow={"none"}>
       <CardHeader>
@@ -30,7 +37,7 @@ function CardDetailInfo() {
               <Heading size="sm">{storage.name}</Heading>
               <HStack>
                 <HStack>
-                  {Array.from({ length: storage.star }, (_, i) => (
+                  {Array.from({ length: star }, (_, i) => (
                     <FaStar key={i} fill="#FBAD39" />
                   ))}
                 </HStack>

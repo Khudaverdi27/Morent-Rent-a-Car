@@ -13,6 +13,7 @@ import Logo from "../common/Logo";
 import CategoryContent from "./CategoryContent";
 import { GrClose } from "react-icons/gr";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import { useNavigate } from "react-router-dom";
 
 interface IDrawerProps {
   isLoading: boolean;
@@ -23,6 +24,11 @@ function DrawerToggle({ isLoading }: IDrawerProps) {
   const isMobile = useMediaQuery(
     "only screen and (min-width : 481px) and (max-width : 781px)"
   );
+  const navigate = useNavigate();
+  const openDrawer = () => {
+    onOpen();
+    navigate("/");
+  };
   return (
     <>
       {isMobile ? (
@@ -32,7 +38,7 @@ function DrawerToggle({ isLoading }: IDrawerProps) {
           _hover={{
             background: "transparent",
           }}
-          onClick={onOpen}
+          onClick={openDrawer}
         >
           <GiSettingsKnobs
             cursor={"pointer"}
@@ -45,7 +51,7 @@ function DrawerToggle({ isLoading }: IDrawerProps) {
       ) : (
         <IconBtn>
           <GiSettingsKnobs
-            onClick={onOpen}
+            onClick={openDrawer}
             style={{
               rotate: "90deg",
               color: `${isLoading ? "#85A8F8" : "gray"}`,

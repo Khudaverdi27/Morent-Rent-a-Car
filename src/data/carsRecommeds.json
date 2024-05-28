@@ -13,7 +13,7 @@
       "main": "images/rush01.png",
       "view": ["images/rush01.png", "images/rush02.png", "images/rush03.png"]
     },
-    "star": 4,
+
     "review": [
       {
         "name": "Andrej Lišakov",
@@ -52,7 +52,7 @@
       "main": "images/crv01.png",
       "view": ["images/crv01.png", "images/crv02.png", "images/crv03.png"]
     },
-    "star": 5,
+
     "review": [
       {
         "name": "Christina Peterson",
@@ -109,7 +109,7 @@
         "images/terios03.png"
       ]
     },
-    "star": 4,
+
     "review": [
       {
         "name": "Hannah Busing",
@@ -162,7 +162,7 @@
       "main": "images/bmw01.png",
       "view": ["images/bmw01.png", "images/bmw02.png", "images/bmw03.png"]
     },
-    "star": 5,
+
     "review": [
       {
         "name": "Juan Encalada",
@@ -201,7 +201,7 @@
       "main": "images/mg01.png",
       "view": ["images/mg01.png", "images/mg02.png", "images/mg03.png"]
     },
-    "star": 4,
+
     "review": [
       {
         "name": "Harps Joseph",
@@ -247,7 +247,7 @@
       "main": "images/newmg01.png",
       "view": ["images/newmg01.png", "images/newmg02.png", "images/newmg03.png"]
     },
-    "star": 3,
+
     "review": [
       {
         "name": "César Rincón",
@@ -293,7 +293,7 @@
       "main": "images/mgmg401.png",
       "view": ["images/mgmg401.png", "images/mgmg402.png", "images/mgmg403.png"]
     },
-    "star": 5,
+
     "review": [
       {
         "name": "John Doe",
@@ -343,7 +343,7 @@
         "images/mgzsred03.png"
       ]
     },
-    "star": 4,
+
     "review": [
       {
         "name": "Aatik Tasneem",

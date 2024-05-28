@@ -14,6 +14,7 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { useAppDispatch } from "../Redux/hooks/reduxhook";
 import { openCategory } from "../Redux/features/slice";
 import DrawerToggle from "../components/Categories/Drawer";
+import { useNavigate } from "react-router-dom";
 
 interface IsearchProps {
   show: boolean;
@@ -24,8 +25,10 @@ function Search({ show }: IsearchProps) {
   const isSmall = useMediaQuery("only screen and (max-width : 480px)");
   const isMobile = useMediaQuery("only screen and (max-width : 780px)");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const openCategories = () => {
     dispatch(openCategory());
+    navigate("/");
   };
 
   return (

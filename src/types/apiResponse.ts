@@ -6,7 +6,15 @@ export type apiResponseBanner = {
     main: string;
     view: [];
   };
-  review: [{ name: string; img: string; job: string; reviewCount: number }];
+  review: [
+    {
+      name: string;
+      img: string;
+      job: string;
+      content: string;
+      reviewCount: number;
+    }
+  ];
   bgPattern: string;
   classname: string;
 };
@@ -24,6 +32,13 @@ export type apiResponsePopulars = {
     main: string;
     view: [];
   };
-  star: number;
-  review: [{ name: string; img: string; job: string; reviewCount: number }];
+  review: [
+    {
+      name: string;
+      img: string;
+      job: string;
+      content: string;
+      reviewCount: number;
+    }
+  ];
 };

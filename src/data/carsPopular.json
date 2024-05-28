@@ -13,7 +13,7 @@
       "main": "images/koen01.png",
       "view": ["images/koen01.png", "images/koen02.png", "images/koen03.png"]
     },
-    "star": 5,
+
     "review": [
       {
         "name": "Sergio de Paula",
@@ -56,7 +56,7 @@
         "images/nissangt03.png"
       ]
     },
-    "star": 4,
+
     "review": [
       {
         "name": "Ivana Cajina",
@@ -116,7 +116,7 @@
       "main": "images/rolls01.png",
       "view": ["images/rolls01.png", "images/rolls02.png", "images/rolls03.png"]
     },
-    "star": 5,
+
     "review": [
       {
         "name": "Alexander Hipp",
@@ -162,7 +162,7 @@
       "main": "images/gtred01.png",
       "view": ["images/gtred01.png", "images/gtred02.png", "images/gtred03.png"]
     },
-    "star": 3,
+
     "review": [
       {
         "name": "Yang Miao",

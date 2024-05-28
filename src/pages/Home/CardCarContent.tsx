@@ -15,11 +15,23 @@ import IconBtn from "../../components/shared/IconBtn";
 import { GoHeart } from "react-icons/go";
 import CarProperties from "../../pages/Home/CarProperties";
 import { useMediaQuery, useSessionStorage } from "@uidotdev/usehooks";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { apiResponsePopulars } from "../../types/apiResponse";
 
 function CardCarContent({ isMobile = false, ...props }) {
   const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
   const [, setStorage] = useSessionStorage<{}>("carToDetail", {});
+  const path = useLocation().pathname;
+
+  const handleRentBtn = (allProps: apiResponsePopulars) => {
+    setStorage(allProps);
+    path === "/car-detail" &&
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+  };
 
   return (
     <>
@@ -99,9 +111,9 @@ function CardCarContent({ isMobile = false, ...props }) {
 
         <Spacer />
 
-        <Link to={"car-detail"}>
+        <Link to={path === "/car-detail" ? "#" : "car-detail"}>
           <Button
-            onClick={() => setStorage(props)}
+            onClick={() => handleRentBtn(props as apiResponsePopulars)}
             size={{ base: "sm", sm: "md" }}
             alignSelf={"flex-end"}
             _hover={{ bg: "Primary.600" }}

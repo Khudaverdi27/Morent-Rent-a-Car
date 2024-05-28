@@ -16,6 +16,7 @@ function Footer() {
   const { isLoading } = useGetByRecommendsQuery("recommendCars");
   return (
     <Container
+      mt={5}
       bg={"Primary.0"}
       color={"Secondary.300"}
       as={"footer"}
