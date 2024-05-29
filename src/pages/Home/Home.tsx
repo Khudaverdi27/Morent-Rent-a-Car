@@ -52,7 +52,7 @@ function Home() {
       ) : (
         <Box>
           {isMobile ? (
-            <SimpleSlider carData={popularCarsData} />
+            <SimpleSlider title={"Popular cars"} carData={popularCarsData} />
           ) : (
             <Section
               title="Popular Cars"
@@ -62,7 +62,7 @@ function Home() {
             />
           )}
           <Section
-            title="Recomendation Car"
+            title="Recomendation Cars"
             showAll={false}
             carData={recommendCarsData}
             isLoading={recommendCarsLoading}

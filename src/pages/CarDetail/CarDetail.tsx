@@ -10,18 +10,20 @@ import {
 import CardDetailInfo from "./CarDetail-Info";
 import CarDetailSlide from "./CardDetail-slide";
 import CarReview from "./CarReview";
-import { useSessionStorage } from "@uidotdev/usehooks";
+import { useMediaQuery, useSessionStorage } from "@uidotdev/usehooks";
 import _ from "lodash";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Section from "../../components/common/Section";
 import {
   useGetByPopularQuery,
   useGetByRecommendsQuery,
 } from "../../services/request";
+import { scrollToUP } from "../../utility/scrollToUp";
+import SimpleSlider from "../Home/slider";
 
 export interface CarReviewProps {
   name: string;
@@ -37,13 +39,17 @@ function CarDetail() {
     useGetByPopularQuery("popularCars");
   const { data: recommendCarsData, isLoading: recommendCarsLoading } =
     useGetByRecommendsQuery("recommendCars");
+  const isMobile = useMediaQuery("only screen and (max-width : 768px)");
   const [showAll, setShowAll] = useState(false);
 
   const modifyData = storage.review.slice(0, 2);
 
+  useEffect(() => {
+    scrollToUP();
+  }, []);
+
   return (
     <>
-      {" "}
       <Grid
         mt={10}
         templateRows={{ base: "repeat(2, 1fr)", md: "repeat(1, 1fr)" }}
@@ -110,22 +116,36 @@ function CarDetail() {
           </Box>
         </GridItem>
       </Grid>
-      <Section
-        title="Recent Cars"
-        showAll={true}
-        carData={
-          Array.isArray(popularCarsData) ? popularCarsData.slice(0, 4) : []
-        }
-        isLoading={popularCarsLoading}
-      />
-      <Section
-        title="Recomendation Cars"
-        showAll={true}
-        carData={
-          Array.isArray(recommendCarsData) ? recommendCarsData.slice(0, 4) : []
-        }
-        isLoading={recommendCarsLoading}
-      />
+
+      <Box overflow={"hidden"}>
+        {isMobile ? (
+          <SimpleSlider title={"Recent cars"} carData={popularCarsData} />
+        ) : (
+          <Section
+            title="Recent Cars"
+            showAll={true}
+            carData={popularCarsData}
+            isLoading={popularCarsLoading}
+          />
+        )}
+        {isMobile ? (
+          <SimpleSlider
+            carData={recommendCarsData}
+            title={"Recomendation cars"}
+          />
+        ) : (
+          <Section
+            title="Recomendation Cars"
+            showAll={true}
+            carData={
+              Array.isArray(recommendCarsData)
+                ? recommendCarsData.slice(0, 4)
+                : []
+            }
+            isLoading={recommendCarsLoading}
+          />
+        )}
+      </Box>
     </>
   );
 }

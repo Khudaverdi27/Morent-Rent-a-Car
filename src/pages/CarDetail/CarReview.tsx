@@ -9,28 +9,14 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { FaStar } from "react-icons/fa";
+
 import { CarReviewProps } from "./CarDetail";
+import StarIcon from "../../components/shared/StarIcon";
 
 function CarReview(props: { data: CarReviewProps }) {
   const { data } = props;
 
   const reviewCount = data.reviewCount;
-  const totalStars = 5;
-  const emptyStars = totalStars - reviewCount;
-
-  // Generate filled stars
-
-  const filledStars = Array.from({ length: reviewCount }, (_, i) => (
-    <FaStar key={`filled-${i}`} fill="#FBAD39" />
-  ));
-
-  // Generate empty stars
-  const emptyStarsArray = Array.from({ length: emptyStars }, (_, i) => (
-    <FaStar key={`empty-${i}`} fill="#E0E0E0" />
-  ));
-
-  const stars = [...filledStars, ...emptyStarsArray];
 
   return (
     <Card boxShadow={"none"} color={"Secondary.300"}>
@@ -50,7 +36,7 @@ function CarReview(props: { data: CarReviewProps }) {
               <HStack gap={2} justify={"space-between"}>
                 <Text flexShrink={0}>{data.job}</Text>
                 <Box display={"flex"} gap={1}>
-                  {stars}
+                  <StarIcon reviewCount={reviewCount} />
                 </Box>
               </HStack>
             </Box>

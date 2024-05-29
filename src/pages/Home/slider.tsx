@@ -6,8 +6,9 @@ import _ from "lodash";
 import { Box, Text } from "@chakra-ui/react";
 interface ISectionProps {
   carData: any;
+  title: string;
 }
-export default function SimpleSlider({ carData }: ISectionProps) {
+export default function SimpleSlider({ carData, title }: ISectionProps) {
   const settings = {
     infinite: true,
     speed: 500,
@@ -22,7 +23,7 @@ export default function SimpleSlider({ carData }: ISectionProps) {
   return (
     <Box className="slider-container mobile-slider">
       <Text color={"Secondary.300"} py={5}>
-        Popular cars
+        {title}
       </Text>
       <Slider {...settings}>
         {_.map(carData, (d: apiResponsePopulars) => (

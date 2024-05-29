@@ -17,6 +17,7 @@ import CarProperties from "../../pages/Home/CarProperties";
 import { useMediaQuery, useSessionStorage } from "@uidotdev/usehooks";
 import { Link, useLocation } from "react-router-dom";
 import { apiResponsePopulars } from "../../types/apiResponse";
+import { scrollToUP } from "../../utility/scrollToUp";
 
 function CardCarContent({ isMobile = false, ...props }) {
   const isSmallScreen = useMediaQuery("only screen and (max-width : 480px)");
@@ -25,12 +26,7 @@ function CardCarContent({ isMobile = false, ...props }) {
 
   const handleRentBtn = (allProps: apiResponsePopulars) => {
     setStorage(allProps);
-    path === "/car-detail" &&
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+    path === "/car-detail" && scrollToUP();
   };
 
   return (
