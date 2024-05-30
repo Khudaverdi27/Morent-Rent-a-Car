@@ -25,7 +25,7 @@ function RentalInfo() {
           fontSize={"14px"}
           color={"Secondary.300"}
         >
-          <Text>Please slect your rental date</Text>
+          <Text>Please select your rental date</Text>
           <Text>Step 2 of 4</Text>
         </HStack>
       </CardHeader>
