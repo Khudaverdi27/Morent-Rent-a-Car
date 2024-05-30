@@ -5,6 +5,7 @@ import Error from "../pages/Error";
 import AuthLayout from "../layouts/AuthLayout";
 import Auth from "../pages/Auth";
 import CarDetail from "../pages/CarDetail/CarDetail";
+import PaymentPage from "../pages/Payment/PaymentPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         path: "car-detail",
         element: <CarDetail />,
+      },
+      {
+        path: "car-detail/payment",
+        element: <PaymentPage />,
       },
       {
         path: "*",

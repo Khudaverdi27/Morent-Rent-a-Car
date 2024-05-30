@@ -4,6 +4,7 @@ import Search from "../../Form/Search";
 import { useGetByPopularQuery } from "../../services/request";
 import ProfileSettings from "./ProfileSettings";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const { isLoading } = useGetByPopularQuery("banner");
@@ -12,6 +13,8 @@ function Navbar() {
   const showSettings = () => {
     setShow(!show);
   };
+
+  const path = useLocation().pathname;
 
   return (
     <Flex
@@ -45,7 +48,7 @@ function Navbar() {
         )}
         <Spacer />
 
-        <Search show={show} />
+        {path !== "/car-detail/payment" && <Search show={show} />}
       </HStack>
       <Spacer />
       <ProfileSettings

@@ -95,7 +95,7 @@ function CardDetailInfo() {
 
         <Spacer />
 
-        <Link to={"#"}>
+        <Link to={"payment"}>
           <Button
             size={{ base: "sm", sm: "md" }}
             alignSelf={"flex-end"}

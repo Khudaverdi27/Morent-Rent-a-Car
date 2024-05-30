@@ -8,11 +8,19 @@
   top: 0;
   right: 0;
 }
-
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.billingCalendar {
+  background-color: #edf2f7;
+  padding: 8px;
+  border-radius: 8px;
+}
 .select--calendar {
   width: 90px;
   font-size: 12px;
   outline: none;
+  background-color: transparent;
 }
 .select--calendar::placeholder {
   color: #90a3bf;
