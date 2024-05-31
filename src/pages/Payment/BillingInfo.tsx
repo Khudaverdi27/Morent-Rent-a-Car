@@ -20,7 +20,7 @@ export interface IFormProps {
 
 function BillingInfo({ register, errors }: IFormProps) {
   return (
-    <Card variant={"unstyled"} p={3}>
+    <Card variant={"unstyled"} p={3} ml={{ base: 4, md: 0 }}>
       <CardHeader>
         <Heading size={"md"}>Billing Info</Heading>
         <HStack
@@ -33,7 +33,11 @@ function BillingInfo({ register, errors }: IFormProps) {
           <Text>Step 1 of 4</Text>
         </HStack>
       </CardHeader>
-      <CardBody display={"flex"} gap={3}>
+      <CardBody
+        display={"flex"}
+        gap={3}
+        flexWrap={{ base: "wrap", lg: "nowrap" }}
+      >
         <Stack spacing={3} w={"100%"}>
           <Box>
             <FormLabel fontWeight={"600"} fontSize={"15px"}>

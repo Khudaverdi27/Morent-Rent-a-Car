@@ -16,7 +16,7 @@ import SelectBoxTitle from "../Home/SelectBox-title";
 
 function RentalInfo() {
   return (
-    <Card variant={"unstyled"} p={3}>
+    <Card variant={"unstyled"} p={3} ml={{ base: 4, md: 0 }}>
       <CardHeader>
         <Heading size={"md"}>Rental Info</Heading>
         <HStack
@@ -31,7 +31,7 @@ function RentalInfo() {
       </CardHeader>
       <CardBody>
         <SelectBoxTitle>Pick - Up</SelectBoxTitle>
-        <Box display={"flex"} gap={3}>
+        <Box display={"flex"} gap={3} flexWrap={{ base: "wrap", md: "nowrap" }}>
           <Stack spacing={3} w={"100%"}>
             <Box>
               <SelectLocations variant="filled" />
@@ -47,7 +47,7 @@ function RentalInfo() {
           </Stack>
         </Box>
         <SelectBoxTitle>Drop-off</SelectBoxTitle>
-        <Box display={"flex"} gap={3}>
+        <Box display={"flex"} gap={3} flexWrap={{ base: "wrap", lg: "nowrap" }}>
           <Stack spacing={3} w={"100%"}>
             <Box>
               <SelectLocations variant="filled" />

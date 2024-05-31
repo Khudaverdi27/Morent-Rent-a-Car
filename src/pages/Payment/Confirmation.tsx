@@ -14,7 +14,7 @@ import {
 import check from "../../assets/img/check.png";
 function Confirmation() {
   return (
-    <Card variant={"unstyled"} p={3}>
+    <Card variant={"unstyled"} p={3} ml={{ base: 4, md: 0 }}>
       <CardHeader>
         <Heading size={"md"}>Confirmation</Heading>
         <HStack

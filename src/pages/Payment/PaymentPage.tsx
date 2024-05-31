@@ -13,9 +13,8 @@ function PaymentPage() {
       <Box flex={{ sm: 1 }}>
         <PaymentLeftSide />
       </Box>
-      <Box>
-        <RentalSummary />
-      </Box>
+
+      <RentalSummary />
     </Flex>
   );
 }

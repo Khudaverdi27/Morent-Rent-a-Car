@@ -22,10 +22,10 @@ function RentalSummary() {
   const tax = +((storage.price * 18) / 100).toFixed(1);
 
   return (
-    <Card variant={"outlined"} maxW={"470px"}>
+    <Card variant={"outlined"} w={{ base: "auto", sm: "100%", md: "auto" }}>
       <CardHeader>
         <Heading size="md">Rental Summary</Heading>
-        <Text pt="2" fontSize="sm" color={"Secondary.300"}>
+        <Text pt="2" fontSize="sm" color={"Secondary.300"} maxW={"410px"}>
           Prices may change depending on the length of the rental and the price
           of your rental car.
         </Text>
@@ -37,14 +37,14 @@ function RentalSummary() {
             <Box
               w={{ base: "82px", sm: "132px" }}
               h={{ base: "68px", sm: "108px" }}
-              bgColor={"Primary.500"}
+              bgColor={"Information.200"}
               borderRadius={"8px"}
             >
               <Image
                 w={"100%"}
                 h={"100%"}
                 objectFit={"contain"}
-                src={"../../../public/" + storage.img.main}
+                src={"/" + storage.img.main}
               />
             </Box>
             <Box>

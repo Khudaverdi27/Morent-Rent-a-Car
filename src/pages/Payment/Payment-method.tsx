@@ -19,7 +19,7 @@ import paypal from "../../assets/img/PayPal.png";
 import bitcoin from "../../assets/img/Bitcoin.png";
 function PaymentMethod({ register, errors }: IFormProps) {
   return (
-    <Card variant={"outlined"}>
+    <Card variant={"outlined"} ml={{ base: 4, md: 0 }}>
       <CardHeader>
         <Heading size={"md"}>Payment Method</Heading>
         <HStack
