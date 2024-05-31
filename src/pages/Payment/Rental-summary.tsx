@@ -44,7 +44,7 @@ function RentalSummary() {
                 w={"100%"}
                 h={"100%"}
                 objectFit={"contain"}
-                src={storage.img.main}
+                src={"../../../public/" + storage.img.main}
               />
             </Box>
             <Box>
