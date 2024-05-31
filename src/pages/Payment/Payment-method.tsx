@@ -40,7 +40,11 @@ function PaymentMethod({ register, errors }: IFormProps) {
               <Radio value="3">Credit Card</Radio>
               <Image src={visa} />
             </HStack>
-            <Box display={"flex"} gap={3}>
+            <Box
+              display={"flex"}
+              gap={3}
+              flexWrap={{ base: "wrap", lg: "nowrap" }}
+            >
               <Stack spacing={3} w={"100%"}>
                 <Box>
                   <FormLabel fontWeight={"600"} fontSize={"15px"}>
