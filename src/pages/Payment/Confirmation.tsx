@@ -31,13 +31,13 @@ function Confirmation() {
       </CardHeader>
       <CardBody gap={3}>
         <Stack spacing={5}>
-          <Box borderRadius={"8px"} bgColor={"#F6F7F9"} py={3} px={7}>
+          <Box borderRadius={"8px"} bgColor={"#F6F7F9"} p={3}>
             <Checkbox w={"100%"} colorScheme="blue">
               I agree with sending an Marketing and newsletter emails. No spam,
               promissed!
             </Checkbox>
           </Box>
-          <Box borderRadius={"8px"} bgColor={"#F6F7F9"} py={3} px={7}>
+          <Box borderRadius={"8px"} bgColor={"#F6F7F9"} p={3}>
             <Checkbox w={"100%"} colorScheme="blue">
               I agree with our terms and conditions and privacy policy.
             </Checkbox>
