@@ -7,7 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useAppDispatch } from "../../Redux/hooks/reduxhook";
-import { addData } from "../../Redux/features/slice";
+import { addData } from "../../Redux/features/filterSlice";
 
 interface ICheckboxProps {
   groupedCars: { [key: string]: any[] };

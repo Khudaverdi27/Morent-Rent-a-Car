@@ -18,7 +18,7 @@ import _ from "lodash";
 import { apiResponsePopulars } from "../../types/apiResponse";
 import Categories from "./Categories";
 import { useAppDispatch } from "../../Redux/hooks/reduxhook";
-import { addData } from "../../Redux/features/slice";
+import { addData } from "../../Redux/features/filterSlice";
 
 function CategoryContent() {
   const { data: popularCarsData } = useGetByPopularQuery("popularCars");

@@ -10,7 +10,7 @@ import _ from "lodash";
 import CategoryContent from "../components/Categories/CategoryContent";
 
 function MainLayout() {
-  const isOpen = useAppSelector((state) => state.click.value);
+  const isOpen = useAppSelector((state) => state.openCategory.value);
   const isMobile = useMediaQuery("only screen and (max-width : 780px)");
   const path = useLocation().pathname;
 

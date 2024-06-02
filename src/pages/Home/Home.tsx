@@ -9,9 +9,10 @@ import { useEffect, useState } from "react";
 import SimpleSlider from "./slider";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useSelector } from "react-redux";
-import { dataArray } from "../../Redux/features/slice";
+
 import _ from "lodash";
 import { apiResponsePopulars } from "../../types/apiResponse";
+import { dataArray } from "../../Redux/features/filterSlice";
 
 function Home() {
   const { data: popularCarsData, isLoading: popularCarsLoading } =

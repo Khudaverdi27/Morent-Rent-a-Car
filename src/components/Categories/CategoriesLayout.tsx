@@ -6,7 +6,7 @@ import { PropsWithChildren } from "react";
 const MotionBox = motion(Box);
 
 function CategoriesLayout({ children }: PropsWithChildren) {
-  const isOpen = useAppSelector((state) => state.click.value);
+  const isOpen = useAppSelector((state) => state.openCategory.value);
 
   return (
     <MotionBox

@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { carApi } from "../services/request";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import openCategoryReducer from "./features/slice";
+import filteredByCategoryReducer from "./features/filterSlice";
 
 export const store = configureStore({
   reducer: {
     [carApi.reducerPath]: carApi.reducer,
-    click: openCategoryReducer,
+    openCategory: openCategoryReducer,
+    filteredCategory: filteredByCategoryReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(carApi.middleware),
