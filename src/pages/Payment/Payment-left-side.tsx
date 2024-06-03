@@ -14,6 +14,7 @@ export type Inputs = {
   cardNumber: number;
   exDate: number;
   cvc: number;
+  payMethod: string;
 };
 
 function PaymentLeftSide() {

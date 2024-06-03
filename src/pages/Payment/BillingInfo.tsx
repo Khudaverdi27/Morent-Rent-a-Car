@@ -20,7 +20,7 @@ export interface IFormProps {
 
 function BillingInfo({ register, errors }: IFormProps) {
   return (
-    <Card variant={"unstyled"} p={3} ml={{ base: 4, md: 0 }}>
+    <Card variant={"unstyled"} px={3} py={6} ml={{ base: 4, md: 0 }}>
       <CardHeader>
         <Heading size={"md"}>Billing Info</Heading>
         <HStack
@@ -39,7 +39,7 @@ function BillingInfo({ register, errors }: IFormProps) {
         flexWrap={{ base: "wrap", lg: "nowrap" }}
       >
         <Stack spacing={3} w={"100%"}>
-          <Box>
+          <Box position="relative">
             <FormLabel fontWeight={"600"} fontSize={"15px"}>
               Name
             </FormLabel>
@@ -51,12 +51,19 @@ function BillingInfo({ register, errors }: IFormProps) {
               size="md"
             />
             {errors.name && (
-              <Box as="span" fontSize={"14px"} color={"Error.500"}>
+              <Box
+                position="absolute"
+                bottom="-5"
+                left="0"
+                as="span"
+                fontSize={"14px"}
+                color={"Error.500"}
+              >
                 Name is required.
               </Box>
             )}
           </Box>
-          <Box>
+          <Box position="relative" mt={2}>
             <FormLabel fontWeight={"600"} fontSize={"15px"}>
               Phone Number
             </FormLabel>
@@ -69,14 +76,21 @@ function BillingInfo({ register, errors }: IFormProps) {
               size="md"
             />
             {errors.number && (
-              <Box as="span" fontSize={"14px"} color={"Error.500"}>
+              <Box
+                fontSize={"14px"}
+                color={"Error.500"}
+                position="absolute"
+                bottom="-5"
+                left="0"
+                as="span"
+              >
                 Phone number is required.
               </Box>
             )}
           </Box>
         </Stack>
         <Stack spacing={3} w={"100%"}>
-          <Box>
+          <Box pos={"relative"}>
             <FormLabel fontWeight={"600"} fontSize={"15px"}>
               Address
             </FormLabel>
@@ -89,12 +103,19 @@ function BillingInfo({ register, errors }: IFormProps) {
               size="md"
             />
             {errors.address && (
-              <Box as="span" fontSize={"14px"} color={"Error.500"}>
+              <Box
+                position="absolute"
+                bottom="-5"
+                left="0"
+                as="span"
+                fontSize={"14px"}
+                color={"Error.500"}
+              >
                 Address is required.
               </Box>
             )}
           </Box>
-          <Box>
+          <Box position="relative" mt={2}>
             <FormLabel fontWeight={"600"} fontSize={"15px"}>
               Town/City
             </FormLabel>
@@ -106,7 +127,13 @@ function BillingInfo({ register, errors }: IFormProps) {
               size="md"
             />
             {errors.city && (
-              <Box as="span" fontSize={"14px"} color={"Error.500"}>
+              <Box
+                fontSize={"14px"}
+                color={"Error.500"}
+                position="absolute"
+                bottom="-5"
+                left="0"
+              >
                 Town or city is required.
               </Box>
             )}
