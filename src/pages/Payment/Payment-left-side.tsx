@@ -1,27 +1,10 @@
 import { Stack, FormControl } from "@chakra-ui/react";
 import BillingInfo from "./BillingInfo";
-import { useForm, SubmitHandler, Control, FieldValues } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import RentalInfo from "./RentalInfo";
 import PaymentMethod from "./Payment-method";
 import Confirmation from "./Confirmation";
-
-export type Inputs = {
-  name: string;
-  number: number;
-  address: string;
-  city: string;
-  holder: string;
-  cardNumber: number;
-  exDate: number;
-  cvc: number;
-  payMethod: string;
-  pickUp: string;
-  dropOff: string;
-  pickTime: string;
-  dropTime: string;
-  pickDate: string;
-  dropDate: string;
-};
+import { Inputs } from "../../types/Inputs";
 
 function PaymentLeftSide() {
   const {

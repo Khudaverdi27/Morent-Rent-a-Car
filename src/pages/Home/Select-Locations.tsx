@@ -6,7 +6,7 @@ import {
   FieldValues,
   UseFormRegister,
 } from "react-hook-form";
-import { Inputs } from "../Payment/Payment-left-side";
+import { Inputs } from "../../types/Inputs";
 
 type IPartialSelectProps = {
   width: number;

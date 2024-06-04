@@ -11,7 +11,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
-import { Inputs } from "./Payment-left-side";
+import { Inputs } from "../../types/Inputs";
 
 export interface IFormProps {
   register: UseFormRegister<Inputs>;
