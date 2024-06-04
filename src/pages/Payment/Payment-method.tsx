@@ -19,7 +19,7 @@ import paypal from "../../assets/img/PayPal.png";
 import bitcoin from "../../assets/img/Bitcoin.png";
 import { useState } from "react";
 function PaymentMethod({ register, errors }: IFormProps) {
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState("3");
 
   return (
     <Card variant={"outlined"} ml={{ base: 4, md: 0 }}>
@@ -40,7 +40,7 @@ function PaymentMethod({ register, errors }: IFormProps) {
         <RadioGroup onChange={setValue} value={value}>
           <Stack p={6} borderRadius={"8px"} bgColor={"#F6F7F9"}>
             <HStack justify={"space-between"}>
-              <Radio {...register("payMethod")} name="payment" value="3">
+              <Radio name="payment" value="3">
                 Credit Card
               </Radio>
               <Image src={visa} />
@@ -56,18 +56,27 @@ function PaymentMethod({ register, errors }: IFormProps) {
                     Card Number
                   </FormLabel>
                   <Input
-                    {...register("cardNumber", { required: true })}
+                    {...register("cardNumber", {
+                      required: " Card Number is required",
+                    })}
                     variant="outlined"
                     type="tel"
                     placeholder="Card Number"
                     _placeholder={{ fontSize: "12px" }}
                     size="md"
                   />
-                  {errors.cardNumber && value == "3" && (
-                    <Box as="span" fontSize={"14px"} color={"Error.500"}>
-                      Card Number is required.
-                    </Box>
-                  )}
+                  {errors.cardNumber &&
+                    typeof errors.cardNumber.message === "string" &&
+                    value == "3" && (
+                      <Text
+                        role="alert"
+                        as="span"
+                        fontSize={"14px"}
+                        color={"Error.500"}
+                      >
+                        {errors.cardNumber.message}
+                      </Text>
+                    )}
                 </Box>
 
                 <Box>
@@ -75,18 +84,27 @@ function PaymentMethod({ register, errors }: IFormProps) {
                     Card Holder
                   </FormLabel>
                   <Input
-                    {...register("holder", { required: true })}
+                    {...register("holder", {
+                      required: "  Card holder is required",
+                    })}
                     isRequired={true}
                     variant="outlined"
                     placeholder="Card holder"
                     _placeholder={{ fontSize: "12px" }}
                     size="md"
                   />
-                  {errors.holder && value == "3" && (
-                    <Box as="span" fontSize={"14px"} color={"Error.500"}>
-                      Card holder is required.
-                    </Box>
-                  )}
+                  {errors.holder &&
+                    typeof errors.holder.message === "string" &&
+                    value == "3" && (
+                      <Text
+                        role="alert"
+                        as="span"
+                        fontSize={"14px"}
+                        color={"Error.500"}
+                      >
+                        {errors.holder.message}
+                      </Text>
+                    )}
                 </Box>
               </Stack>
               <Stack spacing={3} w={"100%"}>
@@ -95,35 +113,51 @@ function PaymentMethod({ register, errors }: IFormProps) {
                     Expration Date
                   </FormLabel>
                   <Input
-                    {...register("exDate", { required: true })}
+                    {...register("exDate", {
+                      required: "Expration Date is required",
+                    })}
                     variant="outlined"
                     type="tel"
                     placeholder="Expration Date"
                     _placeholder={{ fontSize: "12px" }}
                     size="md"
                   />
-                  {errors.exDate && value == "3" && (
-                    <Box as="span" fontSize={"14px"} color={"Error.500"}>
-                      Expration Date is required.
-                    </Box>
-                  )}
+                  {errors.exDate &&
+                    typeof errors.exDate.message === "string" &&
+                    value == "3" && (
+                      <Text
+                        role="alert"
+                        as="span"
+                        fontSize={"14px"}
+                        color={"Error.500"}
+                      >
+                        {errors.exDate.message}
+                      </Text>
+                    )}
                 </Box>
                 <Box>
                   <FormLabel fontWeight={"600"} fontSize={"15px"}>
                     CVC
                   </FormLabel>
                   <Input
-                    {...register("cvc", { required: true })}
+                    {...register("cvc", { required: "CVC is required" })}
                     variant="outlined"
                     placeholder="CVC"
                     _placeholder={{ fontSize: "12px" }}
                     size="md"
                   />
-                  {errors.cvc && value == "3" && (
-                    <Box as="span" fontSize={"14px"} color={"Error.500"}>
-                      CVC is required.
-                    </Box>
-                  )}
+                  {errors.cvc &&
+                    typeof errors.cvc.message === "string" &&
+                    value == "3" && (
+                      <Text
+                        role="alert"
+                        as="span"
+                        fontSize={"14px"}
+                        color={"Error.500"}
+                      >
+                        {errors.cvc.message}
+                      </Text>
+                    )}
                 </Box>
               </Stack>
             </Box>
@@ -139,12 +173,7 @@ function PaymentMethod({ register, errors }: IFormProps) {
               bgColor={"#F6F7F9"}
               alignItems={"center"}
             >
-              <Radio
-                {...register("payMethod")}
-                name="payment"
-                w="100%"
-                value="1"
-              >
+              <Radio name="payment" w="100%" value="1">
                 <Text>PayPal</Text>
               </Radio>
               <Image
@@ -164,12 +193,7 @@ function PaymentMethod({ register, errors }: IFormProps) {
               bgColor={"#F6F7F9"}
               alignItems={"center"}
             >
-              <Radio
-                {...register("payMethod")}
-                name="payment"
-                w="100%"
-                value="2"
-              >
+              <Radio name="payment" w="100%" value="2">
                 <Text>Bitcoin</Text>
               </Radio>
               <Image
@@ -181,11 +205,6 @@ function PaymentMethod({ register, errors }: IFormProps) {
             </Box>
           </Stack>
         </RadioGroup>
-        {errors.payMethod && (
-          <Box as="span" fontSize={"14px"} color={"Error.500"}>
-            Please select payment method.
-          </Box>
-        )}
       </CardBody>
     </Card>
   );

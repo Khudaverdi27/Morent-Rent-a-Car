@@ -1,15 +1,38 @@
-import { Select, Skeleton } from "@chakra-ui/react";
+import { Select, Skeleton, Text } from "@chakra-ui/react";
 import SelectOptions from "./SelectBox-options";
+import {
+  Control,
+  FieldErrors,
+  FieldValues,
+  UseFormRegister,
+} from "react-hook-form";
+import { Inputs } from "../Payment/Payment-left-side";
 
 type IPartialSelectProps = {
   width: number;
   isLoading: boolean;
   variant: string;
+  registerName: keyof Inputs;
+  register: UseFormRegister<Inputs>;
+  errors: FieldErrors<Inputs>;
+  control: Control<FieldValues>;
 };
 
-export type ISelectProps = Partial<IPartialSelectProps>;
+export type ISelectProps = Omit<
+  Partial<IPartialSelectProps>,
+  "registerName"
+> & {
+  registerName: keyof Inputs;
+};
 
-function SelectLocations({ width, isLoading, variant }: ISelectProps) {
+function SelectLocations({
+  width,
+  isLoading,
+  variant,
+  register,
+  errors,
+  registerName,
+}: ISelectProps) {
   return (
     <SelectOptions
       title={
@@ -31,6 +54,9 @@ function SelectLocations({ width, isLoading, variant }: ISelectProps) {
         <Skeleton mt={"5px"} borderRadius={"10px"} w={width} height="16px" />
       ) : (
         <Select
+          {...(register
+            ? register(registerName, { validate: (value) => value !== "0" })
+            : {})}
           w={"100%"}
           cursor={"pointer"}
           variant={variant || "unstyled"}
@@ -38,10 +64,16 @@ function SelectLocations({ width, isLoading, variant }: ISelectProps) {
           color="Secondary.300"
           placeholder="City"
         >
-          <option value="option1">London</option>
-          <option value="option2">Istanbul</option>
-          <option value="option3">Baku</option>
+          <option value="">Select a city</option>
+          <option value="London">London</option>
+          <option value="Istanbul">Istanbul</option>
+          <option value="Baku">Baku</option>
         </Select>
+      )}
+      {errors && errors[registerName] && (
+        <Text role="alert" as="span" fontSize={"14px"} color={"Error.500"}>
+          {errors[registerName]?.message}
+        </Text>
       )}
     </SelectOptions>
   );

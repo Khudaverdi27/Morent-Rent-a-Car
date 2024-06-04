@@ -15,7 +15,7 @@ import { Inputs } from "./Payment-left-side";
 
 export interface IFormProps {
   register: UseFormRegister<Inputs>;
-  errors: FieldErrors;
+  errors: FieldErrors<Inputs>;
 }
 
 function BillingInfo({ register, errors }: IFormProps) {
@@ -44,14 +44,15 @@ function BillingInfo({ register, errors }: IFormProps) {
               Name
             </FormLabel>
             <Input
-              {...register("name", { required: true })}
+              {...register("name", { required: "Name is required" })}
               variant="filled"
               placeholder="Your name"
               _placeholder={{ fontSize: "12px" }}
               size="md"
             />
-            {errors.name && (
-              <Box
+            {errors.name && typeof errors.name.message === "string" && (
+              <Text
+                role="alert"
                 position="absolute"
                 bottom="-5"
                 left="0"
@@ -59,8 +60,8 @@ function BillingInfo({ register, errors }: IFormProps) {
                 fontSize={"14px"}
                 color={"Error.500"}
               >
-                Name is required.
-              </Box>
+                {errors.name.message}
+              </Text>
             )}
           </Box>
           <Box position="relative" mt={2}>
@@ -68,24 +69,25 @@ function BillingInfo({ register, errors }: IFormProps) {
               Phone Number
             </FormLabel>
             <Input
-              {...register("number", { required: true })}
+              {...register("number", { required: "Number is required" })}
               variant="filled"
               type="tel"
               placeholder="Phone number"
               _placeholder={{ fontSize: "12px" }}
               size="md"
             />
-            {errors.number && (
-              <Box
-                fontSize={"14px"}
-                color={"Error.500"}
+            {errors.number && typeof errors.number.message === "string" && (
+              <Text
+                role="alert"
                 position="absolute"
                 bottom="-5"
                 left="0"
                 as="span"
+                fontSize={"14px"}
+                color={"Error.500"}
               >
-                Phone number is required.
-              </Box>
+                {errors.number.message}
+              </Text>
             )}
           </Box>
         </Stack>
@@ -95,15 +97,16 @@ function BillingInfo({ register, errors }: IFormProps) {
               Address
             </FormLabel>
             <Input
-              {...register("address", { required: true })}
+              {...register("address", { required: "Address is required" })}
               isRequired={true}
               variant="filled"
               placeholder="Address"
               _placeholder={{ fontSize: "12px" }}
               size="md"
             />
-            {errors.address && (
-              <Box
+            {errors.address && typeof errors.address.message === "string" && (
+              <Text
+                role="alert"
                 position="absolute"
                 bottom="-5"
                 left="0"
@@ -111,8 +114,8 @@ function BillingInfo({ register, errors }: IFormProps) {
                 fontSize={"14px"}
                 color={"Error.500"}
               >
-                Address is required.
-              </Box>
+                {errors.address.message}
+              </Text>
             )}
           </Box>
           <Box position="relative" mt={2}>
@@ -120,22 +123,24 @@ function BillingInfo({ register, errors }: IFormProps) {
               Town/City
             </FormLabel>
             <Input
-              {...register("city", { required: true })}
+              {...register("city", { required: "Town or city is required" })}
               variant="filled"
               placeholder="Town or city"
               _placeholder={{ fontSize: "12px" }}
               size="md"
             />
-            {errors.city && (
-              <Box
-                fontSize={"14px"}
-                color={"Error.500"}
+            {errors.city && typeof errors.city.message === "string" && (
+              <Text
+                role="alert"
                 position="absolute"
                 bottom="-5"
                 left="0"
+                as="span"
+                fontSize={"14px"}
+                color={"Error.500"}
               >
-                Town or city is required.
-              </Box>
+                {errors.city.message}
+              </Text>
             )}
           </Box>
         </Stack>

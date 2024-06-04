@@ -13,8 +13,9 @@ import {
   Box,
 } from "@chakra-ui/react";
 import SelectBoxTitle from "../Home/SelectBox-title";
+import { IFormProps } from "./BillingInfo";
 
-function RentalInfo() {
+function RentalInfo({ register, errors }: IFormProps) {
   return (
     <Card variant={"unstyled"} p={3} ml={{ base: 4, md: 0 }}>
       <CardHeader>
@@ -34,15 +35,30 @@ function RentalInfo() {
         <Box display={"flex"} gap={3} flexWrap={{ base: "wrap", md: "nowrap" }}>
           <Stack spacing={3} w={"100%"}>
             <Box>
-              <SelectLocations variant="filled" />
+              <SelectLocations
+                variant="filled"
+                register={register}
+                errors={errors}
+                registerName={"pickUp"}
+              />
             </Box>
             <Box>
-              <SelectTime variant="filled" />
+              <SelectTime
+                variant="filled"
+                register={register}
+                errors={errors}
+                registerName={"pickTime"}
+              />
             </Box>
           </Stack>
           <Stack spacing={3} w={"100%"}>
             <Box>
-              <SelectDate variant={"billingCalendar"} />
+              <SelectDate
+                variant={"billingCalendar"}
+                register={register}
+                errors={errors}
+                registerName={"dropTime"}
+              />
             </Box>
           </Stack>
         </Box>
@@ -50,15 +66,30 @@ function RentalInfo() {
         <Box display={"flex"} gap={3} flexWrap={{ base: "wrap", lg: "nowrap" }}>
           <Stack spacing={3} w={"100%"}>
             <Box>
-              <SelectLocations variant="filled" />
+              <SelectLocations
+                variant="filled"
+                register={register}
+                errors={errors}
+                registerName={"dropOff"}
+              />
             </Box>
             <Box>
-              <SelectTime variant="filled" />
+              <SelectTime
+                variant="filled"
+                register={register}
+                errors={errors}
+                registerName={"dropOff"}
+              />
             </Box>
           </Stack>
           <Stack spacing={3} w={"100%"}>
             <Box>
-              <SelectDate variant={"billingCalendar"} />
+              <SelectDate
+                variant={"billingCalendar"}
+                register={register}
+                errors={errors}
+                registerName={"dropOff"}
+              />
             </Box>
           </Stack>
         </Box>

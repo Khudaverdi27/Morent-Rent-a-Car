@@ -1,8 +1,15 @@
-import { Select, Skeleton } from "@chakra-ui/react";
+import { Select, Skeleton, Text } from "@chakra-ui/react";
 import SelectOptions from "./SelectBox-options";
 import { ISelectProps } from "./Select-Locations";
 
-function SelectTime({ width, isLoading, variant }: ISelectProps) {
+function SelectTime({
+  width,
+  isLoading,
+  variant,
+  register,
+  errors,
+  registerName,
+}: ISelectProps) {
   return (
     <SelectOptions
       title={
@@ -24,6 +31,9 @@ function SelectTime({ width, isLoading, variant }: ISelectProps) {
         <Skeleton mt={"5px"} borderRadius={"10px"} w={width} height="16px" />
       ) : (
         <Select
+          {...(register
+            ? register(registerName, { validate: (value) => value !== "0" })
+            : {})}
           mr={5}
           cursor={"pointer"}
           variant={variant || "unstyled"}
@@ -31,10 +41,15 @@ function SelectTime({ width, isLoading, variant }: ISelectProps) {
           color="Secondary.300"
           placeholder="Time"
         >
-          <option value="1012">10:00</option>
-          <option value="1216">12:00</option>
-          <option value="1620">16:00</option>
+          <option value="10:12">10:00</option>
+          <option value="12:16">12:00</option>
+          <option value="16:20">16:00</option>
         </Select>
+      )}
+      {errors && errors[registerName] && (
+        <Text role="alert" as="span" fontSize={"14px"} color={"Error.500"}>
+          {errors[registerName]?.message}
+        </Text>
       )}
     </SelectOptions>
   );
