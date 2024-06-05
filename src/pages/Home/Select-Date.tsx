@@ -1,13 +1,22 @@
 import { HStack, Skeleton } from "@chakra-ui/react";
-import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { RiArrowDownSLine } from "react-icons/ri";
 import SelectOptions from "./SelectBox-options";
 import { ISelectProps } from "./Select-Locations";
 
-function SelectDate({ width, isLoading, variant }: ISelectProps) {
-  const [startDate, setStartDate] = useState<any>("");
+interface ISelectDateProps extends ISelectProps {
+  date: Date | null;
+  setDate: (date: Date | null) => void;
+}
+
+function SelectDate({
+  width,
+  isLoading,
+  variant,
+  date,
+  setDate,
+}: ISelectDateProps) {
   return (
     <SelectOptions
       title={
@@ -30,9 +39,9 @@ function SelectDate({ width, isLoading, variant }: ISelectProps) {
       ) : (
         <HStack className={`${variant || ""}`}>
           <DatePicker
-            selected={startDate}
+            selected={date}
             placeholderText="Select your date"
-            onChange={(date) => setStartDate(date)}
+            onChange={(date) => setDate(date)}
             className={"select--calendar"}
           />
           <RiArrowDownSLine

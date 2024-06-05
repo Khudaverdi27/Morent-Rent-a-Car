@@ -14,8 +14,29 @@ import {
 } from "@chakra-ui/react";
 import SelectBoxTitle from "../Home/SelectBox-title";
 import { IFormProps } from "./BillingInfo";
+import { useState, useEffect } from "react";
+
+import {
+  updateDropDate,
+  updatePickDate,
+} from "../../Redux/features/rentedInfo";
+import { useDispatch } from "react-redux";
 
 function RentalInfo({ register, errors }: IFormProps) {
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (startDate && endDate) {
+      const start = startDate.toISOString().split("T")[0];
+      const end = endDate.toISOString().split("T")[0];
+      dispatch(updatePickDate(start));
+      dispatch(updateDropDate(end));
+    }
+  }, [startDate, dispatch, endDate]);
+
   return (
     <Card variant={"unstyled"} p={3} ml={{ base: 4, md: 0 }}>
       <CardHeader>
@@ -58,6 +79,8 @@ function RentalInfo({ register, errors }: IFormProps) {
                 register={register}
                 errors={errors}
                 registerName={"dropTime"}
+                date={startDate}
+                setDate={setStartDate}
               />
             </Box>
           </Stack>
@@ -76,7 +99,6 @@ function RentalInfo({ register, errors }: IFormProps) {
             <Box>
               <SelectTime
                 variant="filled"
-                register={register}
                 errors={errors}
                 registerName={"dropOff"}
               />
@@ -86,9 +108,10 @@ function RentalInfo({ register, errors }: IFormProps) {
             <Box>
               <SelectDate
                 variant={"billingCalendar"}
-                register={register}
                 errors={errors}
                 registerName={"dropOff"}
+                date={endDate}
+                setDate={setEndDate}
               />
             </Box>
           </Stack>

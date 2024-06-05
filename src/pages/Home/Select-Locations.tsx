@@ -13,7 +13,7 @@ type IPartialSelectProps = {
   isLoading: boolean;
   variant: string;
   registerName: keyof Inputs;
-  register: UseFormRegister<Inputs>;
+  register?: UseFormRegister<Inputs>;
   errors: FieldErrors<Inputs>;
   control: Control<FieldValues>;
 };
@@ -64,7 +64,6 @@ function SelectLocations({
           color="Secondary.300"
           placeholder="City"
         >
-          <option value="">Select a city</option>
           <option value="London">London</option>
           <option value="Istanbul">Istanbul</option>
           <option value="Baku">Baku</option>
