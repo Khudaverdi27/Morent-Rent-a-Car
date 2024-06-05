@@ -11,11 +11,11 @@ import { Inputs } from "../../types/Inputs";
 type IPartialSelectProps = {
   width: number;
   isLoading: boolean;
-  variant: string;
+  variant?: string;
   registerName: keyof Inputs;
   register?: UseFormRegister<Inputs>;
-  errors: FieldErrors<Inputs>;
-  control: Control<FieldValues>;
+  errors?: FieldErrors<Inputs>;
+  control?: Control<FieldValues>;
 };
 
 export type ISelectProps = Omit<

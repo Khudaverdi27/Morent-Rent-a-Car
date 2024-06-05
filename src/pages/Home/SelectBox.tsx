@@ -11,6 +11,8 @@ import SelectTime from "./Select-Time";
 
 function SelectBox() {
   const [changeSelection, setChangeSelection] = useState<number>(0);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
   const { isLoading } = useGetByNameQuery("banner");
   const isMobile = useMediaQuery("only screen and (max-width : 768px)");
   const width = isMobile ? 95 : 160;
@@ -48,9 +50,23 @@ function SelectBox() {
             <SelectBoxTitle>Pick - Up</SelectBoxTitle>
           )}
           <HStack justify={"space-between"}>
-            <SelectLocations width={width} isLoading={isLoading} />
-            <SelectDate width={width} isLoading={isLoading} />
-            <SelectTime width={width} isLoading={isLoading} />
+            <SelectLocations
+              registerName="pickUp"
+              width={width}
+              isLoading={isLoading}
+            />
+            <SelectDate
+              registerName="pickUp"
+              width={width}
+              isLoading={isLoading}
+              date={startDate}
+              setDate={setStartDate}
+            />
+            <SelectTime
+              registerName="pickUp"
+              width={width}
+              isLoading={isLoading}
+            />
           </HStack>
         </Box>
       </Box>
@@ -88,9 +104,23 @@ function SelectBox() {
             <SelectBoxTitle>Drop-off</SelectBoxTitle>
           )}
           <HStack justify={"space-between"}>
-            <SelectLocations width={width} isLoading={isLoading} />
-            <SelectDate width={width} isLoading={isLoading} />
-            <SelectTime width={width} isLoading={isLoading} />
+            <SelectLocations
+              registerName="pickUp"
+              width={width}
+              isLoading={isLoading}
+            />
+            <SelectDate
+              registerName="pickUp"
+              width={width}
+              isLoading={isLoading}
+              date={endDate}
+              setDate={setEndDate}
+            />
+            <SelectTime
+              registerName="pickUp"
+              width={width}
+              isLoading={isLoading}
+            />
           </HStack>
         </Box>
       </Box>

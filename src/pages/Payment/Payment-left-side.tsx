@@ -8,6 +8,7 @@ import { Inputs } from "../../types/Inputs";
 import { useDispatch } from "react-redux";
 import { saveRentedInfo, selectedCar } from "../../Redux/features/rentedInfo";
 import { useSelector } from "react-redux";
+import { useSessionStorage } from "@uidotdev/usehooks";
 
 function PaymentLeftSide() {
   const {
@@ -18,10 +19,11 @@ function PaymentLeftSide() {
 
   const dispatch = useDispatch();
   const selectedInfo = useSelector(selectedCar);
+  const [, setStorage] = useSessionStorage<{}>("dashboard", {});
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     dispatch(saveRentedInfo(data));
-    console.log(selectedInfo);
+    setStorage(selectedInfo);
   };
 
   return (
