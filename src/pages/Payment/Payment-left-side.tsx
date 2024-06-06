@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { saveRentedInfo, selectedCar } from "../../Redux/features/rentedInfo";
 import { useSelector } from "react-redux";
 import { useSessionStorage } from "@uidotdev/usehooks";
+import { useEffect } from "react";
 
 function PaymentLeftSide() {
   const {
@@ -25,7 +26,9 @@ function PaymentLeftSide() {
     dispatch(saveRentedInfo(data));
     setStorage(selectedInfo);
   };
-
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
   return (
     <FormControl as={"form"} onSubmit={handleSubmit(onSubmit)}>
       <Stack ml={-4} spacing={5}>

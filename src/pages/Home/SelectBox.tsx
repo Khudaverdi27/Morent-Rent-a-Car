@@ -105,19 +105,19 @@ function SelectBox() {
           )}
           <HStack justify={"space-between"}>
             <SelectLocations
-              registerName="pickUp"
+              registerName="dropOff"
               width={width}
               isLoading={isLoading}
             />
             <SelectDate
-              registerName="pickUp"
+              registerName="dropOff"
               width={width}
               isLoading={isLoading}
               date={endDate}
               setDate={setEndDate}
             />
             <SelectTime
-              registerName="pickUp"
+              registerName="dropOff"
               width={width}
               isLoading={isLoading}
             />

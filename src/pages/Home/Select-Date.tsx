@@ -1,4 +1,4 @@
-import { HStack, Skeleton } from "@chakra-ui/react";
+import { HStack, Skeleton, Text } from "@chakra-ui/react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -16,6 +16,9 @@ function SelectDate({
   variant,
   date,
   setDate,
+  registerName,
+  register,
+  errors,
 }: ISelectDateProps) {
   return (
     <SelectOptions
@@ -39,6 +42,11 @@ function SelectDate({
       ) : (
         <HStack className={`${variant || ""}`}>
           <DatePicker
+            {...(register
+              ? register(registerName, {
+                  required: "Date is required",
+                })
+              : {})}
             selected={date}
             placeholderText="Select your date"
             onChange={(date) => setDate(date)}
@@ -54,6 +62,17 @@ function SelectDate({
             }}
           />
         </HStack>
+      )}
+      {errors && errors[registerName] && (
+        <Text
+          role="alert"
+          as="span"
+          fontSize={"14px"}
+          color={"Error.500"}
+          fontWeight={"500"}
+        >
+          {errors[registerName]?.message}
+        </Text>
       )}
     </SelectOptions>
   );

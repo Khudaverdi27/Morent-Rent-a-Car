@@ -39,7 +39,7 @@ function BillingInfo({ register, errors }: IFormProps) {
         flexWrap={{ base: "wrap", lg: "nowrap" }}
       >
         <Stack spacing={3} w={"100%"}>
-          <Box position="relative">
+          <Box position="relative" pt={2}>
             <FormLabel fontWeight={"600"} fontSize={"15px"}>
               Name
             </FormLabel>
@@ -92,7 +92,7 @@ function BillingInfo({ register, errors }: IFormProps) {
           </Box>
         </Stack>
         <Stack spacing={3} w={"100%"}>
-          <Box pos={"relative"}>
+          <Box pos={"relative"} pt={2}>
             <FormLabel fontWeight={"600"} fontSize={"15px"}>
               Address
             </FormLabel>

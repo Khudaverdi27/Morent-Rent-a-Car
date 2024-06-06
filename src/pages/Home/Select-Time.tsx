@@ -32,7 +32,10 @@ function SelectTime({
       ) : (
         <Select
           {...(register
-            ? register(registerName, { validate: (value) => value !== "0" })
+            ? register(registerName, {
+                validate: (value) => value !== "0",
+                required: "Time is required",
+              })
             : {})}
           mr={5}
           cursor={"pointer"}
@@ -47,7 +50,13 @@ function SelectTime({
         </Select>
       )}
       {errors && errors[registerName] && (
-        <Text role="alert" as="span" fontSize={"14px"} color={"Error.500"}>
+        <Text
+          role="alert"
+          as="span"
+          fontSize={"14px"}
+          color={"Error.500"}
+          fontWeight={"500"}
+        >
           {errors[registerName]?.message}
         </Text>
       )}

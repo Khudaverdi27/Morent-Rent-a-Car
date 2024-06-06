@@ -78,7 +78,7 @@ function RentalInfo({ register, errors }: IFormProps) {
                 variant={"billingCalendar"}
                 register={register}
                 errors={errors}
-                registerName={"dropTime"}
+                registerName={"pickDate"}
                 date={startDate}
                 setDate={setStartDate}
               />
@@ -100,7 +100,7 @@ function RentalInfo({ register, errors }: IFormProps) {
               <SelectTime
                 variant="filled"
                 errors={errors}
-                registerName={"dropOff"}
+                registerName={"pickTime"}
               />
             </Box>
           </Stack>
@@ -109,7 +109,8 @@ function RentalInfo({ register, errors }: IFormProps) {
               <SelectDate
                 variant={"billingCalendar"}
                 errors={errors}
-                registerName={"dropOff"}
+                registerName={"dropDate"}
+                register={register}
                 date={endDate}
                 setDate={setEndDate}
               />
