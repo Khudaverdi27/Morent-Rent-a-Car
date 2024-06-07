@@ -9,13 +9,13 @@ interface rentedSlice {
 export const initialState: rentedSlice = {
   rentedCarInfo: {
     name: "",
-    number: 0,
+    number: "",
     address: "",
     city: "",
     holder: "",
-    cardNumber: 0,
-    exDate: 0,
-    cvc: 0,
+    cardNumber: "",
+    exDate: "",
+    cvc: "",
     payMethod: "",
     pickUp: "",
     dropOff: "",
