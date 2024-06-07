@@ -1,17 +1,18 @@
-export type Inputs = {
-  name: string;
-  number: number;
-  address: string;
-  city: string;
-  holder: string;
-  cardNumber: number;
-  exDate: number;
-  cvc: number;
-  payMethod: string;
-  pickUp: string;
-  dropOff: string;
-  pickTime: string;
-  dropTime: string;
-  pickDate: string;
-  dropDate: string;
-};
+export type Inputs = Record<
+  | "name"
+  | "number"
+  | "address"
+  | "city"
+  | "holder"
+  | "cardNumber"
+  | "exDate"
+  | "cvc"
+  | "payMethod"
+  | "pickUp"
+  | "dropOff"
+  | "pickTime"
+  | "dropTime"
+  | "pickDate"
+  | "dropDate",
+  string
+>;

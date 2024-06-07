@@ -10,13 +10,17 @@ import { saveRentedInfo, selectedCar } from "../../Redux/features/rentedInfo";
 import { useSelector } from "react-redux";
 import { useSessionStorage } from "@uidotdev/usehooks";
 import { useEffect } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { paySchema } from "../../validation/paySchema";
 
 function PaymentLeftSide() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({
+    resolver: yupResolver(paySchema),
+  });
 
   const dispatch = useDispatch();
   const selectedInfo = useSelector(selectedCar);

@@ -44,7 +44,7 @@ function BillingInfo({ register, errors }: IFormProps) {
               Name
             </FormLabel>
             <Input
-              {...register("name", { required: "Name is required" })}
+              {...register("name")}
               variant="filled"
               placeholder="Your name"
               _placeholder={{ fontSize: "12px" }}
@@ -69,7 +69,7 @@ function BillingInfo({ register, errors }: IFormProps) {
               Phone Number
             </FormLabel>
             <Input
-              {...register("number", { required: "Number is required" })}
+              {...register("number")}
               variant="filled"
               type="tel"
               placeholder="Phone number"
@@ -97,7 +97,7 @@ function BillingInfo({ register, errors }: IFormProps) {
               Address
             </FormLabel>
             <Input
-              {...register("address", { required: "Address is required" })}
+              {...register("address")}
               isRequired={true}
               variant="filled"
               placeholder="Address"
@@ -123,7 +123,7 @@ function BillingInfo({ register, errors }: IFormProps) {
               Town/City
             </FormLabel>
             <Input
-              {...register("city", { required: "Town or city is required" })}
+              {...register("city")}
               variant="filled"
               placeholder="Town or city"
               _placeholder={{ fontSize: "12px" }}

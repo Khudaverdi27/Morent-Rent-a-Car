@@ -56,9 +56,7 @@ function PaymentMethod({ register, errors }: IFormProps) {
                     Card Number
                   </FormLabel>
                   <Input
-                    {...register("cardNumber", {
-                      required: " Card Number is required",
-                    })}
+                    {...register("cardNumber")}
                     variant="outlined"
                     type="tel"
                     placeholder="Card Number"
@@ -84,9 +82,7 @@ function PaymentMethod({ register, errors }: IFormProps) {
                     Card Holder
                   </FormLabel>
                   <Input
-                    {...register("holder", {
-                      required: "  Card holder is required",
-                    })}
+                    {...register("holder")}
                     isRequired={true}
                     variant="outlined"
                     placeholder="Card holder"
@@ -113,9 +109,7 @@ function PaymentMethod({ register, errors }: IFormProps) {
                     Expration Date
                   </FormLabel>
                   <Input
-                    {...register("exDate", {
-                      required: "Expration Date is required",
-                    })}
+                    {...register("exDate")}
                     variant="outlined"
                     type="tel"
                     placeholder="Expration Date"
@@ -140,7 +134,7 @@ function PaymentMethod({ register, errors }: IFormProps) {
                     CVC
                   </FormLabel>
                   <Input
-                    {...register("cvc", { required: "CVC is required" })}
+                    {...register("cvc")}
                     variant="outlined"
                     placeholder="CVC"
                     _placeholder={{ fontSize: "12px" }}
