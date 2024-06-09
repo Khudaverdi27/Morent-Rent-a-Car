@@ -3,9 +3,9 @@ import Home from "../pages/Home/Home";
 import MainLayout from "../layouts/MainLayout";
 import Error from "../pages/Error";
 import AuthLayout from "../layouts/AuthLayout";
-import Auth from "../pages/Auth";
 import CarDetail from "../pages/CarDetail/CarDetail";
 import PaymentPage from "../pages/Payment/PaymentPage";
+import Auth from "../pages/Auth/Index";
 
 export const router = createBrowserRouter([
   {

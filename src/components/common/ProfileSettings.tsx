@@ -1,9 +1,11 @@
 import { FaHeart } from "react-icons/fa6";
 import { BiSolidBell } from "react-icons/bi";
+import { AiOutlineLogin, AiOutlineUserAdd } from "react-icons/ai";
 import { IoMdSettings } from "react-icons/io";
 import { Avatar, Icon, Stack } from "@chakra-ui/react";
 import IconBtn from "../shared/IconBtn";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery, useSessionStorage } from "@uidotdev/usehooks";
+import { Link } from "react-router-dom";
 
 interface iProfileProps {
   isLoading: boolean;
@@ -13,6 +15,7 @@ interface iProfileProps {
 
 function ProfileSettings({ isLoading, showSettings, show }: iProfileProps) {
   const isMobile = useMediaQuery("only screen and (max-width : 768px)");
+  const [storage] = useSessionStorage<string>("token", "");
 
   return (
     <Stack
@@ -27,26 +30,33 @@ function ProfileSettings({ isLoading, showSettings, show }: iProfileProps) {
           order={isMobile ? 3 : 0}
         >
           <IconBtn>
-            <Icon
-              color={isLoading ? "Primary.300" : ""}
-              as={FaHeart}
-              boxSize={5}
-            />
+            <Link to={storage ? "#" : "/auth/login"}>
+              <Icon
+                color={isLoading ? "Primary.300" : ""}
+                as={storage ? FaHeart : AiOutlineLogin}
+                boxSize={5}
+              />
+            </Link>
           </IconBtn>
+
+          {storage && (
+            <IconBtn>
+              <Icon
+                color={isLoading ? "Primary.300" : ""}
+                className="bell--icon"
+                as={BiSolidBell}
+                boxSize={5}
+              />
+            </IconBtn>
+          )}
           <IconBtn>
-            <Icon
-              color={isLoading ? "Primary.300" : ""}
-              className="bell--icon"
-              as={BiSolidBell}
-              boxSize={5}
-            />
-          </IconBtn>
-          <IconBtn>
-            <Icon
-              color={isLoading ? "Primary.300" : ""}
-              as={IoMdSettings}
-              boxSize={5}
-            />
+            <Link to={storage ? "#" : "/auth/register"}>
+              <Icon
+                color={isLoading ? "Primary.300" : ""}
+                as={storage ? IoMdSettings : AiOutlineUserAdd}
+                boxSize={5}
+              />
+            </Link>
           </IconBtn>
         </Stack>
       )}

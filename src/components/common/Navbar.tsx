@@ -5,13 +5,10 @@ import { useGetByPopularQuery } from "../../services/request";
 import ProfileSettings from "./ProfileSettings";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useSessionStorage } from "@uidotdev/usehooks";
-import LoginModal from "../shared/modal/LoginModal";
-import RegisterModal from "../shared/modal/RegisterModal";
 
 function Navbar() {
   const { isLoading } = useGetByPopularQuery("banner");
-  const [storage] = useSessionStorage<string>("token", "");
+
   const [show, setShow] = useState<boolean>(false);
 
   const showSettings = () => {
@@ -57,18 +54,11 @@ function Navbar() {
         {path !== "/car-detail/payment" && <Search show={show} />}
       </HStack>
       <Spacer />
-      {storage ? (
-        <ProfileSettings
-          showSettings={showSettings}
-          isLoading={isLoading}
-          show={show}
-        />
-      ) : (
-        <HStack w={{ base: "100%", md: "auto" }} gap={2}>
-          <LoginModal isLoading={isLoading} />
-          <RegisterModal isLoading={isLoading} />
-        </HStack>
-      )}
+      <ProfileSettings
+        showSettings={showSettings}
+        isLoading={isLoading}
+        show={show}
+      />
     </Flex>
   );
 }
