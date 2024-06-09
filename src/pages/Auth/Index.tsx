@@ -22,13 +22,18 @@ function Auth() {
       bgGradient="linear(to-t, #48c6ef 0%, #6f86d6 100%)"
       py={8}
       px={10}
-      w={"350px"}
+      w={{ base: "350px", sm: "500px" }}
       top={"50%"}
       transform="translate(-50%, -50%)"
       left={"50%"}
       color={"Primary.600"}
     >
-      <CardHeader textAlign={"center"} fontSize={24}>
+      <CardHeader
+        color={"Primary.100"}
+        fontWeight={600}
+        textAlign={"center"}
+        fontSize={24}
+      >
         Welcome To Morent
       </CardHeader>
       <FormControl>
@@ -40,7 +45,12 @@ function Auth() {
           _placeholder={{ color: "Primary.200" }}
         />
         <FormLabel mt={1}>Email</FormLabel>
-        <Input variant="flushed" type="email" placeholder="Enter email" />
+        <Input
+          variant="flushed"
+          _placeholder={{ color: "Primary.200" }}
+          type="email"
+          placeholder="Enter email"
+        />
         <FormLabel mt={1}>Password</FormLabel>
         <InputGroup>
           <Input
