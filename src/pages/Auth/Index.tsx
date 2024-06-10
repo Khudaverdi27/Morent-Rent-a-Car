@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Card,
   CardHeader,
@@ -8,10 +7,15 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { LoginType, RegisterType } from "../../types/Inputs";
+import { LoginSchema, RegisterSchema } from "../../validation/inputSchema";
 
 function Auth() {
   const [show, setShow] = useState(false);
@@ -19,6 +23,20 @@ function Auth() {
   const handleClick = () => setShow(!show);
   const handleConfrimShow = () => setShowConfrim(!showConfrim);
   const path = useLocation().pathname.includes("register");
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginType | RegisterType>({
+    resolver: yupResolver(path ? RegisterSchema : LoginSchema),
+  });
+
+  const registerErrors = errors as FieldErrors<RegisterType>;
+
+  const onSubmit: SubmitHandler<LoginType> = (data) => {
+    console.log(data);
+  };
 
   return (
     <Card
@@ -40,33 +58,53 @@ function Auth() {
       >
         Welcome To Morent
       </CardHeader>
-      <FormControl>
+      <FormControl as={"form"} onSubmit={handleSubmit(onSubmit)}>
         {path && (
           <>
             <FormLabel>Name Surname</FormLabel>
             <Input
+              {...register("name")}
               variant="flushed"
               type="text"
               placeholder="Enter name and surname"
-              _placeholder={{ color: "Primary.400" }}
+              _placeholder={{ color: "Primary.400", fontSize: "13px" }}
             />
+            {registerErrors.name &&
+              typeof registerErrors.name.message === "string" && (
+                <Text
+                  role="alert"
+                  as="span"
+                  fontSize={"14px"}
+                  color={"Error.500"}
+                >
+                  {registerErrors.name.message}
+                </Text>
+              )}
           </>
         )}
 
         <FormLabel mt={1}>Email</FormLabel>
         <Input
+          {...register("email")}
           variant="flushed"
-          _placeholder={{ color: "Primary.400" }}
+          _placeholder={{ color: "Primary.400", fontSize: "13px" }}
           type="email"
           placeholder="Enter your email"
         />
+        {registerErrors.email &&
+          typeof registerErrors.email.message === "string" && (
+            <Text role="alert" as="span" fontSize={"14px"} color={"Error.500"}>
+              {registerErrors.email.message}
+            </Text>
+          )}
         <FormLabel mt={1}>Password</FormLabel>
         <InputGroup>
           <Input
+            {...register("password")}
             variant="flushed"
             type={show ? "text" : "password"}
             placeholder="Enter your password"
-            _placeholder={{ color: "Primary.400" }}
+            _placeholder={{ color: "Primary.400", fontSize: "13px" }}
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -74,15 +112,22 @@ function Auth() {
             </Button>
           </InputRightElement>
         </InputGroup>
+        {registerErrors.password &&
+          typeof registerErrors.password.message === "string" && (
+            <Text role="alert" as="span" fontSize={"14px"} color={"Error.500"}>
+              {registerErrors.password.message}
+            </Text>
+          )}
         {path && (
           <>
             <FormLabel mt={1}>Confrim password</FormLabel>
             <InputGroup>
               <Input
+                {...register("confirmPassword")}
                 variant="flushed"
-                type={show ? "text" : "Confrim password"}
+                type={showConfrim ? "text" : "password"}
                 placeholder="Enter password again"
-                _placeholder={{ color: "Primary.400" }}
+                _placeholder={{ color: "Primary.400", fontSize: "13px" }}
               />
               <InputRightElement width="4.5rem">
                 <Button h="1.75rem" size="sm" onClick={handleConfrimShow}>
@@ -90,17 +135,30 @@ function Auth() {
                 </Button>
               </InputRightElement>
             </InputGroup>
+            {registerErrors.confirmPassword &&
+              typeof registerErrors.confirmPassword.message === "string" && (
+                <Text
+                  role="alert"
+                  as="span"
+                  fontSize={"14px"}
+                  color={"Error.500"}
+                >
+                  {registerErrors.confirmPassword.message}
+                </Text>
+              )}
           </>
         )}
+        <Button
+          type="submit"
+          bgColor={"Information.400"}
+          color={"Primary.0"}
+          _hover={{ bgColor: "Information.300" }}
+          mt={3}
+          w={"100%"}
+        >
+          {path ? "Register" : "Login"}
+        </Button>
       </FormControl>
-      <Box
-        color="Information.800"
-        fontSize={"14px"}
-        textAlign={"center"}
-        pt={3}
-      >
-        Ease of doing a car rental safely and reliably.
-      </Box>
     </Card>
   );
 }

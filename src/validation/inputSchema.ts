@@ -7,7 +7,7 @@ const numberValidation = (field: string) =>
     .matches(/^\+?[0-9]$/, `${field} must only contain numbers`)
     .required(`${field} ${msj}`);
 
-export const paySchema = yup
+export const inputSchema = yup
   .object({
     name: yup
       .string()
@@ -29,3 +29,43 @@ export const paySchema = yup
     dropDate: yup.string().required(`Drop off date ${msj}`),
   })
   .required();
+
+export const LoginSchema = yup.object({
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+});
+
+export const RegisterSchema = yup.object({
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+  name: yup
+    .string()
+    .required("Name and surname is required")
+    .test(
+      "is-full-name",
+      "Name and surname must be at least 2 characters",
+      (value) => {
+        if (!value) return false;
+        const parts = value.trim().split(" ");
+        return (
+          parts.length === 2 && parts[0].length >= 2 && parts[1].length >= 2
+        );
+      }
+    ),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password")], "Passwords must match")
+    .required("Confirm Password is required"),
+});

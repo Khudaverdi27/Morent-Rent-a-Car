@@ -16,3 +16,10 @@ export type Inputs = Record<
   | "dropDate",
   string
 >;
+
+export type LoginType = Record<"email" | "password", string>;
+
+export type RegisterType = Record<
+  "email" | "password" | "name" | "confirmPassword",
+  string
+>;

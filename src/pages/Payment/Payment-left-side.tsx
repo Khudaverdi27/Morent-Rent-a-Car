@@ -9,9 +9,8 @@ import { useDispatch } from "react-redux";
 import { saveRentedInfo, selectedCar } from "../../Redux/features/rentedInfo";
 import { useSelector } from "react-redux";
 import { useSessionStorage } from "@uidotdev/usehooks";
-import { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { paySchema } from "../../validation/paySchema";
+import { inputSchema } from "../../validation/inputSchema";
 
 function PaymentLeftSide() {
   const {
@@ -19,7 +18,7 @@ function PaymentLeftSide() {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>({
-    resolver: yupResolver(paySchema),
+    resolver: yupResolver(inputSchema),
   });
 
   const dispatch = useDispatch();
@@ -30,9 +29,7 @@ function PaymentLeftSide() {
     dispatch(saveRentedInfo(data));
     setStorage(selectedInfo);
   };
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
+
   return (
     <FormControl as={"form"} onSubmit={handleSubmit(onSubmit)}>
       <Stack ml={-4} spacing={5}>
