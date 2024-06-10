@@ -8,7 +8,7 @@ function AuthLayout() {
       as="main"
       h="100vh"
       backgroundImage={`url(${bgImg})`}
-      backgroundPosition="center"
+      bgSize={"cover"}
       backgroundRepeat="no-repeat"
       pos={"relative"}
     >
