@@ -3,17 +3,29 @@ import { Outlet, useNavigate } from "react-router-dom";
 import bgVideo from "../assets/videos/carBg.mp4";
 import { useSelector } from "react-redux";
 import { authInfo } from "../Redux/features/authSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../components/common/Logo";
 
 function AuthLayout() {
   const authData = useSelector(authInfo);
+  const [isFullScreen, setIsFullScreen] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     if (authData.email || authData.password) {
       navigate("/");
     }
   }, []);
+
+  const handleFullScreenChange = () => {
+    setIsFullScreen(document.fullscreenElement !== null);
+  };
+
+  useEffect(() => {
+    document.addEventListener("fullscreenchange", handleFullScreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullScreenChange);
+    };
+  }, [isFullScreen]);
 
   return (
     <Box as="main" h="100vh" pos={"relative"}>
