@@ -1,14 +1,13 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Outlet, useNavigate } from "react-router-dom";
 import bgVideo from "../assets/videos/carBg.mp4";
 import { useSelector } from "react-redux";
 import { authInfo } from "../Redux/features/authSlice";
-import { useEffect, useState } from "react";
-import Logo from "../components/common/Logo";
+import { useEffect } from "react";
+// import Logo from "../components/common/Logo";
 
 function AuthLayout() {
   const authData = useSelector(authInfo);
-  const [isFullScreen, setIsFullScreen] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     if (authData.email || authData.password) {
@@ -16,20 +15,9 @@ function AuthLayout() {
     }
   }, []);
 
-  const handleFullScreenChange = () => {
-    setIsFullScreen(document.fullscreenElement !== null);
-  };
-
-  useEffect(() => {
-    document.addEventListener("fullscreenchange", handleFullScreenChange);
-    return () => {
-      document.removeEventListener("fullscreenchange", handleFullScreenChange);
-    };
-  }, [isFullScreen]);
-
   return (
     <Box as="main" h="100vh" pos={"relative"}>
-      <Flex
+      {/* <Flex
         px={3}
         py={1}
         zIndex={9}
@@ -40,7 +28,7 @@ function AuthLayout() {
         justify={"space-between"}
       >
         <Logo />
-      </Flex>
+      </Flex> */}
       <video
         autoPlay
         muted
