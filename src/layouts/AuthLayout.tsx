@@ -1,9 +1,10 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Outlet, useNavigate } from "react-router-dom";
-import bgImg from "../assets/img/carBg.mp4";
+import bgVideo from "../assets/videos/carBg.mp4";
 import { useSelector } from "react-redux";
 import { authInfo } from "../Redux/features/authSlice";
 import { useEffect } from "react";
+import Logo from "../components/common/Logo";
 
 function AuthLayout() {
   const authData = useSelector(authInfo);
@@ -16,6 +17,18 @@ function AuthLayout() {
 
   return (
     <Box as="main" h="100vh" pos={"relative"}>
+      <Flex
+        px={3}
+        py={1}
+        zIndex={9}
+        bgColor={"Primary.0"}
+        pos={"absolute"}
+        w={"100%"}
+        alignItems={"center"}
+        justify={"space-between"}
+      >
+        <Logo />
+      </Flex>
       <video
         autoPlay
         muted
@@ -28,7 +41,7 @@ function AuthLayout() {
           objectFit: "cover",
         }}
       >
-        <source src={bgImg} type="video/mp4" />
+        <source src={bgVideo} type="video/mp4" />
       </video>
       <Outlet />
     </Box>

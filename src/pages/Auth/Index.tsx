@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardHeader,
@@ -40,6 +41,7 @@ function Auth() {
 
   return (
     <Card
+      mt={2}
       opacity={0.8}
       pos={"absolute"}
       bgGradient="linear(to-t,  Primary.0 0%, Primary.100 100%)"
@@ -150,6 +152,7 @@ function Auth() {
               )}
           </>
         )}
+        {!path && <Box fontSize={12}>Did you forgot password?</Box>}
         <Button
           type="submit"
           bgColor={"Information.400"}

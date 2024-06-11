@@ -8,6 +8,8 @@ import { useAppSelector } from "../Redux/hooks/reduxhook";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import _ from "lodash";
 import CategoryContent from "../components/Categories/CategoryContent";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function MainLayout() {
   const isOpen = useAppSelector((state) => state.openCategory.value);
@@ -16,6 +18,7 @@ function MainLayout() {
 
   return (
     <Box as={"main"} bg={"Secondary.50"}>
+      <ToastContainer autoClose={2000} />
       <Navbar />
       {!isOpen && path === "/" && <Banner />}
       <Flex>

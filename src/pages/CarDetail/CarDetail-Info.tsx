@@ -19,9 +19,13 @@ import IconBtn from "../../components/shared/IconBtn";
 
 import { useSessionStorage } from "@uidotdev/usehooks";
 import StarIcon from "../../components/shared/StarIcon";
+import { useSelector } from "react-redux";
+import { authInfo } from "../../Redux/features/authSlice";
+import { toast } from "react-toastify";
 
 function CardDetailInfo() {
   const [storage] = useSessionStorage<any>("carToDetail", {});
+  const { email } = useSelector(authInfo);
 
   const reviewCountTotal = storage.review.reduce(
     (acc: any, review: any) => acc + review.reviewCount,
@@ -29,7 +33,10 @@ function CardDetailInfo() {
   );
   const reviewCountAverage = reviewCountTotal / storage.review.length;
   const star = Math.round(reviewCountAverage);
-
+  const notify = () => toast.warning("Please login for continue!");
+  const showMessage = () => {
+    !email && notify();
+  };
   return (
     <Card boxShadow={"none"}>
       <CardHeader>
@@ -95,8 +102,9 @@ function CardDetailInfo() {
 
         <Spacer />
 
-        <Link to={"payment"}>
+        <Link to={email ? "payment" : "/"}>
           <Button
+            onClick={showMessage}
             size={{ base: "sm", sm: "md" }}
             alignSelf={"flex-end"}
             _hover={{ bg: "Primary.600" }}
