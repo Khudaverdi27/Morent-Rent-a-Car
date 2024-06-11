@@ -4,6 +4,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import openCategoryReducer from "./features/slice";
 import filteredByCategoryReducer from "./features/filterSlice";
 import rentedCarInfoReducer from "./features/rentedInfo";
+import authSliceReducer from "./features/authSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     openCategory: openCategoryReducer,
     filteredCategory: filteredByCategoryReducer,
     rentedInfo: rentedCarInfoReducer,
+    auth: authSliceReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(carApi.middleware),

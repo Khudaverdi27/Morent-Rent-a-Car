@@ -1,26 +1,35 @@
 import { Box } from "@chakra-ui/react";
-import { Outlet } from "react-router-dom";
-import bgImg from "../assets/img/welcome-banner.png";
+import { Outlet, useNavigate } from "react-router-dom";
+import bgImg from "../assets/img/carBg.mp4";
+import { useSelector } from "react-redux";
+import { authInfo } from "../Redux/features/authSlice";
+import { useEffect } from "react";
 
 function AuthLayout() {
+  const authData = useSelector(authInfo);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (authData.email || authData.password) {
+      navigate("/");
+    }
+  }, []);
+
   return (
-    <Box
-      as="main"
-      h="100vh"
-      backgroundImage={`url(${bgImg})`}
-      bgSize={"cover"}
-      backgroundRepeat="no-repeat"
-      pos={"relative"}
-    >
-      <Box
-        w={"100%"}
-        h={"100vh"}
-        pos={"absolute"}
-        bgGradient="linear(to-r,  Primary.1000 100%, Primary.100 0%)"
-        opacity={0.6}
+    <Box as="main" h="100vh" pos={"relative"}>
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          top: 0,
+          objectFit: "cover",
+        }}
       >
-        0
-      </Box>
+        <source src={bgImg} type="video/mp4" />
+      </video>
       <Outlet />
     </Box>
   );

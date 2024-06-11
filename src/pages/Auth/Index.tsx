@@ -40,6 +40,7 @@ function Auth() {
 
   return (
     <Card
+      opacity={0.8}
       pos={"absolute"}
       bgGradient="linear(to-t,  Primary.0 0%, Primary.100 100%)"
       py={8}
@@ -54,7 +55,8 @@ function Auth() {
         color={"Primary.900"}
         fontWeight={600}
         textAlign={"center"}
-        fontSize={26}
+        fontSize={24}
+        whiteSpace={"nowrap"}
       >
         Welcome To Morent
       </CardHeader>
