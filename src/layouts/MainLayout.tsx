@@ -10,15 +10,12 @@ import _ from "lodash";
 import CategoryContent from "../components/Categories/CategoryContent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useSelector } from "react-redux";
-import { authInfo } from "../Redux/features/authSlice";
 
 function MainLayout() {
   const isOpen = useAppSelector((state) => state.openCategory.value);
   const isMobile = useMediaQuery("only screen and (max-width : 780px)");
   const path = useLocation().pathname;
-  const info = useSelector(authInfo);
-  console.log(info);
+
   return (
     <Box as={"main"} bg={"Secondary.50"}>
       <ToastContainer autoClose={2000} />

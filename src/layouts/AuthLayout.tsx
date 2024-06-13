@@ -6,12 +6,15 @@ import { authInfo } from "../Redux/features/authSlice";
 import { useEffect } from "react";
 import Logo from "../components/common/Logo";
 import { ToastContainer } from "react-toastify";
+import { useSessionStorage } from "@uidotdev/usehooks";
 
 function AuthLayout() {
-  const authData = useSelector(authInfo);
+  const [storage] = useSessionStorage("token", "");
   const navigate = useNavigate();
+  const info = useSelector(authInfo);
+  console.log(info);
   useEffect(() => {
-    if (authData) {
+    if (storage) {
       navigate("/");
     }
   }, []);

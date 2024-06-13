@@ -10,9 +10,9 @@ import {
   InputRightElement,
   Text,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginType, RegisterType } from "../../types/Inputs";
@@ -32,8 +32,6 @@ function Auth() {
   const [, setStorage] = useSessionStorage<string>("token", "");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [test, setTest] = useState(false);
-  const [data, setData] = useState({});
 
   const {
     register,
@@ -47,22 +45,15 @@ function Auth() {
   const notify = (userData: any) => toast.error(userData);
 
   const onSubmit: SubmitHandler<LoginType> = async (data) => {
-    const userData = await signUp(data.email, data.password).then(
-      (d) => setTest(true),
-      setData(d)
-    );
+    const userData: any = await signUp(data.email, data.password);
     if (typeof userData === "string") {
       notify(userData);
-    }
-  };
-
-  useEffect(() => {
-    if (test) {
-      dispatch(login(userData.email));
+    } else {
+      dispatch(login(userData));
       setStorage(userData.uid);
       navigate("/");
     }
-  }, []);
+  };
 
   return (
     <Card
@@ -92,6 +83,7 @@ function Auth() {
           <>
             <FormLabel>Name Surname</FormLabel>
             <Input
+              size="sm"
               {...register("name")}
               variant="flushed"
               type="text"
@@ -103,7 +95,7 @@ function Auth() {
                 <Text
                   role="alert"
                   as="span"
-                  fontSize={"14px"}
+                  fontSize={"13px"}
                   color={"Error.500"}
                 >
                   {registerErrors.name.message}
@@ -114,6 +106,7 @@ function Auth() {
 
         <FormLabel mt={1}>Email</FormLabel>
         <Input
+          size="sm"
           {...register("email")}
           variant="flushed"
           _placeholder={{ color: "Primary.400", fontSize: "13px" }}
@@ -122,13 +115,14 @@ function Auth() {
         />
         {registerErrors.email &&
           typeof registerErrors.email.message === "string" && (
-            <Text role="alert" as="span" fontSize={"14px"} color={"Error.500"}>
+            <Text role="alert" as="span" fontSize={"13px"} color={"Error.500"}>
               {registerErrors.email.message}
             </Text>
           )}
         <FormLabel mt={1}>Password</FormLabel>
         <InputGroup>
           <Input
+            size="sm"
             {...register("password")}
             variant="flushed"
             type={show ? "text" : "password"}
@@ -143,7 +137,7 @@ function Auth() {
         </InputGroup>
         {registerErrors.password &&
           typeof registerErrors.password.message === "string" && (
-            <Text role="alert" as="span" fontSize={"14px"} color={"Error.500"}>
+            <Text role="alert" as="span" fontSize={"13px"} color={"Error.500"}>
               {registerErrors.password.message}
             </Text>
           )}
@@ -152,6 +146,7 @@ function Auth() {
             <FormLabel mt={1}>Confrim password</FormLabel>
             <InputGroup>
               <Input
+                size="sm"
                 {...register("confirmPassword")}
                 variant="flushed"
                 type={showConfrim ? "text" : "password"}
@@ -169,7 +164,7 @@ function Auth() {
                 <Text
                   role="alert"
                   as="span"
-                  fontSize={"14px"}
+                  fontSize={"13px"}
                   color={"Error.500"}
                 >
                   {registerErrors.confirmPassword.message}
@@ -178,17 +173,23 @@ function Auth() {
           </>
         )}
         {!path && <Box fontSize={12}>Did you forgot password?</Box>}
+
         <Button
           type="submit"
           bgColor={"Information.400"}
           color={"Primary.0"}
           _hover={{ bgColor: "Information.300" }}
-          mt={3}
+          my={2}
           w={"100%"}
         >
           {path ? "Register" : "Login"}
         </Button>
       </FormControl>
+      <Box fontSize={12}>
+        <Link to={`${path ? "/auth/login" : "/auth/register"}`}>{`${
+          path ? "Do you" : "Don't"
+        } have account?`}</Link>
+      </Box>
     </Card>
   );
 }
