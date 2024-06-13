@@ -10,13 +10,18 @@ import {
   InputRightElement,
   Text,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginType, RegisterType } from "../../types/Inputs";
 import { LoginSchema, RegisterSchema } from "../../validation/inputSchema";
+import { signUp } from "../../utility/firebase";
+import { useSessionStorage } from "@uidotdev/usehooks";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { login } from "../../Redux/features/authSlice";
 
 function Auth() {
   const [show, setShow] = useState(false);
@@ -24,6 +29,11 @@ function Auth() {
   const handleClick = () => setShow(!show);
   const handleConfrimShow = () => setShowConfrim(!showConfrim);
   const path = useLocation().pathname.includes("register");
+  const [, setStorage] = useSessionStorage<string>("token", "");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [test, setTest] = useState(false);
+  const [data, setData] = useState({});
 
   const {
     register,
@@ -34,10 +44,25 @@ function Auth() {
   });
 
   const registerErrors = errors as FieldErrors<RegisterType>;
+  const notify = (userData: any) => toast.error(userData);
 
-  const onSubmit: SubmitHandler<LoginType> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<LoginType> = async (data) => {
+    const userData = await signUp(data.email, data.password).then(
+      (d) => setTest(true),
+      setData(d)
+    );
+    if (typeof userData === "string") {
+      notify(userData);
+    }
   };
+
+  useEffect(() => {
+    if (test) {
+      dispatch(login(userData.email));
+      setStorage(userData.uid);
+      navigate("/");
+    }
+  }, []);
 
   return (
     <Card

@@ -5,18 +5,20 @@ import { useSelector } from "react-redux";
 import { authInfo } from "../Redux/features/authSlice";
 import { useEffect } from "react";
 import Logo from "../components/common/Logo";
+import { ToastContainer } from "react-toastify";
 
 function AuthLayout() {
   const authData = useSelector(authInfo);
   const navigate = useNavigate();
   useEffect(() => {
-    if (authData.email || authData.password) {
+    if (authData) {
       navigate("/");
     }
   }, []);
 
   return (
     <Box as="main" h="100vh" pos={"relative"}>
+      <ToastContainer autoClose={2000} />
       <Flex
         px={3}
         py={1}

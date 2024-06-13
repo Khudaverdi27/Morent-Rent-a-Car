@@ -1,33 +1,26 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { LoginType } from "../../types/Inputs";
 import { RootState } from "../store";
+import { firebaseType } from "../../types/firebaseLogin";
 
 interface IauthSlice {
-  authData: {
-    email: string;
-    password: string;
-  };
+  email: string;
 }
 
 const initialState: IauthSlice = {
-  authData: {
-    email: "",
-    password: "",
-  },
+  email: "",
 };
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login: (state, action: PayloadAction<LoginType>) => {
-      state.authData.email = action.payload.email;
-      state.authData.password = action.payload.password;
+    login: (state, action: PayloadAction<firebaseType>) => {
+      state.email = action.payload.email;
     },
   },
 });
 
 export const { login } = authSlice.actions;
-export const authInfo = (state: RootState) => state.auth.authData;
+export const authInfo = (state: RootState) => state.auth.email;
 
 export default authSlice.reducer;
