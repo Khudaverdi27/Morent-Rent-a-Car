@@ -5,7 +5,8 @@ import Error from "../pages/Error";
 import AuthLayout from "../layouts/AuthLayout";
 import CarDetail from "../pages/CarDetail/CarDetail";
 import PaymentPage from "../pages/Payment/PaymentPage";
-import Auth from "../pages/Auth/Index";
+import LoginPage from "../pages/Auth/LoginPage";
+import RegisterPage from "../pages/Auth/RegisterPage";
 
 export const router = createBrowserRouter([
   {
@@ -36,11 +37,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "login",
-        element: <Auth />,
+        element: <LoginPage />,
       },
       {
         path: "register",
-        element: <Auth />,
+        element: <RegisterPage />,
       },
     ],
   },
