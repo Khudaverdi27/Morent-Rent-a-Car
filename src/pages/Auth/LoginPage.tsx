@@ -25,7 +25,7 @@ import AuthContainer from "./AuthContainer";
 function LoginPage() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
-  const [, setStorage] = useSessionStorage<string>("token", "");
+  const [, setToken] = useSessionStorage<string>("token", "");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -46,7 +46,7 @@ function LoginPage() {
       notify(userData);
     } else {
       dispatch(login(userData));
-      setStorage(userData.uid);
+      setToken(userData.uid);
       navigate("/");
     }
   };

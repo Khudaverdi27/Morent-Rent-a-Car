@@ -9,12 +9,12 @@ import { ToastContainer } from "react-toastify";
 import { useSessionStorage } from "@uidotdev/usehooks";
 
 function AuthLayout() {
-  const [storage] = useSessionStorage("token", "");
+  const [token] = useSessionStorage("token", "");
   const navigate = useNavigate();
   const info = useSelector(authInfo);
   console.log(info);
   useEffect(() => {
-    if (storage) {
+    if (token) {
       navigate("/");
     }
   }, []);

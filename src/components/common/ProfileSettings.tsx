@@ -15,7 +15,7 @@ interface iProfileProps {
 
 function ProfileSettings({ isLoading, showSettings, show }: iProfileProps) {
   const isMobile = useMediaQuery("only screen and (max-width : 768px)");
-  const [storage] = useSessionStorage<string>("token", "");
+  const [token] = useSessionStorage<string>("token", "");
 
   return (
     <Stack
@@ -30,16 +30,16 @@ function ProfileSettings({ isLoading, showSettings, show }: iProfileProps) {
           order={isMobile ? 3 : 0}
         >
           <IconBtn>
-            <Link to={storage ? "#" : "/auth/login"}>
+            <Link to={token ? "#" : "/auth/login"}>
               <Icon
                 color={isLoading ? "Primary.300" : ""}
-                as={storage ? FaHeart : AiOutlineLogin}
+                as={token ? FaHeart : AiOutlineLogin}
                 boxSize={5}
               />
             </Link>
           </IconBtn>
 
-          {storage && (
+          {token && (
             <IconBtn>
               <Icon
                 color={isLoading ? "Primary.300" : ""}
@@ -50,10 +50,10 @@ function ProfileSettings({ isLoading, showSettings, show }: iProfileProps) {
             </IconBtn>
           )}
           <IconBtn>
-            <Link to={storage ? "#" : "/auth/register"}>
+            <Link to={token ? "#" : "/auth/register"}>
               <Icon
                 color={isLoading ? "Primary.300" : ""}
-                as={storage ? IoMdSettings : AiOutlineUserAdd}
+                as={token ? IoMdSettings : AiOutlineUserAdd}
                 boxSize={5}
               />
             </Link>

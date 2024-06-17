@@ -27,7 +27,7 @@ function RegisterPage() {
   const [showConfrim, setShowConfrim] = useState(false);
   const handleClick = () => setShow(!show);
   const handleConfrimShow = () => setShowConfrim(!showConfrim);
-  const [, setStorage] = useSessionStorage<string>("token", "");
+  const [, setToken] = useSessionStorage<string>("token", "");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -53,7 +53,7 @@ function RegisterPage() {
       notify(userData);
     } else {
       dispatch(login(userData));
-      setStorage(userData.uid);
+      setToken(userData.uid);
       navigate("/");
     }
   };
@@ -110,7 +110,12 @@ function RegisterPage() {
             _placeholder={{ color: "Primary.400", fontSize: "13px" }}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button
+              variant={"ghost"}
+              h="1.75rem"
+              size="sm"
+              onClick={handleClick}
+            >
               {show ? <FaEyeSlash /> : <FaEye />}
             </Button>
           </InputRightElement>
@@ -134,7 +139,12 @@ function RegisterPage() {
               _placeholder={{ color: "Primary.400", fontSize: "13px" }}
             />
             <InputRightElement width="4.5rem">
-              <Button h="1.75rem" size="sm" onClick={handleConfrimShow}>
+              <Button
+                variant={"ghost"}
+                h="1.75rem"
+                size="sm"
+                onClick={handleConfrimShow}
+              >
                 {showConfrim ? <FaEyeSlash /> : <FaEye />}
               </Button>
             </InputRightElement>
