@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   FormControl,
   FormLabel,
@@ -14,12 +15,12 @@ import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { RegisterType } from "../../types/Inputs";
 import { RegisterSchema } from "../../validation/inputSchema";
-import { signUp } from "../../utility/firebase";
 import { useSessionStorage } from "@uidotdev/usehooks";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { login } from "../../Redux/features/authSlice";
 import AuthContainer from "./AuthContainer";
+import { registerToAccount } from "../../utility/firebase";
 
 function RegisterPage() {
   const [show, setShow] = useState(false);
@@ -42,7 +43,12 @@ function RegisterPage() {
   const notify = (userData: any) => toast.error(userData);
 
   const onSubmit: SubmitHandler<RegisterType> = async (data) => {
-    const userData: any = await signUp(data.email, data.password);
+    const userData: any = await registerToAccount(
+      data.email,
+      data.password,
+      data.name
+    );
+
     if (typeof userData === "string") {
       notify(userData);
     } else {
@@ -157,7 +163,12 @@ function RegisterPage() {
           Register
         </Button>
       </FormControl>
-      <Link to={"/auth/login"}>Do you have account?</Link>
+      <Link to={"/auth/login"}>
+        Do you have account?{" "}
+        <Box as="span" color={"Primary.500"} fontWeight={"bold"}>
+          Login
+        </Box>
+      </Link>
     </AuthContainer>
   );
 }

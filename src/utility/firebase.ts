@@ -1,11 +1,14 @@
-import { initializeApp } from "firebase/app";
+import { FirebaseError, initializeApp } from "firebase/app";
 import {
   getAuth,
   signInWithEmailAndPassword,
   AuthError,
   UserCredential,
   User,
+  createUserWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
+import { doc, getFirestore, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzAkp-MbQjlY752Q64fNZ3KMYv9-M4EVE",
@@ -19,6 +22,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 
 export const signUp = async (
   email: string,
@@ -46,5 +51,33 @@ export const signUp = async (
       default:
         return "Something went wrong";
     }
+  }
+};
+export const registerToAccount = async (
+  email: string,
+  password: string,
+  name: string
+): Promise<User | string> => {
+  try {
+    const { user } = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    // Add a new document in collection "cities"
+    await setDoc(doc(db, "users", user.uid), {
+      name,
+      email,
+      notifications: [],
+    });
+    // Update user profile with name
+    await updateProfile(user, {
+      displayName: name,
+    });
+
+    return user;
+  } catch (error) {
+    const errorCode = (error as FirebaseError).code;
+    return errorCode;
   }
 };

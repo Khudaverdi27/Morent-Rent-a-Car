@@ -37,7 +37,7 @@ function LoginPage() {
     resolver: yupResolver(LoginSchema),
   });
 
-  const registerErrors = errors as FieldErrors<LoginType>;
+  const loginErrors = errors as FieldErrors<LoginType>;
   const notify = (userData: any) => toast.error(userData);
 
   const onSubmit: SubmitHandler<LoginType> = async (data) => {
@@ -63,12 +63,11 @@ function LoginPage() {
           type="email"
           placeholder="Enter your email"
         />
-        {registerErrors.email &&
-          typeof registerErrors.email.message === "string" && (
-            <Text role="alert" as="span" fontSize={"13px"} color={"Error.500"}>
-              {registerErrors.email.message}
-            </Text>
-          )}
+        {loginErrors.email && typeof loginErrors.email.message === "string" && (
+          <Text role="alert" as="span" fontSize={"13px"} color={"Error.500"}>
+            {loginErrors.email.message}
+          </Text>
+        )}
         <FormLabel mt={1}>Password</FormLabel>
         <InputGroup>
           <Input
@@ -80,18 +79,20 @@ function LoginPage() {
             _placeholder={{ color: "Primary.400", fontSize: "13px" }}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button variant="ghost" h="1.75rem" size="sm" onClick={handleClick}>
               {show ? <FaEyeSlash /> : <FaEye />}
             </Button>
           </InputRightElement>
         </InputGroup>
-        {registerErrors.password &&
-          typeof registerErrors.password.message === "string" && (
+        {loginErrors.password &&
+          typeof loginErrors.password.message === "string" && (
             <Text role="alert" as="span" fontSize={"13px"} color={"Error.500"}>
-              {registerErrors.password.message}
+              {loginErrors.password.message}
             </Text>
           )}
-        <Box fontSize={12}>Did you forgot password?</Box>
+        <Box fontSize={12} color={"Error.500"}>
+          Did you forgot password?
+        </Box>
         <Button
           type="submit"
           bgColor={"Information.400"}
@@ -102,7 +103,12 @@ function LoginPage() {
         >
           Login
         </Button>
-        <Link to={"/auth/register"}>Don't have account?</Link>
+        <Link to={"/auth/register"}>
+          Don't have account?{" "}
+          <Box as="span" color={"Primary.500"} fontWeight={"bold"}>
+            Register
+          </Box>
+        </Link>
       </FormControl>
     </AuthContainer>
   );

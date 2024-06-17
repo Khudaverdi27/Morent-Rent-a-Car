@@ -19,7 +19,9 @@ export type Inputs = Record<
 
 export type LoginType = Record<"email" | "password", string>;
 
-export type RegisterType = Record<
-  "email" | "password" | "name" | "confirmPassword",
-  string
->;
+export type RegisterType = {
+  email: string;
+  password: string;
+  name: string;
+  confirmPassword: string;
+};

@@ -4,10 +4,12 @@ import { firebaseType } from "../../types/firebaseLogin";
 
 interface IauthSlice {
   email: string;
+  displayName: string;
 }
 
 const initialState: IauthSlice = {
   email: "",
+  displayName: "",
 };
 
 export const authSlice = createSlice({
@@ -15,12 +17,12 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action: PayloadAction<firebaseType>) => {
-      state.email = action.payload.email;
+      state.displayName = action.payload.displayName;
     },
   },
 });
 
 export const { login } = authSlice.actions;
-export const authInfo = (state: RootState) => state.auth.email;
+export const authInfo = (state: RootState) => state.auth.displayName;
 
 export default authSlice.reducer;

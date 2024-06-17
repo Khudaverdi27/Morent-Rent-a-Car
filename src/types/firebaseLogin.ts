@@ -1,1 +1,1 @@
-export type firebaseType = Record<"email", string>;
+export type firebaseType = Record<"email" | "displayName", string>;
